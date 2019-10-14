@@ -2,6 +2,8 @@ Resources
 
 [Google Drive](https://drive.google.com/open?id=1vPxJSLNgyoM5InfvzLNtTtdAPl2ZJoiW)
 
+[Experiment Writeups](https://laurahannah44.github.io/pdfs)
+
 [Geogebra](https://www.geogebra.org/u/laurahannah44)
 
 [Desmos](https://laurahannah44.github.io/desmos)
