@@ -4,6 +4,8 @@ Resources
 
 [Geogebra](https://www.geogebra.org/u/laurahannah44)
 
+[Desmos](https://laurahannah44.github.io/desmos)
+
 [Particle Motion Simulation](https://github.com/LauraHannah44/Motion-Simulation)
 
 [Computer Science Quiz Program](https://github.com/LauraHannah44/NEA-quiz-program)
