@@ -7,3 +7,5 @@ Resources
 [Particle Motion Simulation](https://github.com/LauraHannah44/Motion-Simulation)
 
 [Computer Science Quiz Program](https://github.com/LauraHannah44/NEA-quiz-program)
+
+[Main GitHub page (less complete programs)](https://github.com/LauraHannah44)
