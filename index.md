@@ -12,4 +12,4 @@ Resources
 
 [Computer Science Quiz Program](https://github.com/LauraHannah44/NEA-quiz-program) (GitHub Repository)
 
-[Main GitHub page (less complete programs)](https://github.com/LauraHannah44)
+[Main GitHub Page](https://github.com/LauraHannah44) (Account Page)
