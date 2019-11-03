@@ -10,6 +10,8 @@
 
 [Normal and tangent to parametric points on curve](https://www.desmos.com/calculator/h0o473jvfl)
 
+[Maclaurin approximations for generalised functions](https://www.desmos.com/calculator/byucuhjxqm)
+
 -
 
 [Back to home](https://laurahannah44.github.io/)
