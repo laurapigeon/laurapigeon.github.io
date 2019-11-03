@@ -12,6 +12,8 @@
 
 [Maclaurin approximations for generalised functions](https://www.desmos.com/calculator/byucuhjxqm)
 
+[Average of a Continuous Function](https://www.desmos.com/calculator/yy0kb2vqzk)
+
 -
 
 [Back to home](https://laurahannah44.github.io/)
