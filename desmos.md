@@ -6,6 +6,10 @@
 
 [Eulers methods for solving differentials](https://www.desmos.com/calculator/tpp9s4p5j2)
 
+[Summation formulae](https://www.desmos.com/calculator/duk3d6ufij)
+
+[Normal and tangent to parametric points on curve](https://www.desmos.com/calculator/h0o473jvfl)
+
 -
 
 [Back to home](https://laurahannah44.github.io/)
