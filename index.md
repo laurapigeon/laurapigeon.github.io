@@ -4,7 +4,7 @@ Resources
 
 [Experiment Writeups](https://laurapigeon.github.io/writeups) (Sub-Page)
 
-[Geogebra](https://www.geogebra.org/u/laurahannah44) (Geogebra Site)
+[Geogebra](https://www.geogebra.org/u/laurapigeon) (Geogebra Site)
 
 [Desmos](https://laurapigeon.github.io/desmos) (Sub-Page)
 
