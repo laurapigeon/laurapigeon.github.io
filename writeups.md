@@ -1,21 +1,21 @@
-[Hypothesis Testing/Probability Distributions](https://laurahannah44.github.io/pdfs/HypPD.pdf)
+[Hypothesis Testing/Probability Distributions](https://laurapigeon.github.io/pdfs/HypPD.pdf)
 
-[Acceleration](https://laurahannah44.github.io/pdfs/Acc.pdf)
+[Acceleration](https://laurapigeon.github.io/pdfs/Acc.pdf)
 
-[Electrical Resistivity](https://laurahannah44.github.io/pdfs/ElecRes.pdf)
+[Electrical Resistivity](https://laurapigeon.github.io/pdfs/ElecRes.pdf)
 
-[EMF/Internal Resistance](https://laurahannah44.github.io/pdfs/EMFIntRes.pdf)
+[EMF/Internal Resistance](https://laurapigeon.github.io/pdfs/EMFIntRes.pdf)
 
-[Viscosity](https://laurahannah44.github.io/pdfs/Visc.pdf)
+[Viscosity](https://laurapigeon.github.io/pdfs/Visc.pdf)
 
-[Young Modulus](https://laurahannah44.github.io/pdfs/YoungMod.pdf)
+[Young Modulus](https://laurapigeon.github.io/pdfs/YoungMod.pdf)
 
-[Speed of Sound](https://laurahannah44.github.io/pdfs/SoundSpeed.pdf)
+[Speed of Sound](https://laurapigeon.github.io/pdfs/SoundSpeed.pdf)
 
-[Standing Waves](https://laurahannah44.github.io/pdfs/StandWav.pdf)
+[Standing Waves](https://laurapigeon.github.io/pdfs/StandWav.pdf)
 
-[Wavelength of Light](https://laurahannah44.github.io/pdfs/WavOfLight.pdf)
+[Wavelength of Light](https://laurapigeon.github.io/pdfs/WavOfLight.pdf)
 
 -
 
-[Back to home](https://laurahannah44.github.io/)
+[Back to home](https://laurapigeon.github.io/)
