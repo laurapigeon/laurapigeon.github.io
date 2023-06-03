@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Pixel';
+    src: url('/assets/fonts/hypnospace-outlaw.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    transform: scale(4);
+    transform-origin: top;
+    background: rgb(20, 20, 20);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.status {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 52px;
+    background-image: url('/assets/images/status.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    image-rendering: pixelated;
+}
+
+.statusname,
+.statusupdate,
+.statustext {
+    position: fixed;
+    font-family: 'Pixel', monospace;
+    font-size: 7px;
+}
+
+.statusname {
+    top: 5px;
+    left: 6px;
+    color: rgb(235, 228, 221);
+}
+
+.statusupdate {
+    top: 5px;
+    left: 232px;
+    color: rgb(185, 172, 171);
+}
+
+.statusicon {
+    position: fixed;
+    top: 24px;
+    left: 13px;
+    width: 18px;
+    height: 18px;
+    background-image: url('/assets/images/emote1.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    image-rendering: pixelated;
+}
+
+.statustext {
+    top: 18px;
+    left: 49px;
+    max-width: 240px;
+    color: rgb(235, 228, 221);
+    line-height: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content {
+    position: fixed;
+    top: 52px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: fit-content;
+    border-bottom: 20px solid rgba(0, 0, 0, 0);
+    background-image: url('/assets/images/polyomino background.png');
+    background-repeat: repeat;
+    background-size: auto;
+    background-color: white;
+    background-clip: padding-box;
+    image-rendering: pixelated;
+    overflow-x: hidden;
+    color: rgb(235, 228, 221);
+    font-family: 'Pixel', monospace;
+    font-size: 7px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
