@@ -118,4 +118,10 @@ body {
     width: var(--width);
     text-align: var(--text-align);
     font-family: var(--font-family);
+    color: var(--color)
+}
+
+.linebox {
+    position: relative;
+    height: 8px;
 }
