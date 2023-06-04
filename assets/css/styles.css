@@ -1,34 +1,37 @@
 @font-face {
     font-family: 'Pixel';
-    src: url('/assets/fonts/hypnospace-outlaw.ttf') format('truetype');
+    src: url('/assets/fonts/somybmp01_7.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 * { 
-    font-family: 'Pixel', monospace;
+    font-family: 'Pixel';
     font-size: 7px;
     line-height: 8px;
     color: rgb(235, 228, 221);
+    /*filter: url(#crispify);*/
+}
+
+html {
+    min-width: 100%;
+    overflow: scroll;
+    background: rgb(20, 20, 20);
 }
 
 body {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: fit-content;
-    transform: scale(4);
-    transform-origin: top;
-    background: rgb(20, 20, 20);
-    overflow-x: hidden;
-    overflow-y: scroll;
+    position: relative;
+    margin: 0 auto;
+}
+
+.scaler {
+    width: 300px;
+    height: min-content;
+    transform: scale(1);
+    transform-origin: top left;
 }
 
 .status {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     width: 300px;
     height: 52px;
     background-image: url('/assets/images/status.png');
@@ -39,19 +42,14 @@ body {
     image-rendering: pixelated;
 }
 
-.statusname,
-.statusupdate,
-.statustext {
-    position: fixed;
-    filter: url(#crispify);
-}
-
 .statusname {
+    position: fixed;
     top: 5px;
     left: 6px;
 }
 
 .statusupdate {
+    position: fixed;
     top: 5px;
     left: 232px;
     color: rgb(185, 172, 171);
@@ -72,6 +70,7 @@ body {
 }
 
 .statustext {
+    position: fixed;
     top: 17px;
     left: 49px;
     max-width: 240px;
@@ -84,11 +83,9 @@ body {
 }
 
 .content {
-    position: relative;
-    top: 52px;
-    left: 50%;
-    transform: translateX(-50%);
     width: 300px;
+    height: min-content;
+    margin-left: min(calc(50% - 150px), 0);
     /*border-bottom: 20px solid rgba(0, 0, 0, 0);*/
     background-image: url('/assets/images/polyomino background.png');
     background-repeat: repeat;
@@ -105,7 +102,6 @@ body {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    filter: url(#crispify);
 }
 
 header {
