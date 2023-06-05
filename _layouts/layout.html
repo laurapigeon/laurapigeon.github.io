@@ -4,6 +4,8 @@
         <title>{{ page.title }}</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
         <link rel="icon" type="image/png" href="/assets/images/favicon.ico" />
+    </head>
+    <body>
         <svg class="offscreen" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <filter id="crispify">
@@ -13,28 +15,26 @@
                 </filter>
             </defs>
         </svg>
-        <script src="/scripts and filters/scripts.js" type=module></script>
-        <style>
-        </style>
-    </head>
-    <body>
-        <div class="scaler">
-            <div class="status">
-                <div class="statusbackground"></div>
-                <div class="statusname">
-                    LAURAPIGEON'S STATUS
+        <div class="scalercontainer">
+            <div class="scaler">
+                <div class="status">
+                    <div class="statusbackground"></div>
+                    <div class="statusname">
+                        LAURAPIGEON'S STATUS
+                    </div>
+                    <div class="statusupdate">
+                        UPDATED TODAY
+                    </div>
+                    <div class="statusicon"></div>
+                    <div class="statustext">
+                        @pigeon why did you let out a high pitched yippee what is going on right now
+                    </div>
                 </div>
-                <div class="statusupdate">
-                    UPDATED TODAY
+                <div class="content">
+                    {{ content }}
                 </div>
-                <div class="statusicon"></div>
-                <div class="statustext">
-                    @pigeon why did you let out a high pitched yippee what is going on right now
-                </div>
-            </div>
-            <div class="content">
-                {{ content }}
             </div>
         </div>
+        <script src="/scripts and filters/scripts.js" type=module></script>
     </body>
 </html>

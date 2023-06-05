@@ -13,14 +13,12 @@
 }
 
 html {
-    min-width: 100%;
-    min-height: 100%;
     overflow: scroll;
     background: rgb(20, 20, 20);
 }
 
 body {
-    margin: 0 auto;
+    margin: 0;
     font-family: 'Pixel';
     font-size: 7px;
     line-height: 8px;
@@ -28,9 +26,13 @@ body {
     filter: url(#crispify);
 }
 
-.scaler {
+.scalercontainer {
     position: relative;
     top: -8px;
+    margin: 0 auto;
+}
+
+.scaler {
     width: 300px;
     height: auto;
     transform: scale(4);
