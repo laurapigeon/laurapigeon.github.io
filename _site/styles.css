@@ -133,6 +133,7 @@ body {
     cursor: pointer;
     border-image-slice: 1;
     border-image-repeat: repeat;
+    border-image-source: url("/resources/images/border-image-1.png");
     animation-name: antcrawl;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
