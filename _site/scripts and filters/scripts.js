@@ -86,7 +86,7 @@ window.addEventListener('DOMContentLoaded', () => {
         tempElement.textContent = line
         
         // Perform desired operations on each line
-        console.log(`Line ${index + 1}: ${line}`, tempElement.offsetWidth, tempElement.offsetWidth % 2 == 0 ? `(onset)` : `(offset)`);
+        //console.log(`Line ${index + 1}: ${line}`, tempElement.offsetWidth, tempElement.offsetWidth % 2 == 0 ? `(onset)` : `(offset)`);
         
         const linebox = document.createElement('div');
         linebox.classList.add('.linebox');
@@ -96,6 +96,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         textbox.appendChild(linebox);
       });
+      //console.log(`colour was ${computedStyle.color}`)
     }
   });
 });
