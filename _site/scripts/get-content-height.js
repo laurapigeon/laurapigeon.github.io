@@ -10,9 +10,8 @@ window.addEventListener('load', function() {
         const height = textbox.offsetTop + textbox.offsetHeight;
         maxHeight = Math.max(maxHeight, height);
       });
-      content.style.height = maxHeight + 'px';
+      content.style.height = (maxHeight + 3) + 'px';
     });
-  
   
     // Calculate the dimensions of the scaler container based on the scalers height
     var scaler = document.querySelector('.scaler');

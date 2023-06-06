@@ -43,7 +43,7 @@ window.addEventListener('load', function() {
           // Add the current line to the lines array
           lines.push(currentLine);
           
-          console.log(`Line: ${testLine} len ${tempElement.offsetWidth} longer than ${textboxWidth}`);
+          //console.log(`Line: ${testLine} len ${tempElement.offsetWidth} longer than ${textboxWidth}`);
           
           // Start a new line with the current word
           currentLine = word;
