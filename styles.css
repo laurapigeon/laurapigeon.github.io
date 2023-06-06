@@ -23,7 +23,7 @@ body {
     font-size: 7px;
     line-height: 8px;
     color: rgb(235, 228, 221);
-    filter: url(#crispify);
+    filter: url("#crispify");
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -145,27 +145,51 @@ body {
     display: inline-block;
     border: 1px solid transparent;
     box-sizing: content-box;
+}
+
+.textbox[data-url]:hover::after,
+.textbox[data-url]:hover::before {
     border-image-slice: 1;
     border-image-repeat: repeat;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
+    --mask: conic-gradient(at 6px 6px,#000 75%,#0000 0) -3px -3px;	
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
 }
 
 .textbox[data-url]:hover::after {
     top: -3px;
-    left: -4px;
-    padding: 2px 1px 0px 3px;
+    left: -3px;
+    padding: 2px 1px 0px 2px;
     border-image-source: url("/resources/images/border-1.png");
     animation-name: antcrawl;
 }
 
 .textbox[data-url]:hover::before {
     top: -2px;
-    left: -3px;
-    padding: 1px 2px 1px 2px;
+    left: -2px;
+    padding: 1px 2px 1px 1px;
     border-image-source: url("/resources/images/border-shadow-1.png");
     animation-name: antcrawlshadow;
 }
+
+/*
+.textbox[data-url]:hover::after::after,
+.textbox[data-url]:hover::before::after {
+    background-repeat: no-repeat;
+    background-position-x: -1px;
+    background-position-y: -1px;
+    background-clip: border-box;
+}
+
+.textbox[data-url]:hover::after::after {
+    background-image: url("/resources/images/border-corner.png");
+}
+
+.textbox[data-url]:hover::before::after {
+    background-image: url("/resources/images/border-shadow-corner.png");
+}*/
 
 @keyframes antcrawl { /* rgb(154 199 245 / 0.5) */
      0% { border-image-source: url("/resources/images/border-1.png"); }
