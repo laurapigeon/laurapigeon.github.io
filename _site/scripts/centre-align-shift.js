@@ -56,7 +56,13 @@ window.addEventListener('load', function() {
       // Add the last line to the lines array
       lines.push(currentLine);
       
-      textbox.textContent = '';
+      const childNodes = textbox.childNodes;
+      for (let i = 0; i < childNodes.length; i++) {
+        const node = childNodes[i];
+        if (node.nodeType === Node.TEXT_NODE) {
+          textbox.removeChild(node);
+        }
+      }
       
       // Iterate through each line and perform operations
       lines.forEach((line, index) => {
