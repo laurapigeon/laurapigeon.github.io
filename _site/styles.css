@@ -113,7 +113,6 @@ body {
     position: relative;
     width: 300px;
     border-bottom: 10px solid rgb(0 0 0 / 0);
-    background-image: url('/resources/images/polyomino background.png');
     background-color: rgb(255 255 255 / 0.5);
     background-repeat: repeat;
     background-size: auto;
@@ -124,12 +123,12 @@ body {
 
 .textbox {
     position: absolute;
-    top: var(--top);
-    left: var(--left);
-    width: var(--width);
-    text-align: var(--text-align);
-    font-family: var(--font-family);
-    color: var(--color);
+    top: var(--top, 0px);
+    left: var(--left, 0px);
+    width: var(--width, 100%);
+    text-align: var(--text-align, left);
+    font-family: var(--font-family, Pixel);
+    color: var(--color, rgb(235, 228, 221));
 }
 
 /* #region links */

@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', function() {
             border.classList.add('textboxborder')
             border.style.top = '-3px';
             border.style.left = '-3px';
-            border.style.padding = '2px 1px 0px 2px';
+            border.style.padding = '2px 1px 1px 2px';
             border.style.borderImageSource = 'url("/resources/images/border-1.png")';
             border.style.animationName = 'antcrawl';
             textbox.appendChild(border);
@@ -17,14 +17,14 @@ window.addEventListener('DOMContentLoaded', function() {
             bordershadow.classList.add('textboxborder')
             bordershadow.style.top = '-2px';
             bordershadow.style.left = '-2px';
-            bordershadow.style.padding = '1px 2px 1px 1px';
+            bordershadow.style.padding = '1px 2px 2px 1px';
             bordershadow.style.borderImageSource = 'url("/resources/images/border-shadow-1.png")';
             bordershadow.style.animationName = 'antcrawlshadow';
             textbox.appendChild(bordershadow);
             
             var images = ["border-corner.png", "border-shadow-corner.png"]
             var tops = ["0%", "0%", "100%", "100%"];
-            var topshift = ["-2px", "-2px", "-1px", "-1px", "-3px", "-3px", "-2px", "-2px"];
+            var topshift = ["-2px", "-2px", "0px", "0px", "-3px", "-3px", "-1px", "-1px"];
             var lefts = ["0%", "100%", "100%", "0%"];
             var leftshift = ["-2px", "0px", "0px", "-2px", "-3px", "-1px", "-1px", "-3px"];
 
