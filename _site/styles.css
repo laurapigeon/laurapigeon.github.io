@@ -1,13 +1,6 @@
 @font-face {
-    font-family: 'Pixel';
+    font-family: 'pixel0';
     src: url('/resources/fonts/somybmp01_7.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Pixel2';
-    src: url('/resources/fonts/hypnospace-outlaw.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -19,16 +12,11 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Pixel';
+    font-family: 'pixel0';
     font-size: 7px;
     line-height: 8px;
     color: rgb(235, 228, 221);
     filter: url(#crispify);
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 
@@ -123,32 +111,65 @@ body {
 
 .textbox {
     position: absolute;
-    top: var(--top, 0px);
-    left: var(--left, 0px);
-    width: var(--width, 100%);
+    top: var(--top);
+    left: var(--left);
+    bottom: var(--bottom);
+    right: var(--right);
+    box-sizing: content-box;
+    width: var(--width, 0px);
     text-align: var(--text-align, left);
-    font-family: var(--font-family, Pixel);
+    font-family: var(--font-family, pixel0);
     color: var(--color, rgb(235, 228, 221));
 }
 
+.linebox {
+    position: relative;
+    height: 8px;
+    min-width: 100%;
+    pointer-events: none;
+}
+
+.image {
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+    bottom: var(--bottom);
+    right: var(--right);
+    height: auto;
+    image-rendering: pixelated;
+}
+
 /* #region links */
-.textbox[data-url]:hover {
+.textbox[data-url]:hover,
+.image[data-url]:hover {
     cursor: pointer;
 }
 
-.textbox[data-url]:hover .textboxborder,
-.textbox[data-url]:hover .textboxcorner {
+.textbox[data-url]:hover .border,
+.image[data-url]:hover .border {
     display: inline-block;
 }
 
-.textboxborder {
+.border {
     display: none;
-    content: "";
     position: absolute;
+    top: -3px;
+    left: -3px;
+    box-sizing: content-box;
     width: 100%;
     height: 100%;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
+    padding: 1px;
+}
+
+.borderedge {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     box-sizing: content-box;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    border: 1px solid transparent;
     border-image-slice: 1;
     border-image-repeat: repeat;
     animation-duration: 0.5s;
@@ -159,9 +180,10 @@ body {
     pointer-events: none;
 }
 
-.textboxcorner {
-    display: none;
+.bordercorner {
     position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
 @keyframes antcrawl { /* rgb(154 199 245 / 0.5) */
@@ -178,10 +200,3 @@ body {
    75% { border-image-source: url("/resources/images/border-shadow-4.png"); }
 }
 /* #endregion */
-
-.linebox {
-    position: relative;
-    height: 8px;
-    min-width: 100%;
-    pointer-events: none;
-}

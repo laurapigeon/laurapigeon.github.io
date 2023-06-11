@@ -3,14 +3,14 @@ window.addEventListener('load', function() {
     const contents = document.querySelectorAll('.content');
     
     contents.forEach(content => {
-      const textboxes = content.querySelectorAll('.textbox');
-      
-      let maxHeight = 0;
-      textboxes.forEach(textbox => {
-        const height = textbox.offsetTop + textbox.offsetHeight;
-        maxHeight = Math.max(maxHeight, height);
-      });
-      content.style.height = (maxHeight + 3) + 'px';
+        const contentelements = content.querySelectorAll('.image, .textbox');
+        
+        let maxHeight = 0;
+        contentelements.forEach(contentelement => {
+            const height = contentelement.offsetTop + contentelement.offsetHeight;
+            maxHeight = Math.max(maxHeight, height);
+        });
+        content.style.height = (maxHeight + 3) + 'px';
     });
   
     // Calculate the dimensions of the scaler container based on the scalers height
