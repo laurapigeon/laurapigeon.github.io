@@ -135,8 +135,9 @@ body {
     left: var(--left);
     bottom: var(--bottom);
     right: var(--right);
-    height: auto;
+    height: min-content;
     image-rendering: pixelated;
+    line-height: 0px;
 }
 
 /* #region links */
@@ -174,10 +175,12 @@ body {
     border-image-repeat: repeat;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
-    --mask: conic-gradient(at 6px 6px,#000 75%,#0000 0) -3px -3px;	
+    --mask: conic-gradient(at 6px 6px,#000 75%,#0000 0) -3px -3px;
     -webkit-mask: var(--mask);
     mask: var(--mask);
     pointer-events: none;
+    /*mix-blend-mode: overlay;
+    background-color: rgba(255 164 164 / 1);*/
 }
 
 .bordercorner {
@@ -186,14 +189,14 @@ body {
     left: 0px;
 }
 
-@keyframes antcrawl { /* rgb(154 199 245 / 0.5) */
+@keyframes antcrawl { /* rgb(154 199 245 / 1) */
      0% { border-image-source: url("/resources/images/border-1.png"); }
     25% { border-image-source: url("/resources/images/border-2.png"); }
     50% { border-image-source: url("/resources/images/border-3.png"); }
     75% { border-image-source: url("/resources/images/border-4.png"); }
 }
 
-@keyframes antcrawlshadow { /* rgb(29 37 69 / 0.5) */
+@keyframes antcrawlshadow { /* rgb(61 59 91 / 0.75) */
     0% { border-image-source: url("/resources/images/border-shadow-1.png"); }
    25% { border-image-source: url("/resources/images/border-shadow-2.png"); }
    50% { border-image-source: url("/resources/images/border-shadow-3.png"); }
