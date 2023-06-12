@@ -1,0 +1,15 @@
+---
+layout: content
+title: Page List
+background_image: kingdom.png
+background_scale: 100
+---
+
+{% assign pages = site.pages | where_exp: "page", "page.url contains '/'" %}
+{% for page in pages %}
+    {% assign index = forloop.index | minus: 1 %}
+    {% assign top = index | times: 12 | plus: 10 %}
+    <div class="textbox" style="--top: {{ top }}px; left: 10px;" data-url="{{ page.url }}"> <!--left: 50%; transform: translateX(-50%);-->
+        {{ page.url }}
+    </div>
+{% endfor %}
