@@ -10,12 +10,16 @@
 
 [unicode.md](https://laurapigeon.github.io/unicode.md)
 
-[writeups](https://laurapigeon.github.io/writeups.md)
+[writeups.md](https://laurapigeon.github.io/writeups.md)
 
 [geogebra.md](https://laurapigeon.github.io/geogebra.md)
 
 [desmos.md](https://laurapigeon.github.io/desmos.md)
 
 [layouts/content.html](https://laurapigeon.github.io/layouts/content.html)
+
+[fonttest.html](https://laurapigeon.github.io/fonttest.html)
+
+[todo.html](https://laurapigeon.github.io/todo.html)
 
 need to figure out how to generate list of all html and md files in base directory and also link within the site rather than the full link
