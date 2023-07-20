@@ -34,7 +34,7 @@ window.addEventListener('load', function() {
             const words = textbox.textContent.split(' ');
             
             // Initialize variables
-            
+            console.log(textbox.textContent)
             // Loop through each word
             for (const word of words) {
                 // Add the word to the current line
@@ -43,6 +43,7 @@ window.addEventListener('load', function() {
                 // Set the text content of the temporary element to the test line
                 tempElement.textContent = testLine;
                 
+                console.log(word, word.includes("\n\n"))
                 // Check if the test line exceeds the width of the text box
                 if (tempElement.offsetWidth >= textboxWidth) {
                     // Add the current line to the lines array
@@ -52,6 +53,10 @@ window.addEventListener('load', function() {
                     
                     // Start a new line with the current word
                     currentLine = word;
+
+                } else if (word.includes("\n")) {
+                    lines.push(currentLine);
+                    currentLine = "";
 
                 } else {
                     // Update the current line

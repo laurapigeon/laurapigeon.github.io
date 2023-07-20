@@ -3,13 +3,27 @@ layout: content
 title: Page List
 background_image: kingdom.png
 background_scale: 100
+list_page: true
+categories: [list, debug]
 ---
 
-{% assign pages = site.pages | where_exp: "page", "page.url contains '/'" %}
-{% for page in pages %}
-    {% assign index = forloop.index | minus: 1 %}
-    {% assign top = index | times: 12 | plus: 10 %}
-    <div class="textbox" style="--top: {{ top }}px; left: 10px;" data-url="{{ page.url }}"> <!--left: 50%; transform: translateX(-50%);-->
-        {{ page.url }}
+{% assign top = 10 %}
+{% for cat in site.category_list %}
+    <div class="textbox" style="--top: {{ top }}px; --left: 120px; --width: 100px; --text-align: center;">
+        {{ cat }}
     </div>
-{% endfor %}
+    {% assign top = top | plus: 12 %}
+    {% for page in site.pages %}
+        {% if page.list_page == true %}
+            {% for pc in page.categories %}
+                {% if pc == cat %}
+                    {% assign pageSlug = page.url | split: '.' | first %}
+                    <div class="textbox" style="--top: {{ top }}px; --left: 120px; --width: 100px; --text-align: center;" data-url="{{ pageSlug }}">
+                        {{ pageSlug }}
+                    </div>
+                    {% assign top = top | plus: 12 %}
+                {% endif %}   <!-- cat-match-p -->
+            {% endfor %}  <!-- page-category -->
+        {% endif %}   <!-- resource-p -->
+    {% endfor %}  <!-- page -->
+{% endfor %}  <!-- cat -->
