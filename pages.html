@@ -6,7 +6,7 @@ background_scale: 100
 list_page: true
 categories: [list, debug]
 ---
-
+test
 {% assign top = 10 %}
 {% for cat in site.category_list %}
     <div class="textbox" style="--top: {{ top }}px; --left: 120px; --width: 100px; --text-align: center;">
@@ -20,6 +20,7 @@ categories: [list, debug]
                     {% assign pageSlug = page.url | split: '.' | first %}
                     <div class="textbox" style="--top: {{ top }}px; --left: 120px; --width: 100px; --text-align: center;" data-url="{{ pageSlug }}">
                         {{ pageSlug }}
+                        hi
                     </div>
                     {% assign top = top | plus: 12 %}
                 {% endif %}   <!-- cat-match-p -->
