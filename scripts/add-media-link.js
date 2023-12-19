@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', function() {
     const contents = document.querySelectorAll('.content');
     
     contents.forEach(content => {
-        const contentelements = content.querySelectorAll('.image, .textbox');
+        const contentelements = content.querySelectorAll('.image, p');
 
         contentelements.forEach(function(contentelement) {
             var url = contentelement.dataset.url;

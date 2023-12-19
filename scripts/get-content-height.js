@@ -3,16 +3,17 @@ window.addEventListener('load', function() {
     const contents = document.querySelectorAll('.content');
     
     contents.forEach(content => {
-        const contentelements = content.querySelectorAll('.image, .textbox');
+        const contentelements = content.querySelectorAll('.image, p');
         
         let maxHeight = 0;
         contentelements.forEach(contentelement => {
-            const height = contentelement.offsetTop + contentelement.offsetHeight;
+            var bottomMargin = parseInt(window.getComputedStyle(contentelement).marginBottom);
+            const height = contentelement.offsetTop + contentelement.offsetHeight + bottomMargin;
             maxHeight = Math.max(maxHeight, height);
         });
-        content.style.height = (maxHeight + 3) + 'px';
+        content.style.height = maxHeight + 'px';
     });
-  
+
     // Calculate the dimensions of the scaler container based on the scalers height
     var scaler = document.querySelector('.scaler');
     scaler.parentElement.style.height = (scaler.offsetHeight * 4) + 'px';

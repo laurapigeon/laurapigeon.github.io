@@ -4,16 +4,16 @@ window.addEventListener('load', function() {
     tempElement.style.whiteSpace = 'nowrap';
     tempElement.style.visibility = 'hidden';
   
-    // Get all textbox elements
-    const textboxes = document.querySelectorAll('.textbox');
+    // Get all positionbox elements
+    const positionboxes = document.querySelectorAll('.positionbox');
   
-    // Loop through textboxes replacing text contents with lineboxes
-    textboxes.forEach(textbox => {
+    // Loop through positionboxes replacing text contents with lineboxes
+    positionboxes.forEach(positionbox => {
   
-        // Get the computed style of the textbox
-        const computedStyle = window.getComputedStyle(textbox);
+        // Get the computed style of the positionbox
+        const computedStyle = window.getComputedStyle(positionbox);
         
-        // Make temp elem match textbox stylings
+        // Make temp elem match positionbox stylings
         tempElement.style.fontFamily = computedStyle.fontFamily;
         tempElement.style.fontSize = computedStyle.fontSize;
         document.body.appendChild(tempElement)
@@ -21,20 +21,20 @@ window.addEventListener('load', function() {
         const lines = [];
         let currentLine = '';
         if (computedStyle.width === '0px') {
-            currentLine = textbox.textContent;
-            tempElement.textContent = textbox.textContent;
-            textbox.style.width = tempElement.offsetWidth + "px";
+            currentLine = positionbox.textContent;
+            tempElement.textContent = positionbox.textContent;
+            positionbox.style.width = tempElement.offsetWidth + "px";
 
         } else {
-            // Get the width of the textbox
-            const textboxWidth = textbox.clientWidth - 4;
-            console.log(textboxWidth, computedStyle.width)
+            // Get the width of the positionbox
+            const positionboxWidth = positionbox.clientWidth - 4;
+            //console.log(positionboxWidth, computedStyle.width)
             
             // Split the text content into words
-            const words = textbox.textContent.trim().split(' ');
+            const words = positionbox.textContent.trim().split(' ');
             
             // Initialize variables
-            console.log(textbox.textContent)
+            //console.log(positionbox.textContent)
             // Loop through each word
             for (const word of words) {
                 // Add the word to the current line
@@ -43,13 +43,13 @@ window.addEventListener('load', function() {
                 // Set the text content of the temporary element to the test line
                 tempElement.textContent = testLine;
                 
-                console.log(word, word.includes("\n\n"))
+                //console.log(word, word.includes("\n\n"))
                 // Check if the test line exceeds the width of the text box
-                if (tempElement.offsetWidth >= textboxWidth) {
+                if (tempElement.offsetWidth >= positionboxWidth) {
                     // Add the current line to the lines array
                     lines.push(currentLine);
                     
-                    //console.log(`Line: ${testLine} len ${tempElement.offsetWidth} longer than ${textboxWidth}`);
+                    //console.log(`Line: ${testLine} len ${tempElement.offsetWidth} longer than ${positionboxWidth}`);
                     
                     // Start a new line with the current word
                     currentLine = word;
@@ -68,11 +68,11 @@ window.addEventListener('load', function() {
         // Add the last line to the lines array
         lines.push(currentLine);
         
-        const childNodes = textbox.childNodes;
+        const childNodes = positionbox.childNodes;
         for (let i = 0; i < childNodes.length; i++) {
             const node = childNodes[i];
             if (node.nodeType === Node.TEXT_NODE) {
-                textbox.removeChild(node);
+                positionbox.removeChild(node);
             }
         }
         
@@ -91,11 +91,11 @@ window.addEventListener('load', function() {
             if (computedStyle.textAlign === 'center' && tempElement.offsetWidth % 2 == (parseInt(computedStyle.width, 10) + 1) % 2) {
                 linebox.style.transform = 'translateX(-0.5px)';
             }
-            //if (tempElement.offsetWidth > textboxWidth) {
+            //if (tempElement.offsetWidth > positionboxWidth) {
             //  linebox.style.offsetWidth = tempElement.offsetWidth
             //  console.log(line, tempElement.offsetWidth)
             //}
-            textbox.appendChild(linebox);
+            positionbox.appendChild(linebox);
         });
           //console.log(`colour was ${computedStyle.color}`)
     });

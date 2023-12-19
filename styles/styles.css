@@ -5,6 +5,7 @@
     font-style: normal;
 }
 
+/* #region structure */
 html {
     overflow: scroll;
     background: rgb(20, 20, 20);
@@ -33,6 +34,7 @@ body {
     transform-origin: top left;
     box-sizing: border-box;
 }
+/* #endregion */
 
 /* #region status */
 .status {
@@ -99,25 +101,30 @@ body {
 
 .content {
     position: relative;
+    box-sizing: border-box;
     width: 300px;
-    border-bottom: 10px solid rgb(0 0 0 / 0);
-    background-color: rgb(255 255 255 / 0.5);
+    background-color: #36393e;
     background-repeat: repeat;
     background-size: auto;
-    background-clip: border-box;
+    background-clip: padding-box;
     background-position: 0% 0%;
     image-rendering: pixelated;
     overflow: hidden;
+    padding: 0px 7px 0px 7px;
 }
 
-.textbox {
-    position: absolute;
+.positionbox {
+    position: absolute !important;
     top: var(--top);
     left: var(--left);
     bottom: var(--bottom);
     right: var(--right);
+}
+
+.content p {
+    position: relative;
+    width: var(--width, fit-content);
     box-sizing: content-box;
-    width: var(--width, 0px);
     text-align: var(--text-align, left);
     font-family: var(--font-family, pixel0);
     color: var(--color, rgb(235, 228, 221));
@@ -131,24 +138,19 @@ body {
 }
 
 .image {
-    position: absolute;
-    top: var(--top);
-    left: var(--left);
-    bottom: var(--bottom);
-    right: var(--right);
     height: min-content;
     image-rendering: pixelated;
     line-height: 0px;
 }
 
 /* #region links */
-.textbox[data-url]:hover,
-.image[data-url]:hover {
+.image[data-url]:hover,
+.content p[data-url]:hover {
     cursor: pointer;
 }
 
-.textbox[data-url]:hover .border,
-.image[data-url]:hover .border {
+.image[data-url]:hover .border,
+.content p[data-url]:hover .border {
     display: inline-block;
 }
 
