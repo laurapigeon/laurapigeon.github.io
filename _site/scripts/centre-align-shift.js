@@ -28,10 +28,10 @@ window.addEventListener('load', function() {
         } else {
             // Get the width of the textbox
             const textboxWidth = textbox.clientWidth - 4;
-            //console.log(textboxWidth, computedStyle.width)
+            console.log(textboxWidth, computedStyle.width)
             
             // Split the text content into words
-            const words = textbox.textContent.split(' ');
+            const words = textbox.textContent.trim().split(' ');
             
             // Initialize variables
             console.log(textbox.textContent)
