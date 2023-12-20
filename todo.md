@@ -14,3 +14,5 @@ implement new fonts
 animate text
 
 pull one status from a list of randoms (based on computer time?)
+
+add search button (take to pages page) and home button (take to index)

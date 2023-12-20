@@ -22,9 +22,11 @@ window.addEventListener('load', function() {
         let currentLine = '';
         if (computedStyle.width === '0px') {
             tempElement.textContent = positionbox.textContent;
-            var content = positionbox.closest('.content');
-            positionbox.style.width = Math.min(tempElement.offsetWidth, content.clientWidth) + "px";
-            //console.log(tempElement.offsetWidth, content.clientWidth);
+            var content = positionbox.closest('.content')
+            var contentStyle = window.getComputedStyle(content)
+            var contentWidth = content.clientWidth - parseFloat(contentStyle.paddingLeft) - parseFloat(contentStyle.paddingRight);
+            positionbox.style.width = Math.min(tempElement.offsetWidth, contentWidth) + "px";
+            //console.log(tempElement.offsetWidth, contentWidth);
             tempElement.textContent = '';
             computedStyle = window.getComputedStyle(positionbox);
         }
