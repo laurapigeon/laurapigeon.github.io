@@ -5,13 +5,13 @@ window.addEventListener('load', function() {
     tempElement.style.visibility = 'hidden';
   
     // Get all positionbox elements
-    const positionboxes = document.querySelectorAll('.positionbox');
+    const positionboxes = document.querySelectorAll('p');
   
     // Loop through positionboxes replacing text contents with lineboxes
     positionboxes.forEach(positionbox => {
   
         // Get the computed style of the positionbox
-        const computedStyle = window.getComputedStyle(positionbox);
+        var computedStyle = window.getComputedStyle(positionbox);
         
         // Make temp elem match positionbox stylings
         tempElement.style.fontFamily = computedStyle.fontFamily;
@@ -21,47 +21,48 @@ window.addEventListener('load', function() {
         const lines = [];
         let currentLine = '';
         if (computedStyle.width === '0px') {
-            currentLine = positionbox.textContent;
             tempElement.textContent = positionbox.textContent;
-            positionbox.style.width = tempElement.offsetWidth + "px";
+            var content = positionbox.closest('.content');
+            positionbox.style.width = Math.min(tempElement.offsetWidth, content.clientWidth) + "px";
+            //console.log(tempElement.offsetWidth, content.clientWidth);
+            tempElement.textContent = '';
+            computedStyle = window.getComputedStyle(positionbox);
+        }
 
-        } else {
-            // Get the width of the positionbox
-            const positionboxWidth = positionbox.clientWidth - 4;
-            //console.log(positionboxWidth, computedStyle.width)
+        // Get the width of the positionbox
+        const positionboxWidth = positionbox.clientWidth;
+        //console.log(positionboxWidth, computedStyle.width)
+        
+        // Split the text content into words
+        const words = positionbox.textContent.trim().split(' ');
+        
+        // Initialize variables
+        //console.log(positionbox.textContent)
+        // Loop through each word
+        for (const word of words) {
+            // Add the word to the current line
+            const testLine = currentLine ? currentLine + ' ' + word : word;
             
-            // Split the text content into words
-            const words = positionbox.textContent.trim().split(' ');
-            
-            // Initialize variables
-            //console.log(positionbox.textContent)
-            // Loop through each word
-            for (const word of words) {
-                // Add the word to the current line
-                const testLine = currentLine ? currentLine + ' ' + word : word;
-                
-                // Set the text content of the temporary element to the test line
-                tempElement.textContent = testLine;
-                
-                //console.log(word, word.includes("\n\n"))
-                // Check if the test line exceeds the width of the text box
-                if (tempElement.offsetWidth >= positionboxWidth) {
-                    // Add the current line to the lines array
-                    lines.push(currentLine);
-                    
-                    //console.log(`Line: ${testLine} len ${tempElement.offsetWidth} longer than ${positionboxWidth}`);
-                    
-                    // Start a new line with the current word
-                    currentLine = word;
+            // Set the text content of the temporary element to the test line
+            tempElement.textContent = testLine;
 
-                } else if (word.includes("\n")) {
-                    lines.push(currentLine);
-                    currentLine = "";
+            // Check if the test line exceeds the width of the text box
+            if (tempElement.offsetWidth > positionboxWidth) {
+                // Add the current line to the lines array
+                lines.push(currentLine);
+                
+                //console.log(`Line: ${testLine} len ${tempElement.offsetWidth} longer than ${positionboxWidth}`);
+                
+                // Start a new line with the current word
+                currentLine = word;
 
-                } else {
-                    // Update the current line
-                    currentLine = testLine;
-                }
+            } else if (word.includes("\n")) {
+                lines.push(currentLine);
+                currentLine = "";
+
+            } else {
+                // Update the current line
+                currentLine = testLine;
             }
         }
         
