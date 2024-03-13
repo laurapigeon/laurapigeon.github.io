@@ -5,7 +5,7 @@ list_page: true
 categories: [discussion]
 ---
 
-hihi! so ive finally committed to properly working on getting this website into a form that i can consistently add pages to, to do things like document my various curios and leave breadcrum trails for people learning similarly obscure things as i
+hihi! so ive finally committed to properly working on getting this website into a form that i can consistently add pages to, to do things like document my various curios and leave breadcrumb trails for people learning similarly obscure things as i
 
 the site itself closely follows the visual style of hypnospace outlaw, a game i couldnt recommend more highly, but wouldnt want to spoil the experience of by trying to boil it down. suffice to say i loved it enough to spend weeks trying to match the aesthetic in my blocky graphics and crawling ant links, despite css and js really not liking that
 
