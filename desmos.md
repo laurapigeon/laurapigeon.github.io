@@ -7,8 +7,6 @@ categories: [list]
 
 A collection of Desmos charts demonstrating mathematical constructions:
 
--
-
 Radical function root finding
 {: data-url="https://www.desmos.com/calculator/mnxpjzcjxq"}
 

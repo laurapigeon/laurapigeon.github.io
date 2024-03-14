@@ -7,9 +7,9 @@ categories: [other]
 ---
 
 <div class="positionbox" markdown="1" style="--top: 10px; --left:7px; --text-align:left;">
-eyyyyyooooooooooooooooooooohhhhhh
+hi im laura (she/they) welcome to my website :)
 
-hi im laura welcome to my website :)
+i like systems and pigeons
 </div>
 
 <p class="positionbox" style="--top: 34px; --right:7px; --text-align:right;" data-url="/pages">
