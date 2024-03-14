@@ -10,8 +10,14 @@ categories: [other]
 hi im laura (she/they) welcome to my website :)
 
 i like systems and pigeons
+
+heres a bunch of resources ive made
+{: data-url="/resources" style="--color: rgb(164, 164, 255);"}
+
+heres how you can contact me
+{: data-url="/contact" style="--color: rgb(164, 255, 255);"}
 </div>
 
-<p class="positionbox" style="--top: 34px; --right:7px; --text-align:right;" data-url="/pages">
+<p class="positionbox" style="--top: 80px; --right:7px; --text-align:right;" data-url="/pages">
 Link Tree
 </p>

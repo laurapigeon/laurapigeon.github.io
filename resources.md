@@ -3,19 +3,19 @@ layout: content
 title: Resources
 background_image: pigeons.jpg
 list_page: true
-categories: [debug]
+categories: [list]
 ---
 
 Resources
 
 Google Drive
-{: data-url="https://drive.google.com/open?id=1vPxJSLNgyoM5InfvzLNtTtdAPl2ZJoiW"}
+{: data-url="https://drive.google.com/open?id=1vPxJSLNgyoM5InfvzLNtTtdAPl2ZJoiW" style="--color: rgb(34, 34, 71);"}
 
 Experiment Writeups (Sub-Page)
 {: data-url="/writeups"}
 
 Geogebra
-{: data-url="https://www.geogebra.org/u/laurapigeon"}
+{: data-url="https://www.geogebra.org/u/laurahannah44"}
 
 Desmos (Sub-Page)
 {: data-url="/desmos"}
