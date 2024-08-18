@@ -92,6 +92,7 @@ body {
     max-width: 240px;
     line-height: 8px;
     display: -webkit-box;
+    line-clamp: 3;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -138,10 +139,19 @@ p {
 }
 
 .image {
-    height: min-content;
-    width: min-content;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    height: var(--height, min-content);
+    width: var(--width, min-content);
     image-rendering: pixelated;
     line-height: 0px;
+}
+
+img {
+    height: min-content;
+    width: min-content;
+    align-self: center;
 }
 
 /* #region links */

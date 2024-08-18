@@ -19,4 +19,6 @@ add search button (take to pages page) and home button (take to index)
 
 height of markdown sections in html pages dont update height of page
 
-style all text in markdown page
+tab between links
+
+add reader mode

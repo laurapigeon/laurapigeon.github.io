@@ -9,6 +9,11 @@ window.addEventListener('load', function() {
   
     // Loop through positionboxes replacing text contents with lineboxes
     positionboxes.forEach(positionbox => {
+        console.log(positionbox.textContent);
+        if (positionbox.textContent.trim().length === 0) {
+            console.log("see its going now bye");
+            return;
+        }
   
         // Get the computed style of the positionbox
         var computedStyle = window.getComputedStyle(positionbox);

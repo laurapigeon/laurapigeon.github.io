@@ -8,15 +8,15 @@ categories: [list, debug]
 ---
 
 {% assign top = 0 %}
-{% for cat in site.category_list %}
+{% for category in site.category_list %}
 <p class="positionbox" style="--top: {{ top }}px; --left: 100px; --width: 100px; --text-align: center; --color: aquamarine;">
-    {{ cat }}
+    -- {{ category }} --
 </p>
 {% assign top = top | plus: 12 %}
 {% for page in site.pages %}
 {% if page.list_page == true %}
-{% for pc in page.categories %}
-{% if pc == cat %}
+{% for page_category in page.categories %}
+{% if page_category == category %}
 {% assign pageSlug = page.url | split: '.' | first %}
 <p class="positionbox" style="--top: {{ top }}px; --left: 100px; --width: 100px; --text-align: center;" data-url="{{ pageSlug }}">
     {{ pageSlug }}
