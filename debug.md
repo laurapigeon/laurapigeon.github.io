@@ -6,22 +6,22 @@ list_page: true
 categories: [list, debug]
 ---
 
-<p class="free shift" style="--top: 10px; --right:10px; --text-align:right;" data-url="/texttest">
+<p class="free" style="--top: 10px; --right:10px; --text-align:right;" data-url="/texttest">
     Text Box Link Test
 </p>
 
-<p class="free shift" style="--top: 22px; --right:10px; --text-align:right;" data-url="/fonttest">
+<p class="free" style="--top: 22px; --right:10px; --text-align:right;" data-url="/fonttest">
     Font Alignment Test
 </p>
 
-<p class="free shift" style="--top: 34px; --right:10px; --text-align:right;" data-url="/pages">
+<p class="free" style="--top: 34px; --right:10px; --text-align:right;" data-url="/pages">
     Link Tree
 </p>
 
-<p class="free shift" style="--top: 46px; --right:10px; --text-align:right;" data-url="/todo">
+<p class="free" style="--top: 46px; --right:10px; --text-align:right;" data-url="/todo">
     To Do List
 </p>
 
-<p class="image free shift" style="--top: 10px; --left: 20px;" data-url="/resources/images/Pigeon.png">
+<p class="image free" style="--top: 10px; --left: 20px;" data-url="/resources/images/Pigeon.png">
     <img src="/resources/images/Pigeon.png">
 </p>

@@ -9,7 +9,7 @@ categories: [list, debug]
 
 {% assign top = 0 %}
 {% for category in site.category_list %}
-<p class="free shift" style="--top: {{ top }}px; --left: 100px; --width: 100px; --text-align: center; --color: aquamarine;">
+<p class="free" style="--top: {{ top }}px; --left: 100px; --width: 100px; --text-align: center; --color: aquamarine;">
     -- {{ category }} --
 </p>
 {% assign top = top | plus: 12 %}
@@ -18,7 +18,7 @@ categories: [list, debug]
 {% for page_category in page.categories %}
 {% if page_category == category %}
 {% assign pageSlug = page.url | split: '.' | first %}
-<p class="free shift" style="--top: {{ top }}px; --left: 100px; --width: 100px; --text-align: center;" data-url="{{ pageSlug }}">
+<p class="free" style="--top: {{ top }}px; --left: 100px; --width: 100px; --text-align: center;" data-url="{{ pageSlug }}">
     {{ pageSlug }}
 </p>
 {% assign top = top | plus: 12 %}

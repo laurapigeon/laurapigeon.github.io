@@ -1,42 +1,38 @@
 window.addEventListener('DOMContentLoaded', function() {
-    const contents = document.querySelectorAll('.content');
-    
-    contents.forEach(content => {
-        const contentelements = content.querySelectorAll('.image, p');
+    const elements = document.querySelectorAll('.image[data-url], p[data-url], div[data-url]');
 
-        contentelements.forEach(function(contentelement) {
-            var url = contentelement.dataset.url;
-            if (url) {
-                const border = document.createElement('div');
-                border.classList.add('border');
-                contentelement.appendChild(border);
+    elements.forEach(function(element) {
+        var url = element.dataset.url;
+        console.log(url)
+        console.log(element.innerHTML)
+        const border = document.createElement('div');
+        border.classList.add('border');
+        element.appendChild(border);
 
-                contentelement.addEventListener("click", function(event) {
-                    if (!isTextSelected() && !isClickedOnSelectedText(event)) {
-                        window.location.href = url;
-                    }
-                });
-
-                contentelement.addEventListener("mousedown", function(event) {
-                    if (event.button === 1) { // Middle mouse button
-                        window.open(url,'_blank');
-                        window.open(this.href,'_self');
-                    }
-                });
+        element.addEventListener("click", function(event) {
+            if (!isTextSelected() && !isClickedOnSelectedText(event)) {
+                window.location.href = url;
             }
         });
 
-        function isTextSelected() {
-            return window.getSelection().toString().length > 0;
-        }
-
-        function isClickedOnSelectedText(event) {
-            var selection = window.getSelection();
-            if (selection.rangeCount > 0) {
-                var range = selection.getRangeAt(0);
-                return range.commonAncestorContainer.contains(event.target);
+        element.addEventListener("mousedown", function(event) {
+            if (event.button === 1) { // Middle mouse button
+                window.open(url,'_blank');
+                window.open(this.href,'_self');
             }
-            return false;
-        }
+        });
     });
+
+    function isTextSelected() {
+        return window.getSelection().toString().length > 0;
+    }
+
+    function isClickedOnSelectedText(event) {
+        var selection = window.getSelection();
+        if (selection.rangeCount > 0) {
+            var range = selection.getRangeAt(0);
+            return range.commonAncestorContainer.contains(event.target);
+        }
+        return false;
+    }
 });

@@ -116,9 +116,14 @@ body {
 
 .free {
     position: absolute !important;
+    top: var(--top);
+    left: var(--left);
+    bottom: var(--bottom);
+    right: var(--right);
 }
 
 .shift {
+    position: relative;
     top: var(--top);
     left: var(--left);
     bottom: var(--bottom);

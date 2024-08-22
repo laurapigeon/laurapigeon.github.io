@@ -9,9 +9,9 @@ window.addEventListener('load', function() {
   
     // Loop through paragraphs replacing text contents with lineboxes
     paragraphs.forEach(paragraph => {
-        console.log(paragraph.textContent);
+        //console.log(paragraph.textContent);
         if (paragraph.textContent.trim().length === 0) {
-            console.log("see its going now bye");
+            //console.log("see its going now bye");
             return;
         }
   
