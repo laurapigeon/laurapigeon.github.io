@@ -4,21 +4,21 @@ window.addEventListener('load', function() {
     tempElement.style.whiteSpace = 'nowrap';
     tempElement.style.visibility = 'hidden';
   
-    // Get all positionbox elements
-    const positionboxes = document.querySelectorAll('p');
+    // Get all paragraph elements
+    const paragraphs = document.querySelectorAll('p');
   
-    // Loop through positionboxes replacing text contents with lineboxes
-    positionboxes.forEach(positionbox => {
-        console.log(positionbox.textContent);
-        if (positionbox.textContent.trim().length === 0) {
+    // Loop through paragraphs replacing text contents with lineboxes
+    paragraphs.forEach(paragraph => {
+        console.log(paragraph.textContent);
+        if (paragraph.textContent.trim().length === 0) {
             console.log("see its going now bye");
             return;
         }
   
-        // Get the computed style of the positionbox
-        var computedStyle = window.getComputedStyle(positionbox);
+        // Get the computed style of the paragraph
+        var computedStyle = window.getComputedStyle(paragraph);
         
-        // Make temp elem match positionbox stylings
+        // Make temp elem match paragraph stylings
         tempElement.style.fontFamily = computedStyle.fontFamily;
         tempElement.style.fontSize = computedStyle.fontSize;
         document.body.appendChild(tempElement)
@@ -26,25 +26,25 @@ window.addEventListener('load', function() {
         const lines = [];
         let currentLine = '';
         if (computedStyle.width === '0px') {
-            tempElement.textContent = positionbox.textContent;
-            var content = positionbox.closest('.content')
+            tempElement.textContent = paragraph.textContent;
+            var content = paragraph.closest('.content')
             var contentStyle = window.getComputedStyle(content)
             var contentWidth = content.clientWidth - parseFloat(contentStyle.paddingLeft) - parseFloat(contentStyle.paddingRight);
-            positionbox.style.width = Math.min(tempElement.offsetWidth, contentWidth) + "px";
+            paragraph.style.width = Math.min(tempElement.offsetWidth, contentWidth) + "px";
             //console.log(tempElement.offsetWidth, contentWidth);
             tempElement.textContent = '';
-            computedStyle = window.getComputedStyle(positionbox);
+            computedStyle = window.getComputedStyle(paragraph);
         }
 
-        // Get the width of the positionbox
-        const positionboxWidth = positionbox.clientWidth;
-        //console.log(positionboxWidth, computedStyle.width)
+        // Get the width of the paragraph
+        const paragraphWidth = paragraph.clientWidth;
+        //console.log(paragraphWidth, computedStyle.width)
         
         // Split the text content into words
-        const words = positionbox.textContent.trim().split(' ');
+        const words = paragraph.textContent.trim().split(' ');
         
         // Initialize variables
-        //console.log(positionbox.textContent)
+        //console.log(paragraph.textContent)
         // Loop through each word
         for (const word of words) {
             // Add the word to the current line
@@ -54,11 +54,11 @@ window.addEventListener('load', function() {
             tempElement.textContent = testLine;
 
             // Check if the test line exceeds the width of the text box
-            if (tempElement.offsetWidth > positionboxWidth) {
+            if (tempElement.offsetWidth > paragraphWidth) {
                 // Add the current line to the lines array
                 lines.push(currentLine);
                 
-                //console.log(`Line: ${testLine} len ${tempElement.offsetWidth} longer than ${positionboxWidth}`);
+                //console.log(`Line: ${testLine} len ${tempElement.offsetWidth} longer than ${paragraphWidth}`);
                 
                 // Start a new line with the current word
                 currentLine = word;
@@ -76,11 +76,11 @@ window.addEventListener('load', function() {
         // Add the last line to the lines array
         lines.push(currentLine);
         
-        const childNodes = positionbox.childNodes;
+        const childNodes = paragraph.childNodes;
         for (let i = 0; i < childNodes.length; i++) {
             const node = childNodes[i];
             if (node.nodeType === Node.TEXT_NODE) {
-                positionbox.removeChild(node);
+                paragraph.removeChild(node);
             }
         }
         
@@ -99,11 +99,11 @@ window.addEventListener('load', function() {
             if (computedStyle.textAlign === 'center' && tempElement.offsetWidth % 2 == (parseInt(computedStyle.width, 10) + 1) % 2) {
                 linebox.style.transform = 'translateX(-0.5px)';
             }
-            //if (tempElement.offsetWidth > positionboxWidth) {
+            //if (tempElement.offsetWidth > paragraphWidth) {
             //  linebox.style.offsetWidth = tempElement.offsetWidth
             //  console.log(line, tempElement.offsetWidth)
             //}
-            positionbox.appendChild(linebox);
+            paragraph.appendChild(linebox);
         });
           //console.log(`colour was ${computedStyle.color}`)
     });
