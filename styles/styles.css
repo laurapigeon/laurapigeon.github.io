@@ -126,9 +126,14 @@ p {
     position: relative;
     width: var(--width, 0px);
     box-sizing: content-box;
+    padding-left: var(--padding-left);
     text-align: var(--text-align, left);
     font-family: var(--font-family, pixel0);
-    color: var(--color, rgb(235, 228, 221));
+    font-size: var(--font-size);
+    top: var(--top);
+    left: var(--left);
+    bottom: var(--bottom);
+    right: var(--right);
 }
 
 .linebox {
