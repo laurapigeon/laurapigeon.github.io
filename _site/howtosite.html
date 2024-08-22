@@ -2,23 +2,33 @@
 <html>
     <head>
         <title>How to make a site</title>
-        <link rel="stylesheet" href="/styles/styles.css">
         <link rel="icon" type="image/png" href="/resources/images/favicon.ico" />
         <script src="/scripts/add-media-link.js" type=module></script>
         <script src="/scripts/add-link-border.js" type=module></script>
         <script src="/scripts/centre-align-shift.js" type=module></script>
         <script src="/scripts/get-content-height.js" type=module></script>
         <script src="/scripts/preload-images.js" type=module></script>
+        <link rel="stylesheet" href="/styles/styles.css">
         <style>
             .content {
                 background-image: url('/resources/images/backgrounds/');
                 background-position: ;
+
+                
+                background-color: #36393e;
+                
+            }
+            p {
+                
+                color: var(--color, rgb(235, 228, 221));
+                
             }
         </style>
     </head>
     <body>
         <svg class="offscreen" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
             <defs>
+                <!--this is used to remove antialiasing for the upscale-->
                 <filter id="crispify">
                     <feComponentTransfer>
                         <feFuncA type="discrete" tableValues="0 1"/>
@@ -28,6 +38,7 @@
         </svg>
         <div class="scalercontainer">
             <div class="scaler">
+                
                 <div class="status">
                     <div class="statusbackground"></div>
                     <div class="statusname">
@@ -41,36 +52,53 @@
                         @pigeon why did you let out a high pitched yippee what is going on right now
                     </div>
                 </div>
+                
                 <div class="content">
-                    <p>make new github repository and clone to a folder on your computer</p>
+                    <p>make a github account (site name will be [githubname].github.io)</p>
 
-<p>open folder in visual studio code</p>
+<p>download git</p>
 
-<p>ctrl+shift+` to open terminal</p>
+<p>download ruby with devkit</p>
 
-<p>might need github vsc extension</p>
+<p>put git and ruby on PATH</p>
 
-<p>might want tortoisegit</p>
+<p>download vsc (reopen for it to see PATH update)</p>
 
-<p>make build action for site push</p>
+<p>get the vsc github pull requests extension</p>
 
-<p>might need to set up jekyll?</p>
+<p>get the vsc liquid extension</p>
 
-<p data-url="https://www.ruby-lang.org/o">https://www.ruby-lang.org/ install latest version with devkit</p>
+<p>authorize github account on vsc</p>
 
-<p>put it on PATH variable</p>
+<p>make new github repository called [githubname].github.io</p>
 
-<p>`gem install bundler`</p>
+<p>make folder in computer for local repository</p>
 
-<p>`bundle install`</p>
+<p>open folder in vsc</p>
 
-<p>`bundle exec jekyll serve –incremental`</p>
+<p>open vsc terminal</p>
 
-<p>check all relevant files exist</p>
+<p>copy paste instructions from github into vsc</p>
 
-<p>create .md file and check local and push version</p>
+<p>create Gemfile in folder</p>
 
-<p>https://jekyllrb.com/ do this stuff instead</p>
+<p>gem install bundler</p>
+
+<p>bundle install</p>
+
+<p>bundle exec jekyll serve</p>
+
+<p>create index.md</p>
+
+<p>check local version works</p>
+
+<p>commit and push to github</p>
+
+<p>check public version works</p>
+
+<p>–</p>
+
+<p>https://jekyllrb.com/ maybe do this instead?</p>
 
                 </div>
             </div>

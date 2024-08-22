@@ -3,6 +3,7 @@ layout: content
 title: Home
 background_image: polyomino structures.png
 list_page: true
+hide_status: true
 categories: [other]
 ---
 

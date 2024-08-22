@@ -22,3 +22,5 @@ height of markdown sections in html pages dont update height of page
 tab between links
 
 add reader mode
+
+dynamic loading with mouse shake

@@ -5,33 +5,48 @@ list_page: true
 categories: [guide]
 ---
 
-make new github repository and clone to a folder on your computer
+make a github account (site name will be \[githubname].github.io)
 
-open folder in visual studio code
+download git
 
-ctrl+shift+\` to open terminal
+download ruby with devkit
 
-might need github vsc extension
+put git and ruby on PATH
 
-might want tortoisegit
+download vsc (reopen for it to see PATH update)
 
-make build action for site push
+get the vsc github pull requests extension
 
-might need to set up jekyll?
+get the vsc liquid extension
 
-https://www.ruby-lang.org/ install latest version with devkit
-{: data-url="https://www.ruby-lang.org/o"}
+authorize github account on vsc
 
-put it on PATH variable
+make new github repository called \[githubname].github.io
 
-\`gem install bundler\`
+make folder in computer for local repository
 
-\`bundle install\`
+open folder in vsc
 
-\`bundle exec jekyll serve --incremental\`
+open vsc terminal
 
-check all relevant files exist
+copy paste instructions from github into vsc
 
-create .md file and check local and push version
+create Gemfile in folder
 
-https://jekyllrb.com/ do this stuff instead
+gem install bundler
+
+bundle install
+
+bundle exec jekyll serve
+
+create index.md
+
+check local version works
+
+commit and push to github
+
+check public version works
+
+--
+
+https://jekyllrb.com/ maybe do this instead?

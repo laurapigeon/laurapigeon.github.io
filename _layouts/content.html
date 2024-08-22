@@ -2,23 +2,37 @@
 <html>
     <head>
         <title>{{ page.title }}</title>
-        <link rel="stylesheet" href="/styles/styles.css">
         <link rel="icon" type="image/png" href="/resources/images/favicon.ico" />
         <script src="/scripts/add-media-link.js" type=module></script>
         <script src="/scripts/add-link-border.js" type=module></script>
         <script src="/scripts/centre-align-shift.js" type=module></script>
         <script src="/scripts/get-content-height.js" type=module></script>
         <script src="/scripts/preload-images.js" type=module></script>
+        <link rel="stylesheet" href="/styles/styles.css">
         <style>
             .content {
                 background-image: url('/resources/images/backgrounds/{{ page.background_image }}');
                 background-position: {{ page.background_position }};
+
+                {% if page.background_color and page.background_color != "" and page.background_color != nil %}
+                background-color: {{ page.background_color }};
+                {% else %}
+                background-color: #36393e;
+                {% endif %}
+            }
+            p {
+                {% if page.text_color and page.text_color != "" and page.text_color != nil %}
+                color: var(--color, {{ page.text_color }});
+                {% else %}
+                color: var(--color, {{ site.text_color }});
+                {% endif %}
             }
         </style>
     </head>
     <body>
         <svg class="offscreen" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
             <defs>
+                <!--this is used to remove antialiasing for the upscale-->
                 <filter id="crispify">
                     <feComponentTransfer>
                         <feFuncA type="discrete" tableValues="0 1"/>
@@ -28,6 +42,7 @@
         </svg>
         <div class="scalercontainer">
             <div class="scaler">
+                {% unless page.hide_status == true %}
                 <div class="status">
                     <div class="statusbackground"></div>
                     <div class="statusname">
@@ -41,6 +56,7 @@
                         @pigeon why did you let out a high pitched yippee what is going on right now
                     </div>
                 </div>
+                {% endunless %}
                 <div class="content">
                     {{ content }}
                 </div>
