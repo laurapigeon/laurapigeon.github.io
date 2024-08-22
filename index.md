@@ -6,6 +6,10 @@ list_page: true
 categories: [other]
 ---
 
+<div class="image free" style="--top:5px; --right:5px">
+<img src="/resources/images/poly pigeon.png">
+</div>
+
 <div class="free" markdown="1" style="--top: 10px; --left:20px; --width:260px; --text-align:left;">
 hi im laura (she/they) welcome to my website :)
 
@@ -21,6 +25,6 @@ heres a story about how i messed around with an aperiodic polyomino tiling for d
 {: data-url="/funtiling" style="--color: rgb(164, 255, 164);"}
 </div>
 
-<p class="free" style="--top: 100px; --right:7px; --text-align:right;" data-url="/pages">
+<p class="free" style="--top:100px; --right:7px; --text-align:right;" data-url="/pages">
 Link Tree
 </p>

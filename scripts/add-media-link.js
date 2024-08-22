@@ -3,8 +3,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
     elements.forEach(function(element) {
         var url = element.dataset.url;
-        console.log(url)
-        console.log(element.innerHTML)
         const border = document.createElement('div');
         border.classList.add('border');
         element.appendChild(border);

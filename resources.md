@@ -3,6 +3,7 @@ layout: content
 title: Resources
 background_image: pigeons.jpg
 list_page: true
+text_color: rgb(0,0,0)
 categories: [list]
 ---
 
