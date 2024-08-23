@@ -24,3 +24,5 @@ tab between links
 add reader mode
 
 dynamic loading with mouse shake
+
+browser frame

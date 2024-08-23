@@ -8,5 +8,9 @@ category_list:
   - debug
   - other
 text_color: rgb(235, 228, 221)
+background_color: rgb(54, 59, 62)
+favicon: pigeon.ico
+font: 'basic'
+font-size: 7px
 title: laurapigeons epic website :)
 ---

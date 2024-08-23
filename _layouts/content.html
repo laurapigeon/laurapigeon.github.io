@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% if page.title and page.title != "" and page.title != nil %}
         <title>{{ page.title }}</title>
-        <link rel="stylesheet" href="/styles/styles.css">
-        <link rel="icon" type="image/png" href="/resources/images/favicon.ico" />
+        {% else %}
+        <title>{{ site.title }}</title>
+        {% endif %}
+
+        {% if page.favicon and page.favicon != "" and page.favicon != nil %}
+        <link rel="icon" type="image/png" href="/resources/images/favicons/{{ page.favicon }}" />
+        {% else %}
+        <link rel="icon" type="image/png" href="/resources/images/favicons/{{ site.favicon }}" />
+        {% endif %}
+
         <script src="/scripts/add-media-link.js" type=module></script>
         <script src="/scripts/add-link-border.js" type=module></script>
         <script src="/scripts/centre-align-shift.js" type=module></script>
         <script src="/scripts/get-content-height.js" type=module></script>
         <script src="/scripts/preload-images.js" type=module></script>
+        <link rel="stylesheet" href="/styles/styles.css">
         <style>
             .content {
                 background-image: url('/resources/images/backgrounds/{{ page.background_image }}');
@@ -17,15 +27,32 @@
                 {% if page.background_color and page.background_color != "" and page.background_color != nil %}
                 background-color: {{ page.background_color }};
                 {% else %}
-                background-color: #36393e;
+                background-color: {{ site.background_color }};
                 {% endif %}
             }
+
             p {
                 {% if page.text_color and page.text_color != "" and page.text_color != nil %}
                 color: var(--color, {{ page.text_color }});
                 {% else %}
                 color: var(--color, {{ site.text_color }});
                 {% endif %}
+
+                {% if page.font and page.font != "" and page.font != nil %}
+                font-family: var(--font, {{ page.font }});
+                {% else %}
+                font-family: var(--font, {{ site.font }});
+                {% endif %}
+
+                {% if page.font-size and page.font-size != "" and page.font-size != nil %}
+                font-size: var(--font-size, {{ page.font-size }});
+                {% else %}
+                font-size: var(--font-size, {{ site.font-size }});
+                {% endif %}
+            }
+
+            .statusicon {
+                background-image: url('/resources/images/emotes/grin.png');
             }
         </style>
     </head>
@@ -61,6 +88,12 @@
                     {{ content }}
                 </div>
             </div>
+        </div>
+        <div class="windowframe">
+            <img class="windowframeleft" src="/resources/images/frame/left.png">
+            <img class="windowframeright" src="/resources/images/frame/right.png">
+            <img class="windowframetop" src="/resources/images/frame/top.png">
+            <img class="windowframebottom" src="/resources/images/frame/bottom.png">
         </div>
     </body>
 </html>

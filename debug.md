@@ -22,6 +22,6 @@ categories: [list, debug]
     To Do List
 </p>
 
-<p class="image free" style="--top: 10px; --left: 20px;" data-url="/resources/images/Pigeon.png">
-    <img src="/resources/images/Pigeon.png">
+<p class="image free" style="--top: 10px; --left: 20px;" data-url="/resources/images/pigeon.png">
+    <img src="/resources/images/pigeon.png">
 </p>

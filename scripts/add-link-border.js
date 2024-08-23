@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', function() {
         edge.style.top = '-1px';
         edge.style.left = '-1px';
         edge.style.padding = '1px 0px 0px 1px';
-        edge.style.borderImageSource = 'url("/resources/images/border-1.png")';
+        edge.style.borderImageSource = 'url("/resources/images/ants/border-1.png")';
         edge.style.animationName = 'antcrawl';
         border.appendChild(edge);
 
@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', function() {
         edgeshadow.style.top = '0px';
         edgeshadow.style.left = '0px';
         edgeshadow.style.padding = '0px 1px 1px 0px';
-        edgeshadow.style.borderImageSource = 'url("/resources/images/border-shadow-1.png")';
+        edgeshadow.style.borderImageSource = 'url("/resources/images/ants/border-shadow-1.png")';
         edgeshadow.style.animationName = 'antcrawlshadow';
         border.appendChild(edgeshadow);
         
@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
         for (var i = 0; i < 8; i++) {
             var img = document.createElement("img");
-            img.src = "/resources/images/" + images[i < 4 ? 0 : 1];
+            img.src = "/resources/images/ants/" + images[i < 4 ? 0 : 1];
             img.classList.add('bordercorner');
             img.style.top = tops[i % 4];
             img.style.left = lefts[i % 4];
