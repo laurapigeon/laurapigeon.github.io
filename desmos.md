@@ -2,7 +2,7 @@
 layout: content
 title: Desmos
 list_page: true
-categories: [list]
+tag: [list]
 ---
 
 A collection of Desmos charts demonstrating mathematical constructions:

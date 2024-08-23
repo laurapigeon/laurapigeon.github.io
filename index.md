@@ -3,7 +3,7 @@ layout: content
 title: Home
 background_image: polyomino structures.png
 list_page: true
-categories: [other]
+tags: []
 ---
 
 <div class="image free" style="--top:5px; --right:5px">

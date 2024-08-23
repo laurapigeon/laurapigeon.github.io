@@ -2,7 +2,7 @@
 layout: content
 title: Kramdown
 list_page: true
-categories: [debug]
+tags: [debug]
 ---
 
 this is a *markdown* page

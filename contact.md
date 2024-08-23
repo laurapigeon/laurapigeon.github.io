@@ -2,7 +2,7 @@
 layout: content
 title: Contact Me
 list_page: true
-categories: [list]
+tags: [list]
 ---
 
 email: laurapigeon44@proton.me

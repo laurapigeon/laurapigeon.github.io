@@ -2,7 +2,7 @@
 layout: content
 title: To-Do List
 list_page: true
-categories: [meta]
+tags: [meta]
 ---
 
 replace fixed colour border images with custom colours

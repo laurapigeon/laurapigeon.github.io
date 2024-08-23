@@ -1,12 +1,11 @@
 ---
-category_list:
+tag_list:
   - list
   - discussion
   - guide
   - gallery
   - meta
   - debug
-  - other
 text_color: rgb(235, 228, 221)
 background_color: rgb(54, 59, 62)
 favicon: pigeon.ico

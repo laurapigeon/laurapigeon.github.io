@@ -2,7 +2,7 @@
 layout: content
 title: A fun polyomino tiling
 list_page: true
-categories: [discussion]
+tags: [discussion]
 ---
 
 so many years ago i was active on a minecraft redstone tech server, and i was working on tilings for the floor of my plot. a friend idly built these polyominoes and said they tile and i was like "wow cool" and took a screenshot

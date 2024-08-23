@@ -3,7 +3,7 @@ layout: content
 title: Debug
 background_image: polyomino structures.png
 list_page: true
-categories: [list, debug]
+tags: [list, debug]
 ---
 
 <p class="free" style="--top: 10px; --right:10px; --text-align:right;" data-url="/texttest">

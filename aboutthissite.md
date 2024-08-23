@@ -2,7 +2,7 @@
 layout: content
 title: About this website...
 list_page: true
-categories: [discussion]
+tags: [discussion]
 ---
 
 hihi! so ive finally committed to properly working on getting this website into a form that i can consistently add pages to, to do things like document my various curios and leave breadcrumb trails for people learning similarly obscure things as i

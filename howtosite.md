@@ -2,7 +2,7 @@
 layout: content
 title: How to make a site
 list_page: true
-categories: [guide]
+tags: [guide]
 ---
 
 make a github account (site name will be \[githubname].github.io)

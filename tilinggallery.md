@@ -1,7 +1,7 @@
 ---
 title: A gallery of polyomino tiling desktop backgrounds
 list_page: true
-categories: [gallery]
+tags: [gallery]
 ---
 
 <img src="/resources/images/funtiling/gallery/grey.png">

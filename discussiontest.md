@@ -2,7 +2,7 @@
 layout: content
 title: Discussion Test
 list_page: true
-categories: [discussion]
+tag: [discussion]
 ---
 
 hello

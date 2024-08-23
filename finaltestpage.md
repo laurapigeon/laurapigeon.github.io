@@ -4,7 +4,7 @@ title: debugging till the end of everything
 list_page: true
 background_color: rgba(0,0,0,0)
 text_color: rgb(255,0,0)
-categories: [debug]
+tags: [debug]
 ---
 
 <p class="image">

@@ -3,7 +3,7 @@ layout: content
 title: Hyperlink Test
 background_image: polyomino bright.png
 list_page: true
-categories: [debug]
+tags: [debug]
 ---
 
 <p class="free" style="--top: 10px; --left: 10px; --width: 101px; --text-align: center; --font: basic; --color: rgb(37, 65, 37);" data-url="/">
