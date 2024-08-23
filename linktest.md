@@ -18,6 +18,6 @@ tags: [debug]
 <p class="free" style="--top: 200px; --left: 120px; --width: 61px; --text-align: right; --font: basic; --color: rgb(61, 61, 61);" data-url="/">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
-<p class="image free" style="--top: 500px; --right: 10px;" data-url="/">
-    <img src="/resources/images/under construction.png">
-</p>
+
+<img src="/resources/images/under construction.png">
+{: class="free" style="--top: 500px; --right: 10px;" data-url="/" }

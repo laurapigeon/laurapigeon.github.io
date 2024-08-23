@@ -11,7 +11,8 @@ window.addEventListener('load', function() {
             const height = contentelement.offsetTop + contentelement.offsetHeight + bottomMargin;
             maxHeight = Math.max(maxHeight, height);
         });
-        content.style.height = maxHeight + 'px';
+        // 2px extra in case of links
+        content.style.height = maxHeight + 2 + 'px';
     });
 
     // Calculate the dimensions of the scaler container based on the scalers height

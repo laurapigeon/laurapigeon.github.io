@@ -7,13 +7,13 @@ html {
     overflow-y: scroll;
 }
 
+html::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
 body {
     margin: 0;
     user-select: none;
-}
-
-html::-webkit-scrollbar {
-    display: none; /* for Chrome, Safari, and Opera */
 }
 
 .scalercontainer {
@@ -26,13 +26,72 @@ html::-webkit-scrollbar {
 .scaler {
     width: 300px;
     height: auto;
-    padding-top: 16px;
-    padding-bottom: 2px;
+    padding: 16px 0px 5px 0px;
+    box-sizing: border-box;
     transform: scale(4);
     transform-origin: top left;
-    box-sizing: border-box;
 }
 
+/* #endregion */
+
+/* #region status */
+.status {
+    position: relative;
+    width: 300px;
+    height: 53px;
+    border: 6px;
+    font-family: 'basic';
+    font-size: 7px;
+    line-height: 8px;
+}
+
+.statusbackground {
+    position: absolute;
+    top: 16px;
+    left: 7px;
+    width: 287px;
+    height: 31px;
+}
+
+.statusname {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    color: rgb(235, 228, 221);
+}
+
+.statusupdate {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    color: rgb(185, 172, 171);
+}
+
+.statusicon {
+    position: absolute;
+    top: 26px;
+    left: 13px;
+    width: 18px;
+    height: 18px;
+}
+
+.statustext {
+    position: absolute;
+    top: 18px;
+    left: 49px;
+    max-width: 240px;
+    line-height: 8px;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgb(235, 228, 221);
+}
+/* #endregion */
+
+/* #region windowframe */
 .windowframe {
     position: fixed;
     top: 0px;
@@ -64,75 +123,6 @@ html::-webkit-scrollbar {
 .windowframeright {
     right: 0px;
 }
-
-/* #endregion */
-
-/* #region status */
-.status {
-    position: relative;
-    width: 300px;
-    height: 53px;
-    border: 6px;
-    font-family: 'basic';
-    font-size: 7px;
-    line-height: 8px;
-}
-
-.statusbackground {
-    position: absolute;
-    top: 16px;
-    left: 7px;
-    width: 287px;
-    height: 31px;
-    background-image: url('/resources/images/status.png');
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-color: rgb(0 0 0 / 0); 
-    background-clip: padding-box;
-    image-rendering: pixelated;
-}
-
-.statusname {
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    color: rgb(235, 228, 221);
-}
-
-.statusupdate {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    color: rgb(185, 172, 171);
-}
-
-.statusicon {
-    position: absolute;
-    top: 26px;
-    left: 13px;
-    width: 18px;
-    height: 18px;
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-color: rgba(0, 0, 0, 0);
-    background-clip: padding-box;
-    image-rendering: pixelated;
-}
-
-.statustext {
-    position: absolute;
-    top: 18px;
-    left: 49px;
-    max-width: 240px;
-    line-height: 8px;
-    display: -webkit-box;
-    line-clamp: 3;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: rgb(235, 228, 221);
-}
 /* #endregion */
 
 .content {
@@ -154,6 +144,7 @@ html::-webkit-scrollbar {
     left: var(--left);
     bottom: var(--bottom);
     right: var(--right);
+    margin: 0px;
 }
 
 .shift {
@@ -164,12 +155,19 @@ html::-webkit-scrollbar {
     right: var(--right);
 }
 
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 p {
     position: relative;
     width: var(--width, 0px);
     box-sizing: content-box;
     padding-left: var(--padding-left);
     text-align: var(--text-align, left);
+    height: var(--height, fit-content);
+    width: var(--width, fit-content);
 }
 
 .linebox {
@@ -179,20 +177,18 @@ p {
     pointer-events: none;
 }
 
-.image {
+.imagebox {
     display: flex;
     justify-content: space-between;
-    margin: auto;
-    height: var(--height, min-content);
-    width: var(--width, min-content);
-    image-rendering: pixelated;
+    margin-left: auto;
+    margin-right: auto;
     line-height: 0px;
 }
 
 img {
-    height: min-content;
-    width: min-content;
     align-self: center;
+    image-rendering: pixelated;
+    vertical-align: top;
 }
 
 /* #region links */

@@ -50,10 +50,6 @@
                 font-size: var(--font-size, {{ site.font-size }});
                 {% endif %}
             }
-
-            .statusicon {
-                background-image: url('/resources/images/emotes/grin.png');
-            }
         </style>
     </head>
     <body>
@@ -71,14 +67,14 @@
             <div class="scaler">
                 {% unless page.hide_status == true %}
                 <div class="status">
-                    <div class="statusbackground"></div>
+                    <img class="statusbackground" src="/resources/images/status.png">
                     <div class="statusname">
                         LAURAPIGEON'S STATUS
                     </div>
                     <div class="statusupdate">
                         UPDATED 24 YEARS AGO
                     </div>
-                    <div class="statusicon"></div>
+                    <img class="statusicon" src="/resources/images/emotes/grin.png">
                     <div class="statustext">
                         @pigeon why did you let out a high pitched yippee what is going on right now
                     </div>

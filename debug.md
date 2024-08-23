@@ -6,7 +6,7 @@ list_page: true
 tags: [list, debug]
 ---
 
-<p class="free" style="--top: 10px; --right:10px; --text-align:right;" data-url="/texttest">
+<p class="free" style="--top: 10px; --right:10px; --text-align:right;" data-url="/linktest">
     Text Box Link Test
 </p>
 
@@ -22,6 +22,6 @@ tags: [list, debug]
     To Do List
 </p>
 
-<p class="image free" style="--top: 10px; --left: 20px;" data-url="/resources/images/pigeon.png">
-    <img src="/resources/images/pigeon.png">
+<p class="imagebox free" style="--top: 10px; --left: 20px;" data-url="/resources/images/pixel pigeon.png">
+    <img src="/resources/images/pixel pigeon.png">
 </p>

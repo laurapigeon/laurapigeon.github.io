@@ -9,27 +9,24 @@ tags: [list, debug]
 
 {% assign top = 0 %}
 {% for tag in site.tag_list %}
-<p class="free" style="--top: {{ top }}px; --left: 100px; --width: 100px; --text-align: center; --color: aquamarine;">
-    -- {{ tag }} --
-</p>
+\-\- {{ tag }} \-\-
+{: class="center" style="--color: aquamarine;" }
 {% assign top = top | plus: 12 %}
 {% for page in site.pages %}
 {% if page.list_page == true %}
 {% for page_tag in page.tags %}
 {% if page_tag == tag %}
 {% assign pageSlug = page.url | split: '.' | first %}
-<p class="free" style="--top: {{ top }}px; --left: 100px; --width: 100px; --text-align: center;" data-url="{{ pageSlug }}">
-    {{ pageSlug }}
-</p>
+{{ pageSlug }}
+{: class="center" data-url="{{ pageSlug }};"}
 {% assign top = top | plus: 12 %}
 {% endif %}
 {% endfor %}
 {% endif %}
 {% endfor %}
 {% endfor %}
-<p class="free" style="--top: {{ top }}px; --left: 100px; --width: 100px; --text-align: center; --color: aquamarine;">
-    -- other --
-</p>
+\-\- other \-\-
+{: class="center" style="--color: aquamarine;" }
 {% assign top = top | plus: 12 %}
 {% for page in site.pages %}
 {% if page.list_page == true %}
@@ -41,9 +38,8 @@ tags: [list, debug]
 {% endfor  %}
 {% if is_other %}
 {% assign pageSlug = page.url | split: '.' | first %}
-<p class="free" style="--top: {{ top }}px; --left: 100px; --width: 100px; --text-align: center;" data-url="{{ pageSlug }}">
-    {{ pageSlug }}
-</p>
+{{ pageSlug }}
+{: class="center" data-url="{{ pageSlug }};"}
 {% assign top = top | plus: 12 %}
 {% endif %}
 {% endif %}
