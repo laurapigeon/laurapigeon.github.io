@@ -1,0 +1,61 @@
+.image[data-url]:hover,
+p[data-url]:hover {
+    cursor: pointer;
+}
+
+.image[data-url]:hover .border,
+p[data-url]:hover .border {
+    display: inline-block;
+}
+
+.border {
+    display: none;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    padding: 1px;
+}
+
+.borderedge {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-sizing: content-box;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    border: 1px solid transparent;
+    border-image-slice: 1;
+    border-image-repeat: repeat;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    --mask: conic-gradient(at 6px 6px,#000 75%,#0000 0) -3px -3px;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    pointer-events: none;
+    /*mix-blend-mode: overlay;
+    background-color: rgba(255 164 164 / 1);*/
+}
+
+.bordercorner {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+@keyframes antcrawl { /* rgb(154 199 245 / 1) */
+     0% { border-image-source: url("/resources/images/ants/border-1.png"); }
+    25% { border-image-source: url("/resources/images/ants/border-2.png"); }
+    50% { border-image-source: url("/resources/images/ants/border-3.png"); }
+    75% { border-image-source: url("/resources/images/ants/border-4.png"); }
+}
+
+@keyframes antcrawlshadow { /* rgb(61 59 91 / 0.75) */
+    0% { border-image-source: url("/resources/images/ants/border-shadow-1.png"); }
+   25% { border-image-source: url("/resources/images/ants/border-shadow-2.png"); }
+   50% { border-image-source: url("/resources/images/ants/border-shadow-3.png"); }
+   75% { border-image-source: url("/resources/images/ants/border-shadow-4.png"); }
+}

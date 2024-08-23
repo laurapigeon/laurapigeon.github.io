@@ -1,0 +1,54 @@
+.status {
+    position: relative;
+    width: 300px;
+    height: 53px;
+    border: 6px;
+    font-family: 'basic';
+    font-size: 7px;
+    line-height: 8px;
+}
+
+.statusbackground {
+    position: absolute;
+    top: 16px;
+    left: 7px;
+    width: 287px;
+    height: 31px;
+}
+
+.statusname {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    color: rgb(235, 228, 221);
+}
+
+.statusupdate {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    color: rgb(185, 172, 171);
+}
+
+.statusicon {
+    position: absolute;
+    top: 26px;
+    left: 13px;
+    width: 18px;
+    height: 18px;
+}
+
+.statustext {
+    position: absolute;
+    top: 18px;
+    left: 49px;
+    max-width: 240px;
+    line-height: 8px;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgb(235, 228, 221);
+}

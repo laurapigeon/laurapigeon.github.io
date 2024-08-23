@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'basic';
+    font-size: 7px;
+    line-height: 8px;
+    src: url('/resources/fonts/somybmp01_7.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'abyssal';
+    font-size: 14px;
+    line-height: 15px;
+    src: url('/resources/fonts/abyssalsomepx2.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'archbishop';
+    font-size: 14px;
+    line-height: 15px;
+    src: url('/resources/fonts/archbishopsomepx2n.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'bijou0';
+    font-size: 14px;
+    line-height: 15px;
+    src: url('/resources/fonts/bijousomepx0n.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'bijou1';
+    font-size: 14px;
+    line-height: 15px;
+    src: url('/resources/fonts/bijousomepx1n.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'blackout0';
+    font-size: 14px;
+    line-height: 15px;
+    src: url('/resources/fonts/blackoutsomepx0n.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'blackout0b';
+    font-size: 14px;
+    line-height: 15px;
+    src: url('/resources/fonts/blackoutsomepx0b.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'blackout1';
+    font-size: 14px;
+    line-height: 15px;
+    src: url('/resources/fonts/blackoutsomepx1n.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'blackout1b';
+    font-size: 14px;
+    line-height: 15px;
+    src: url('/resources/fonts/blackoutsomepx1b.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'blackout2';
+    font-size: 14px;
+    line-height: 15px;
+    src: url('/resources/fonts/blackoutsomepx2n.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'blackout2b';
+    font-size: 14px;
+    line-height: 15px;
+    src: url('/resources/fonts/blackoutsomepx2b.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'bookstore1b';
+    font-size: 12px;
+    line-height: 13px;
+    src: url('/resources/fonts/bookstore1b.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'bookstore1n';
+    font-size: 12px;
+    line-height: 13px;
+    src: url('/resources/fonts/bookstore1n.ttf') format('truetype');
+}

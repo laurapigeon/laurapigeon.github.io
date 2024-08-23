@@ -1,0 +1,32 @@
+html {
+    overflow: scroll;
+    background: rgb(20, 20, 20);
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll;
+}
+
+html::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+body {
+    margin: 0;
+    user-select: none;
+}
+
+.scalercontainer {
+    position: relative;
+    top: -8px;
+    margin: 0 auto;
+    filter: url(#crispify);
+}
+
+.scaler {
+    width: 300px;
+    height: auto;
+    padding: 16px 0px 5px 0px;
+    box-sizing: border-box;
+    transform: scale(4);
+    transform-origin: top left;
+}
