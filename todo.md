@@ -26,3 +26,5 @@ add reader mode
 dynamic loading with mouse shake
 
 browser frame
+
+find extra emotes

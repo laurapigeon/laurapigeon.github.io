@@ -56,10 +56,10 @@ p {
     margin-left: auto;
     margin-right: auto;
     line-height: 0px;
+    align-items: center;
 }
 
 img {
-    align-self: center;
-    image-rendering: pixelated;
     vertical-align: top;
+    image-rendering: pixelated;
 }

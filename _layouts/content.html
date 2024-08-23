@@ -19,6 +19,7 @@
         <script src="/scripts/get-content-height.js" type=module></script>
         <script src="/scripts/preload-images.js" type=module></script>
         <script src="/scripts/remove-half-pixels.js" type=module></script>
+        <script src="/scripts/set-scrollbar-top.js" type=module></script>
         <link rel="stylesheet" href="/styles/fonts.css">
         <link rel="stylesheet" href="/styles/links.css">
         <link rel="stylesheet" href="/styles/status.css">
@@ -92,25 +93,62 @@
             </div>
         </div>
         <div class="windowframe">
-            <img class="wfbottom" src="/resources/images/frame/bottom.png">
-            <img class="wftop" src="/resources/images/frame/top.png">
-            <img class="wfleft" src="/resources/images/frame/left.png">
-            <img class="wfright" src="/resources/images/frame/right.png">
-            <img class="wfbottomleft" src="/resources/images/frame/bottomleft.png">
-            <img class="wfbottomright" src="/resources/images/frame/bottomright.png">
-            <div class="browsertitle">
-                HYPNOSPACE EXPLORER
+            <div class="wf explorerbar">
+                <img class="ebleft" src="/resources/images/frame/ebleft.png">
+                <img class="ebbody" src="/resources/images/frame/ebbody.png">
+                <img class="ebright" src="/resources/images/frame/ebright.png">
             </div>
-            <div class="navigationbar">
-                {% assign pageSlug = page.url | split: "." | first | remove: "/" %}
-                {% if pageSlug == "" %}
-                >> {{ site.zone_name | upcase }} >> {{ site.index_name | upcase }}
-                {% else %}
-                >> {{ site.zone_name | upcase }} >> {{ pageSlug | upcase }}
-                {% endif %}
+            <div class="wf explorerbar">
+                <img class="eb ebback" src="/resources/images/frame/ebback.png">
+                <img class="eb ebforward" src="/resources/images/frame/ebforward.png">
+                <div class="eb ebpage">
+                    {{ page.title }}
+                </div>
+                <div class="eb ebuser">
+                    laurapigeon
+                </div>
+                <img class="eb ebsearch" src="/resources/images/frame/ebsearch.png">
+                <img class="eb ebinfo" src="/resources/images/frame/ebinfo.png">
             </div>
-            <img class="wftopleft" src="/resources/images/frame/topleft.png">
-            <img class="wftopright" src="/resources/images/frame/topright.png">
+            <div class="wf scrollbar">
+                <img class="sbtop" src="/resources/images/frame/sbtop.png">
+                <div class="sbbody">
+                    <img class="wf sbbar" id="scrollbar" src="/resources/images/frame/scrollbar.png">
+                </div>
+                <img class="sbbottom" src="/resources/images/frame/sbbottom.png">
+            </div>
+            <div>
+                <img class="wf wfbottom" src="/resources/images/frame/bottom.png">
+                <img class="wf wfleft" src="/resources/images/frame/left.png">
+                <img class="wf wfright" src="/resources/images/frame/right.png">
+                <img class="wf wfbottomleft" src="/resources/images/frame/bottomleft.png">
+                <img class="wf wfbottomright" src="/resources/images/frame/bottomright.png">
+            </div>
+            <div class="wf titlebar">
+                <div class="tbleft">
+                    <div class="wf tbglobe"></div>
+                </div>
+                <div class="tbbody">
+                    <div class="wf tbtitle">
+                        HYPNOSPACE EXPLORER
+                    </div>
+                    <div class="wf navigationbar">
+                        <div class="nbhome"></div>
+                        <dif class="nbtext">
+                            {% assign pageSlug = page.url | split: "." | first | remove: "/" %}
+                            {% if pageSlug == "" %}
+                            >> {{ site.zone_name | upcase }} >> {{ site.index_name | upcase }}
+                            {% else %}
+                            >> {{ site.zone_name | upcase }} >> {{ pageSlug | upcase }}
+                            {% endif %}
+                        </dif>
+                        <div class="nbrefresh"></div>
+                    </div>
+                </div>
+                <div class="tbright">
+                    <div class="wf tbminimise"></div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
