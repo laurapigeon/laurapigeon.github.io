@@ -86,10 +86,25 @@
             </div>
         </div>
         <div class="windowframe">
-            <img class="windowframeleft" src="/resources/images/frame/left.png">
-            <img class="windowframeright" src="/resources/images/frame/right.png">
-            <img class="windowframetop" src="/resources/images/frame/top.png">
-            <img class="windowframebottom" src="/resources/images/frame/bottom.png">
+            <img class="wfbottom" src="/resources/images/frame/bottom.png">
+            <img class="wftop" src="/resources/images/frame/top.png">
+            <img class="wfleft" src="/resources/images/frame/left.png">
+            <img class="wfright" src="/resources/images/frame/right.png">
+            <img class="wfbottomleft" src="/resources/images/frame/bottomleft.png">
+            <img class="wfbottomright" src="/resources/images/frame/bottomright.png">
+            <div class="browsertitle">
+                HYPNOSPACE EXPLORER
+            </div>
+            <div class="navigationbar">
+                {% assign pageSlug = page.url | split: "." | first | remove: "/" %}
+                {% if pageSlug == "" %}
+                >> {{ site.zone_name | upcase }} >> {{ site.index_name | upcase }}
+                {% else %}
+                >> {{ site.zone_name | upcase }} >> {{ pageSlug | upcase }}
+                {% endif %}
+            </div>
+            <img class="wftopleft" src="/resources/images/frame/topleft.png">
+            <img class="wftopright" src="/resources/images/frame/topright.png">
         </div>
     </body>
 </html>

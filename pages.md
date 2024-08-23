@@ -7,19 +7,16 @@ list_page: true
 tags: [list, debug]
 ---
 
-{% assign top = 0 %}
 {% for tag in site.tag_list %}
 \-\- {{ tag }} \-\-
 {: class="center" style="--color: aquamarine;" }
-{% assign top = top | plus: 12 %}
 {% for page in site.pages %}
 {% if page.list_page == true %}
 {% for page_tag in page.tags %}
 {% if page_tag == tag %}
-{% assign pageSlug = page.url | split: '.' | first %}
+{% assign pageSlug = page.url | split: "." | first %}
 {{ pageSlug }}
-{: class="center" data-url="{{ pageSlug }};"}
-{% assign top = top | plus: 12 %}
+{: class="center" data-url="{{ pageSlug }}"}
 {% endif %}
 {% endfor %}
 {% endif %}
@@ -27,7 +24,6 @@ tags: [list, debug]
 {% endfor %}
 \-\- other \-\-
 {: class="center" style="--color: aquamarine;" }
-{% assign top = top | plus: 12 %}
 {% for page in site.pages %}
 {% if page.list_page == true %}
 {% assign is_other = true %}
@@ -37,10 +33,9 @@ tags: [list, debug]
 {% endif %}
 {% endfor  %}
 {% if is_other %}
-{% assign pageSlug = page.url | split: '.' | first %}
+{% assign pageSlug = page.url | split: "." | first %}
 {{ pageSlug }}
-{: class="center" data-url="{{ pageSlug }};"}
-{% assign top = top | plus: 12 %}
+{: class="center" data-url="{{ pageSlug }}"}
 {% endif %}
 {% endif %}
 {% endfor %}
