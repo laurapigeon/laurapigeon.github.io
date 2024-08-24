@@ -20,14 +20,14 @@ body {
     image-rendering: pixelated;
 }
 
-.scalercontainer {
+#scalercontainer {
     position: relative;
     top: -8px;
     margin: 0 auto;
     filter: url(#crispify);
 }
 
-.scaler {
+#scaler {
     width: 300px;
     height: auto;
     padding: 32px 0px 5px 0px;

@@ -27,7 +27,7 @@ window.addEventListener('load', function() {
         let currentLine = '';
         if (computedStyle.width === '0px') {
             tempElement.textContent = paragraph.textContent;
-            var content = paragraph.closest('.content')
+            var content = paragraph.closest('#content')
             var contentStyle = window.getComputedStyle(content)
             var contentWidth = content.clientWidth - parseFloat(contentStyle.paddingLeft) - parseFloat(contentStyle.paddingRight);
             paragraph.style.width = Math.min(tempElement.offsetWidth, contentWidth) + "px";
@@ -93,7 +93,7 @@ window.addEventListener('load', function() {
             //console.log(`Line ${index + 1}: ${line}`, tempElement.offsetWidth, tempElement.offsetWidth % 2 == 0 ? `(onset)` : `(offset)`);
             
             const linebox = document.createElement('div');
-            linebox.classList.add('.linebox');
+            linebox.classList.add('linebox');
             linebox.textContent = line;
             //console.log(tempElement.offsetWidth % 2, parseInt(computedStyle.width, 10) % 2)
             if (computedStyle.textAlign === 'center' && tempElement.offsetWidth % 2 == (parseInt(computedStyle.width, 10) + 1) % 2) {

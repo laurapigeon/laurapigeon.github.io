@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', function() {
     const borders = document.querySelectorAll('.border');
     borders.forEach(function(border) {
-
+        //console.log("added");
         const edge = document.createElement('div');
         edge.classList.add('borderedge');
         edge.style.top = '-1px';

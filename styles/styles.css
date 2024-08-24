@@ -1,4 +1,4 @@
-.content {
+#content {
     position: relative;
     box-sizing: border-box;
     width: 300px;
@@ -62,4 +62,9 @@ p {
 img {
     vertical-align: top;
     image-rendering: pixelated;
+}
+
+a, a:link, a:hover, a:visited, a:active {
+    color: inherit;
+    text-decoration: none;
 }
