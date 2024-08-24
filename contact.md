@@ -1,5 +1,5 @@
 ---
-layout: content
+layout: HSP
 title: Contact Me
 list_page: true
 tags: [list]

@@ -1,5 +1,5 @@
 ---
-layout: content
+layout: HSP
 title: How to make a site
 list_page: true
 tags: [guide]

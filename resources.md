@@ -1,5 +1,5 @@
 ---
-layout: content
+layout: HSP
 title: Resources
 background_image: pigeons.jpg
 list_page: true

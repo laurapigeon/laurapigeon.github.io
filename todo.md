@@ -1,5 +1,5 @@
 ---
-layout: content
+layout: HSP
 title: To-Do List
 list_page: true
 tags: [meta]

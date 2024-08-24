@@ -1,5 +1,5 @@
 ---
-layout: content
+layout: HSP
 title: Page List
 background_image: kingdom.png
 background_position: -12px 0px

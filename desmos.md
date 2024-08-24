@@ -1,5 +1,5 @@
 ---
-layout: content
+layout: HSP
 title: Desmos
 list_page: true
 tag: [list]

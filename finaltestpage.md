@@ -1,5 +1,5 @@
 ---
-layout: content
+layout: HSP
 title: debugging till the end of everything
 list_page: true
 background_color: rgba(0,0,0,0)

@@ -1,5 +1,5 @@
 ---
-layout: content
+layout: HSP
 title: Debug
 background_image: polyomino structures.png
 list_page: true

@@ -1,5 +1,5 @@
 ---
-layout: content
+layout: HSP
 title: A fun polyomino tiling
 list_page: true
 tags: [discussion]

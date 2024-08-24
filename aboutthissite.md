@@ -1,5 +1,5 @@
 ---
-layout: content
+layout: HSP
 title: About this website...
 list_page: true
 tags: [discussion]

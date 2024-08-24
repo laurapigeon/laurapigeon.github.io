@@ -1,5 +1,5 @@
 ---
-layout: content
+layout: HSP
 title: Hyperlink Test
 background_image: polyomino bright.png
 list_page: true
