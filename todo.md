@@ -15,7 +15,7 @@ animate text
 
 pull one status from a list of randoms (based on computer time?)
 
-add search button (take to pages page) and home button (take to index)
+add search button (take to pages page)
 
 height of markdown sections in html pages dont update height of page
 
@@ -25,6 +25,10 @@ add reader mode
 
 dynamic loading with mouse shake
 
-browser frame
-
 find extra emotes
+
+frame theme dropdown
+
+hold scroll bar
+
+home & refresh gifs

@@ -1,4 +1,5 @@
 #windowframe {
+    flex-direction: column;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -7,258 +8,230 @@
     pointer-events: none;
     transform: scale(4);
     transform-origin: top left;
+}
+
+
+
+
+
+.text {
     font-family: 'basic';
     font-size: 7px;
     line-height: 8px;
+    overflow: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
 }
 
-.wf {
-    position: absolute;
-    overflow: hidden;
-    white-space: nowrap;
+#windowframe,
+#titlebar,
+#wfbody,
+#bottombar,
+#explorerbarpanel,
+#explorerbarcontents,
+#scrollbar,
+#navigationbar {
+    display:flex;
+}
+#explorerbarpanel,
+#explorerbarcontents,
+#titlebar,
+#bottombar,
+#navigationbar {
+    width: 100%;
+}
+#scrollbar {
+    flex-direction: column;
+    height: 100%
+}
+#explorerbarpanel,
+#explorerbarcontents,
+#scrollbar {
+    align-items: center;
+}
+#navigationbar,
+#titlebar {
+    align-items: flex-start;
+}
+#titlebar {
+    height: 24px;
+    z-index: 2;
+}
+#bottombar {
+    align-items: flex-end;
+    height: 27px;
+}
+#navigationbar {
+    top: 9px;
+}
+#scrollbar {
+    width: 9px;
+    height: calc(100% + 27px);
+}
+#explorerbarpanel,
+#explorerbarcontents {
+    height: 16px;
+}
+#explorerbarcontents {
+    transform: translate(0px,-16px);
+}
+#explorerbar {
+    transform: translate(0px,-5px);
+    z-index: 1;
+}
+#scrollbar {
+    transform: translate(0px,-4px);
+}
+#explorerbar,
+#titlebar,
+#scrollbar {
     pointer-events: auto;
 }
 
 
 
-#explorerbarpanel,
-#explorerbar {
-    display: flex;
-    align-items: center;
-    top: 19px;
-    left: 5px;
-    width: calc(100% - 5px - 14px);
-    height: 16px;
-}
 
-#ebbody {
-    flex-grow: 1;
-    flex-shrink: 0;
-    height: 16px;
-}
 
+#wfbody,
+#bbbody,
+#ebbody,
 #ebpage,
-#ebuser {
-    color: rgb(94, 66, 128);
+#ebuser,
+#sbbody,
+#tbbody,
+#nbtext,
+#explorerbar {
     flex-grow: 1;
     flex-shrink: 1;
-    min-width: 0px !important;
-    margin: 0px 1px 0px 1px;
+    min-width: 0px;
+    min-height: 0px;
 }
-
+#bbbody {
+    height: 4px;
+}
+#ebbody {
+    height: 16px;
+}
+#explorerbar {
+    height: 16px;
+}
+#ebpage,
 #ebuser {
-    text-align: right;
+    margin: 0px 1px 0px 1px;
+    min-width: 0px !important;
+    color: rgb(94, 66, 128);
 }
-
-#ebback {
-    background-image: url('/resources/images/frame/ebback.png');
-}
-#ebback:active {
-    background-image: url('/resources/images/frame/ebbackactive.png');
-}
-#ebforward {
-    background-image: url('/resources/images/frame/ebforward.png');
-}
-#ebforward:active {
-    background-image: url('/resources/images/frame/ebforwardactive.png');
-}
-#ebsearch {
-    background-image: url('/resources/images/frame/ebsearch.png');
-}
-#ebsearch:active {
-    background-image: url('/resources/images/frame/ebsearchactive.png');
-}
-#ebinfo {
-    width: 12px;
-    height: 10px;
-    margin: 3px 3px 3px 2px;
-    background-image: url('/resources/images/frame/ebinfo.png');
-}
-#ebinfo:active {
-    width: 17px;
-    height: 15px;
-    margin: 0px 0px 1px 0px;
-    background-image: url('/resources/images/frame/ebinfoactive.png');
-}
-
-.eb {
-    width: 13px;
-    height: 10px;
-    margin: 3px 3px 3px 2px;
-}
-
-.eb:active {
-    width: 17px;
-    height: 15px;
-    margin: 0px 1px 1px 0px;
-}
-
-
-
-#scrollbar {
-    display: flex;
-    flex-direction: column;
-    top: 20px;
-    right: 5px;
-    width: 9px;
-    height: calc(100% - 20px - 4px);
-}
-
-#sbtop,
-#sbbottom {
-    width: 9px;
-    height: 9px;
-}
-
-#sbtop {
-    background-image: url("/resources/images/frame/sbtop.png");
-}
-#sbtop:active {
-    background-image: url("/resources/images/frame/sbtopactive.png");
-}
-#sbbottom {
-    background-image: url("/resources/images/frame/sbbottom.png");
-}
-#sbbottom:active {
-    background-image: url("/resources/images/frame/sbbottomactive.png");
-}
-
 #sbbody {
     position: relative;
-    flex-grow: 1;
-    flex-shrink: 0;
-    overflow: hidden;
-    height: 9px;
+    width: 9px;
     background-image: url("/resources/images/frame/sbbody.png");
 }
-
-
-
-#titlebar {
-    display: flex;
-    align-items: flex-start;
-    min-width: 100%;
-    height: 24px;
-}
-
-#tbleft {
-    width: 21px;
-    height: 24px;
-    background-image: url("/resources/images/frame/tbleft.png");
-}
-
-#tbright {
-    width: 22px;
-    height: 21px;
-    background-image: url("/resources/images/frame/tbright.png");
-}
-
 #tbbody {
     position: relative;
-    overflow: hidden;
-    flex-grow: 1;
-    flex-shrink: 0;
     height: 19px;
     background-image: url("/resources/images/frame/tbbody.png");
 }
-
-
-
-#navigationbar {
-    display: flex;
-    align-items: center;
-    top: 9px;
-    width: 100%;
-}
-
 #nbtext {
-    overflow: hidden;
-    flex-grow: 1;
-    flex-shrink: 1;
-    padding: 0px 2px 0px 0px;
+    padding: 1px 2px 0px 0px;
     top: 10px;
     left: 14px;
     color: rgb(220, 175, 240);
 }
-
-#nbhome {
-    flex-shrink: 0;
-    width: 12px;
-    height: 10px;
-    padding: 0px 1px 0px 0px;
-    background-repeat: no-repeat;
-    background-image: url("/resources/images/frame/nbhome00.png");
-}
-
-#nbrefresh {
-    flex-shrink: 0;
-    width: 9px;
-    height: 6px;
-    margin: 0px 1px 0px 1px;
-    background-image: url("/resources/images/frame/nbrefresh.png");
-}
-
-.nb {
-    padding: 0px 0px 0px 1px;
-}
-
-
-
-#tbglobe {
-    top: 3px;
-    left: 4px;
-    width: 16px;
-    height: 16px;
-    background-image: url("/resources/images/frame/tbglobe.png");
-}
-
-#tbminimise {
-    top: 2px;
-    right: 4px;
-    width: 15px;
-    height: 14px;
-    background-image: url("/resources/images/frame/tbminimise.png");
-}
-
-#tbtitle {
-    top: 1px;
-    left: 1px;
-    color: rgb(48, 36, 84);
-}
-
-
-
-#wfbottomleft,
-#wfbottom,
-#wfbottomright {
-    bottom: 0px;
-}
-
-#wfright,
-#wfbottomright {
-    right: 0px;
-}
-
 #wfleft,
 #wfright {
     width: 5px;
-    height: calc(100% - 2px);
-    margin-top: 1px;
-    margin-bottom: 1px;
 }
-
-#wfbottom {
-    width: calc(100% - 2px);
-    margin-left: 1px;
-    margin-right: 1px;
-}
-
-#wfbottom {
-    height: 4px;
+#ebuser {
+    text-align: right;
 }
 
 
 
+
+#tbleft {
+    min-width: 21px;
+    min-height: 24px;
+    background-image: url("/resources/images/frame/tbleft.png");
+}
+#tbright {
+    min-width: 22px;
+    min-height: 24px;
+    background-image: url("/resources/images/frame/tbright.png");
+}
+#ebback,
+#ebforward,
+#ebsearch {
+    margin: 3px 3px 3px 2px;
+    min-width: 13px;
+    min-height: 10px;
+}
+#ebback:active,
+#ebforward:active,
+#ebsearch:active {
+    margin: 0px 1px 1px 0px;
+    min-width: 17px;
+    min-height: 15px;
+}
+#ebback { background-image: url('/resources/images/frame/ebback.png'); }
+#ebback:active { background-image: url('/resources/images/frame/ebbackactive.png'); }
+#ebforward { background-image: url('/resources/images/frame/ebforward.png'); }
+#ebforward:active { background-image: url('/resources/images/frame/ebforwardactive.png'); }
+#ebsearch { background-image: url('/resources/images/frame/ebsearch.png'); }
+#ebsearch:active { background-image: url('/resources/images/frame/ebsearchactive.png'); }
+#ebinfo {
+    margin: 3px 3px 3px 2px;
+    min-width: 12px;
+    min-height: 10px;
+    background-image: url('/resources/images/frame/ebinfo.png');
+}
+#ebinfo:active {
+    margin: 0px 0px 1px 0px;
+    min-width: 17px;
+    min-height: 15px;
+    background-image: url('/resources/images/frame/ebinfoactive.png');
+}
+#sbtop,
+#sbbottom {
+    min-width: 9px;
+    min-height: 9px;
+}
+#sbtop { background-image: url("/resources/images/frame/sbtop.png"); }
+#sbtop:active { background-image: url("/resources/images/frame/sbtopactive.png"); }
+#sbbottom { background-image: url("/resources/images/frame/sbbottom.png"); }
+#sbbottom:active { background-image: url("/resources/images/frame/sbbottomactive.png"); }
+#nbhome {
+    padding: 0px 1px 0px 0px;
+    min-width: 12px;
+    min-height: 10px;
+    background-repeat: no-repeat;
+    background-image: url("/resources/images/frame/nbhome00.png");
+}
+#nbrefresh {
+    margin: 2px 1px 0px 0px;
+    min-width: 9px;
+    min-height: 6px;
+    background-image: url("/resources/images/frame/nbrefresh.png");
+}
+.nbtext {
+    padding: 0px 0px 0px 1px;
+}
+#tbglobe {
+    margin: 3px 1px 5px 4px;
+    min-width: 16px;
+    min-height: 16px;
+    background-image: url("/resources/images/frame/tbglobe.png");
+}
+#tbminimise {
+    margin: 2px 4px 8px 3px;
+    min-width: 15px;
+    min-height: 14px;
+    background-image: url("/resources/images/frame/tbminimise.png");
+}
+#tbtitle {
+    padding: 1px 1px 0px 1px;
+    color: rgb(48, 36, 84);
+}
 #nbhome:hover,
 #nbrefresh:hover,
 #ebback:hover,

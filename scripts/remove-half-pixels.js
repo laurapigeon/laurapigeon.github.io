@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
     const elements = document.querySelectorAll('.center');
 
     elements.forEach(function(element) {
@@ -7,8 +7,8 @@ window.addEventListener('DOMContentLoaded', function() {
         //console.log(elementMargin);
         if (elementMargin % 1 !== 0) {
             //console.log(element.textContent)
-            element.style.marginLeft = Math.ceil(elementMargin) + "px";
-            element.style.marginRight = Math.floor(elementMargin) + "px";
+            element.style.marginLeft = Math.floor(elementMargin) + "px";
+            element.style.marginRight = Math.ceil(elementMargin) + "px";
         }
     });
 });

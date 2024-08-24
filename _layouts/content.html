@@ -19,7 +19,6 @@
         <script src="/scripts/add-link-border.js" type=module></script>
         <script src="/scripts/centre-align-shift.js" type=module></script>
         <script src="/scripts/get-content-height.js" type=module></script>
-        <script src="/scripts/preload-images.js" type=module></script>
         <script src="/scripts/remove-half-pixels.js" type=module></script>
         <script src="/scripts/set-scrollbar-pos.js" type=module></script>
         <link rel="stylesheet" href="/styles/fonts.css">
@@ -30,13 +29,16 @@
         <link rel="stylesheet" href="/styles/windowframe.css">
         <style>
             #content {
+                {% if page.background_image and page.background_image != "" and page.background_image != nil %}
                 background-image: url('/resources/images/backgrounds/{{ page.background_image }}');
                 background-position: {{ page.background_position }};
-
+                background-color: rgba(0,0,0,0);
+                {% else %}
                 {% if page.background_color and page.background_color != "" and page.background_color != nil %}
                 background-color: {{ page.background_color }};
                 {% else %}
                 background-color: {{ site.background_color }};
+                {% endif %}
                 {% endif %}
             }
 
@@ -64,7 +66,7 @@
     <body>
         <svg class="offscreen" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
             <defs>
-                <!--this is used to remove antialiasing for the upscale-->
+                <!--this is used to remove chromatic aberration for the upscale-->
                 <filter id="crispify">
                     <feComponentTransfer>
                         <feFuncA type="discrete" tableValues="0 1"/>
@@ -76,16 +78,21 @@
             <div id="scaler">
                 {% unless page.hide_status == true %}
                 <div id="status">
-                    <img id="statusbackground" src="/resources/images/status.png">
-                    <div id="statusname">
-                        LAURAPIGEON'S STATUS
+                    <div id="statustitle">
+                        <div id="statusname">
+                            {{ site.user_name | upcase }}'S STATUS
+                        </div>
+                        <div id="statusupdate">
+                            UPDATED {{ site.status_updated }}
+                        </div>
                     </div>
-                    <div id="statusupdate">
-                        UPDATED 24 YEARS AGO
-                    </div>
-                    <img id="statusicon" src="/resources/images/emotes/grin.png">
-                    <div id="statustext">
-                        @pigeon why did you let out a high pitched yippee what is going on right now
+                    <div id="statuscontent">
+                        <div id="statusemotebg">
+                            <img src="/resources/images/emotes/{{ site.status_emote }}">
+                        </div>
+                        <div id="statustext">
+                            {{ site.status_text }}
+                        </div>
                     </div>
                 </div>
                 {% endunless %}
@@ -95,52 +102,28 @@
             </div>
         </div>
         <div id="windowframe">
-            <div class="wf" id="explorerbarpanel">
-                <img id="ebleft" src="/resources/images/frame/ebleft.png">
-                <img id="ebbody" src="/resources/images/frame/ebbody.png">
-                <img id="ebright" src="/resources/images/frame/ebright.png">
-            </div>
-            <div class="wf" id="explorerbar">
-                <a class="eb" id="ebback" href="javascript:history.back()" ondragstart="return false;" ondrop="return false;"></a>
-                <a class="eb" id="ebforward" href="javascript:history.forward()" ondragstart="return false;" ondrop="return false;"></a>
-                <div id="ebpage">
-                    {{ page.title }}
-                </div>
-                <div id="ebuser">
-                    laurapigeon
-                </div>
-                <a class="eb" id="ebsearch" ondragstart="return false;" ondrop="return false;"></a>
-                <a id="ebinfo" href="https://github.com/laurapigeon/laurapigeon.github.io" ondragstart="return false;" ondrop="return false;"></a>
-            </div>
-            <div>
-                <img class="wf" id="wfbottom" src="/resources/images/frame/bottom.png">
-                <img class="wf" id="wfleft" src="/resources/images/frame/left.png">
-                <img class="wf" id="wfright" src="/resources/images/frame/right.png">
-                <img class="wf" id="wfbottomleft" src="/resources/images/frame/bottomleft.png">
-                <img class="wf" id="wfbottomright" src="/resources/images/frame/bottomright.png">
-            </div>
-            <div class="wf" id="titlebar">
+            <div id="titlebar">
                 <div id="tbleft">
-                    <div class="wf" id="tbglobe"></div>
+                    <div id="tbglobe"></div>
                 </div>
                 <div id="tbbody">
-                    <div class="wf" id="tbtitle">
+                    <div class="text" id="tbtitle">
                         HYPNOSPACE EXPLORER
                     </div>
-                    <div class="wf" id="navigationbar">
+                    <div id="navigationbar">
                         <a id="nbhome" href="https://github.com/laurapigeon/laurapigeon.github.io" ondragstart="return false;" ondrop="return false;"></a>
-                        <dif id="nbtext">
+                        <dif class="text" id="nbtext">
                             {% assign pageSlug = page.url | split: "." | first | remove: "/" %}
                             {% if pageSlug == "" %}
                             {% assign pageSlug = site.index_name %}
                             {% endif %}
-                            <a class="nb" href="https://github.com/laurapigeon/laurapigeon.github.io">
+                            <a class="nbtext" href="https://github.com/laurapigeon/laurapigeon.github.io">
                                 >>
                             </a>
-                            <a class="nb" href="/">
+                            <a class="nbtext" href="/">
                                 {{ site.zone_name | upcase }} >>
                             </a>
-                            <a class="nb" href="javascript:window.location.href=window.location.href">
+                            <a class="nbtext" href="javascript:window.location.href=window.location.href">
                                 {{ pageSlug | upcase }}
                             </a>
                         </dif>
@@ -148,15 +131,43 @@
                     </div>
                 </div>
                 <div id="tbright">
-                    <div class="wf" id="tbminimise"></div>
+                    <div id="tbminimise"></div>
                 </div>
             </div>
-            <div class="wf" id="scrollbar">
-                <div id="sbtop" ondragstart="return false;" ondrop="return false;"></div>
-                <div id="sbbody">
-                    <img class="wf" src="/resources/images/frame/scrollbar.png" id="sbbar" ondragstart="return false;" ondrop="return false;">
+            <div id="wfbody">
+                <img id="wfleft" src="/resources/images/frame/wfleft.png">
+                <div id="explorerbar">
+                    <div id="explorerbarpanel">
+                        <img id="ebleft" src="/resources/images/frame/ebleft.png">
+                        <img id="ebbody" src="/resources/images/frame/ebbody.png">
+                        <img id="ebright" src="/resources/images/frame/ebright.png">
+                    </div>
+                    <div id="explorerbarcontents">
+                        <a id="ebback" href="javascript:history.back()" ondragstart="return false;" ondrop="return false;"></a>
+                        <a id="ebforward" href="javascript:history.forward()" ondragstart="return false;" ondrop="return false;"></a>
+                        <div class="text" id="ebpage">
+                            {{ page.title }}
+                        </div>
+                        <div class="text" id="ebuser">
+                            {{ site.user_name }}
+                        </div>
+                        <a id="ebsearch" ondragstart="return false;" ondrop="return false;"></a>
+                        <a id="ebinfo" href="https://github.com/laurapigeon/laurapigeon.github.io" ondragstart="return false;" ondrop="return false;"></a>
+                    </div>
                 </div>
-                <div id="sbbottom" ondragstart="return false;" ondrop="return false;"></div>
+                <div id="scrollbar">
+                    <div id="sbtop" ondragstart="return false;" ondrop="return false;"></div>
+                    <div id="sbbody">
+                        <img src="/resources/images/frame/scrollbar.png" id="sbbar" ondragstart="return false;" ondrop="return false;">
+                    </div>
+                    <div id="sbbottom" ondragstart="return false;" ondrop="return false;"></div>
+                </div>
+                <img id="wfright" src="/resources/images/frame/wfright.png">
+            </div>
+            <div id="bottombar">
+                <img id="bbleft" src="/resources/images/frame/bbleft.png">
+                <img id="bbbody" src="/resources/images/frame/bbbody.png">
+                <img id="bbright" src="/resources/images/frame/bbright.png">
             </div>
         </div>
     </body>

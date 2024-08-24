@@ -7,14 +7,15 @@ window.addEventListener('load', function() {
     let maxHeight = 0;
     contentelements.forEach(contentelement => {
         var bottomMargin = parseInt(window.getComputedStyle(contentelement).marginBottom);
-        const height = contentelement.offsetTop + contentelement.offsetHeight + bottomMargin;
+        var height = contentelement.offsetTop + contentelement.offsetHeight + bottomMargin;
+        if (contentelement.hasAttribute("data-url")) {
+            height += 2;
+        }
         maxHeight = Math.max(maxHeight, height);
     });
-    // 2px extra in case of links
-    content.style.height = maxHeight + 2 + 'px';
+    content.style.height = maxHeight + 'px';
 
     // Calculate the dimensions of the scaler container based on the scalers height
     var scaler = document.getElementById('scaler');
     scaler.parentElement.style.height = (scaler.offsetHeight * 4) + 'px';
-    scaler.parentElement.style.width = (scaler.offsetWidth * 4) + 'px';
 });

@@ -1,53 +1,52 @@
 #status {
     position: relative;
+    box-sizing: border-box;
     width: 300px;
     height: 53px;
-    border: 6px;
+    padding: 6px 6px 6px 6px;
     font-family: 'basic';
     font-size: 7px;
     line-height: 8px;
 }
 
-#statusbackground {
-    position: absolute;
-    top: 16px;
-    left: 7px;
-    width: 287px;
-    height: 31px;
+#statustitle,
+#statuscontent {
+    display: flex;
+    justify-content: space-between;
 }
 
 #statusname {
-    position: absolute;
-    top: 6px;
-    left: 6px;
     color: rgb(235, 228, 221);
 }
 
 #statusupdate {
-    position: absolute;
-    top: 6px;
-    right: 6px;
     color: rgb(185, 172, 171);
 }
 
-#statusicon {
-    position: absolute;
-    top: 26px;
-    left: 13px;
-    width: 18px;
-    height: 18px;
+#statuscontent {
+    margin: 2px 0px 0px 1px;
+    width: 287px;
+    height: 31px;
+}
+
+#statusemotebg {
+    display: grid;
+    justify-content: center;
+    align-content: end;
+    box-sizing: border-box;
+    padding: 0px 0px 3px 0px;
+    width: 31px;
+    height: 31px;
+    background-image: url("/resources/images/status/emote.png");
 }
 
 #statustext {
-    position: absolute;
-    top: 18px;
-    left: 49px;
-    max-width: 240px;
+    box-sizing: border-box;
+    padding: 2px 6px 2px 6px;
+    width: 251px;
+    height: 31px;
+    background-image: url("/resources/images/status/text.png");
     line-height: 8px;
-    display: -webkit-box;
-    line-clamp: 3;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     color: rgb(235, 228, 221);

@@ -24,14 +24,15 @@ body {
     position: relative;
     top: -8px;
     margin: 0 auto;
+    width: 1200px;
     filter: url(#crispify);
 }
 
 #scaler {
+    box-sizing: border-box;
+    padding: 32px 0px 5px 0px;
     width: 300px;
     height: auto;
-    padding: 32px 0px 5px 0px;
-    box-sizing: border-box;
     transform: scale(4);
     transform-origin: top left;
 }

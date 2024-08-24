@@ -5,7 +5,7 @@ list_page: true
 tags: [discussion]
 ---
 
-so many years ago i was active on a minecraft redstone tech server, and i was working on tilings for the floor of my plot. a friend idly built these polyominoes and said they tile and i was like "wow cool" and took a screenshot
+so many years ago i was active on a minecraft redstone tech server, and i was working on tilings for the floor of my plot. a friend idly built these polyominoes and said they tile and i was like \"wow cool\" and took a screenshot
 
 <p class="imagebox" style="--width: 100px">
     <img src="/resources/images/funtiling/tile-0.png">
@@ -23,7 +23,7 @@ my first thought was to just randomly append them together to see how they fit a
 
 (for demonstrations sake, ive created a set of larger polyominoes that tile in the same way but with gaps, so tiles of the same kind dont meld together)
 
-this reminded me of what id heard of the penrose tiling via numberphile, so i took note of the term "aperiodic" and set on to figure out more
+this reminded me of what id heard of the penrose tiling via numberphile, so i took note of the term \"aperiodic\" and set on to figure out more
 {: data-url="https://youtu.be/QTrM-UVcgBY"}
 
 the more i stared at my local attempts, the more i started to notice vaguely rectangular blocks composed of different combinations of the three tiles, that tended to slot next to each other in the successful areas, but were broken or offset when i would reach a problem. as per usual, i set out to catalogue them, to figure out more. i gave each a corresponding colour, as i noticed successful areas never had multiple of these slanted rectangles touching each other
