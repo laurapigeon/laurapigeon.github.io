@@ -92,7 +92,9 @@
                     </div>
                     <div id="statuscontent">
                         <div id="statusemotebg">
+                            {% if site.status_emote and site.status_emote != "" and site.status_emote != nil %}
                             <img src="/resources/images/emotes/{{ site.status_emote }}">
+                            {% endif %}
                         </div>
                         <div id="statustext">
                             {{ site.status_text }}
