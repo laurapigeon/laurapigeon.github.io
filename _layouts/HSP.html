@@ -21,6 +21,7 @@
         <script src="/scripts/get-content-height.js" defer></script>
         <!-- get content height before configuring scrollbar !! -->
         <script src="/scripts/disable-buttons.js" defer></script>
+        <script src="/scripts/functions.js" defer></script>
         <script src="/scripts/remove-half-pixels.js" defer></script>
         <script src="/scripts/set-scrollbar-pos.js" defer></script>
         <link rel="stylesheet" href="/styles/fonts.css">
@@ -119,13 +120,13 @@
                             {% if pageSlug == "" %}
                             {% assign pageSlug = site.index_name %}
                             {% endif %}
-                            <a class="nbtext" href={{ site.home_url }}>
+                            <a class="text nbtext" href={{ site.home_url }}>
                                 >>
                             </a>
-                            <a class="nbtext" href="/">
+                            <a class="text nbtext" href="/">
                                 {{ site.zone_name | upcase }} >>
                             </a>
-                            <a class="nbtext" href="javascript:window.location.href=window.location.href">
+                            <a class="text nbtext" href="javascript:window.location.href=window.location.href">
                                 {{ pageSlug | upcase }}
                             </a>
                         </dif>
@@ -145,8 +146,8 @@
                         <img id="ebright" src="/resources/images/frame/ebright.png">
                     </div>
                     <div id="ebcontents">
-                        <a id="ebback" href="javascript:history.back()" ondragstart="return false;" ondrop="return false;"></a>
-                        <a id="ebforward" href="javascript:history.forward()" ondragstart="return false;" ondrop="return false;"></a>
+                        <a id="ebback" href="javascript:historyBackWFallback()" ondragstart="return false;" ondrop="return false;"></a>
+                        <a id="ebforward" href="javascript:historyForwardWFallback()" ondragstart="return false;" ondrop="return false;"></a>
                         <div class="text" id="ebpage">
                             {{ page.title }}
                         </div>

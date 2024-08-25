@@ -9,15 +9,15 @@ replace fixed colour border images with custom colours
 
 stop border textures from deloading
 
+replace ui sprites with atlas
+
+restrict loading procedurally
+
 implement new fonts
 
 animate text
 
 pull one status from a list of randoms (based on computer time?)
-
-add search button (take to pages page)
-
-height of markdown sections in html pages dont update height of page
 
 tab between links
 
@@ -32,3 +32,7 @@ frame theme dropdown
 hold scroll bar
 
 home & refresh gifs
+
+get ellipses in fonts
+
+redirect to 404 when backwards or forwards when not possible
