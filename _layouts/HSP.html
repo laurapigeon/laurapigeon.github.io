@@ -13,23 +13,24 @@
         <link rel="icon" type="image/png" href="/resources/images/favicons/{{ site.favicon }}" />
         {% endif %}
 
-        <script src="/scripts/add-clickables.js" defer></script>
-        <script src="/scripts/add-media-link.js" defer></script>
-        <!-- add media link before add link border !! -->
-        <script src="/scripts/add-link-border.js" defer></script>
-        <script src="/scripts/centre-align-shift.js" defer></script>
-        <script src="/scripts/get-content-height.js" defer></script>
-        <!-- get content height before configuring scrollbar !! -->
-        <script src="/scripts/disable-buttons.js" defer></script>
-        <script src="/scripts/functions.js" defer></script>
-        <script src="/scripts/remove-half-pixels.js" defer></script>
-        <script src="/scripts/set-scrollbar-pos.js" defer></script>
         <link rel="stylesheet" href="/styles/fonts.css">
         <link rel="stylesheet" href="/styles/links.css">
         <link rel="stylesheet" href="/styles/status.css">
         <link rel="stylesheet" href="/styles/structure.css">
         <link rel="stylesheet" href="/styles/styles.css">
         <link rel="stylesheet" href="/styles/windowframe.css">
+        <script src="/scripts/get-content-height.js" defer></script>
+        <!-- get content height before configuring scrollbar !! -->
+        <script src="/scripts/disable-buttons.js" defer></script>
+        <script src="/scripts/centre-align-shift.js" defer></script>
+        <script src="/scripts/add-media-link.js" defer></script>
+        <script src="/scripts/delay-load.js" defer></script>
+        <script src="/scripts/add-clickables.js" defer></script>
+        <!-- add media link before add link border !! -->
+        <script src="/scripts/add-link-border.js" defer></script>
+        <script src="/scripts/functions.js"></script>
+        <script src="/scripts/remove-half-pixels.js" defer></script>
+        <script src="/scripts/set-scrollbar-pos.js" defer></script>
         <style>
             #content {
                 {% if page.background_image and page.background_image != "" and page.background_image != nil %}
@@ -126,11 +127,11 @@
                             <a class="text nbtext" href="/">
                                 {{ site.zone_name | upcase }} >>
                             </a>
-                            <a class="text nbtext" href="javascript:window.location.href=window.location.href">
+                            <a class="text nbtext" href="javascript:window.location.reload()">
                                 {{ pageSlug | upcase }}
                             </a>
                         </dif>
-                        <a id="nbrefresh" href="javascript:window.location.href=window.location.href" ondragstart="return false;" ondrop="return false;"></a>
+                        <a id="nbrefresh" href="javascript:window.location.reload()" ondragstart="return false;" ondrop="return false;"></a>
                     </div>
                 </div>
                 <div id="tbright">

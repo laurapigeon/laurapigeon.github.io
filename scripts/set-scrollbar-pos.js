@@ -1,4 +1,4 @@
-['scroll', 'resize'].forEach(function(e) {
+['load', 'scroll', 'resize'].forEach(function(e) {
     window.addEventListener(e, function() {
         var h = document.documentElement, 
         b = document.body,

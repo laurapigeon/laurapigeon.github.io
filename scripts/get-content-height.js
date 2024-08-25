@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
     // Calculate the new height of the content boxes based on the text boxes within
-    const content = document.getElementById('content');
+    var content = document.getElementById('content');
 
     const contentelements = content.querySelectorAll('p');
     
