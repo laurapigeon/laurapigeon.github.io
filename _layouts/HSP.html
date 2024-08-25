@@ -13,14 +13,16 @@
         <link rel="icon" type="image/png" href="/resources/images/favicons/{{ site.favicon }}" />
         {% endif %}
 
-        <script src="/scripts/add-clickables.js" type=module></script>
-        <script src="/scripts/add-media-link.js" type=module></script>
+        <script src="/scripts/add-clickables.js" defer></script>
+        <script src="/scripts/add-media-link.js" defer></script>
         <!-- add media link before add link border !! -->
-        <script src="/scripts/add-link-border.js" type=module></script>
-        <script src="/scripts/centre-align-shift.js" type=module></script>
-        <script src="/scripts/get-content-height.js" type=module></script>
-        <script src="/scripts/remove-half-pixels.js" type=module></script>
-        <script src="/scripts/set-scrollbar-pos.js" type=module></script>
+        <script src="/scripts/add-link-border.js" defer></script>
+        <script src="/scripts/centre-align-shift.js" defer></script>
+        <script src="/scripts/get-content-height.js" defer></script>
+        <!-- get content height before configuring scrollbar !! -->
+        <script src="/scripts/disable-buttons.js" defer></script>
+        <script src="/scripts/remove-half-pixels.js" defer></script>
+        <script src="/scripts/set-scrollbar-pos.js" defer></script>
         <link rel="stylesheet" href="/styles/fonts.css">
         <link rel="stylesheet" href="/styles/links.css">
         <link rel="stylesheet" href="/styles/status.css">
@@ -55,10 +57,10 @@
                 font-family: var(--font, {{ site.font }});
                 {% endif %}
 
-                {% if page.font-size and page.font-size != "" and page.font-size != nil %}
-                font-size: var(--font-size, {{ page.font-size }});
+                {% if page.font_size and page.font_size != "" and page.font_size != nil %}
+                font-size: var(--font-size, {{ page.font_size }});
                 {% else %}
-                font-size: var(--font-size, {{ site.font-size }});
+                font-size: var(--font-size, {{ site.font_size }});
                 {% endif %}
             }
         </style>
@@ -80,7 +82,7 @@
                 <div id="status">
                     <div id="statustitle">
                         <div id="statusname">
-                            {{ site.user_name | upcase }}'S STATUS
+                            {{ site.real_name | upcase }}'S STATUS
                         </div>
                         <div id="statusupdate">
                             UPDATED {{ site.status_updated }}
@@ -111,13 +113,13 @@
                         HYPNOSPACE EXPLORER
                     </div>
                     <div id="navigationbar">
-                        <a id="nbhome" href="https://github.com/laurapigeon/laurapigeon.github.io" ondragstart="return false;" ondrop="return false;"></a>
+                        <a id="nbhome" href={{ site.home_url }} ondragstart="return false;" ondrop="return false;"></a>
                         <dif class="text" id="nbtext">
                             {% assign pageSlug = page.url | split: "." | first | remove: "/" %}
                             {% if pageSlug == "" %}
                             {% assign pageSlug = site.index_name %}
                             {% endif %}
-                            <a class="nbtext" href="https://github.com/laurapigeon/laurapigeon.github.io">
+                            <a class="nbtext" href={{ site.home_url }}>
                                 >>
                             </a>
                             <a class="nbtext" href="/">
@@ -152,7 +154,11 @@
                             {{ site.user_name }}
                         </div>
                         <a id="ebsearch" ondragstart="return false;" ondrop="return false;"></a>
-                        <a id="ebinfo" href="https://github.com/laurapigeon/laurapigeon.github.io" ondragstart="return false;" ondrop="return false;"></a>
+                        {% if site.info_url and site.info_url != "" and site.info_url != nil %}
+                        <a id="ebinfo" href={{ site.info_url }} ondragstart="return false;" ondrop="return false;"></a>
+                        {% else %}
+                        <a id="ebinfo" ondragstart="return false;" ondrop="return false;"></a>
+                        {% endif %}
                     </div>
                 </div>
                 <div id="scrollbar">

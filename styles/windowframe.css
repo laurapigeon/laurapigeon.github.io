@@ -84,7 +84,7 @@
     transform: translate(0px,-4px);
 }
 #explorerbar,
-#titlebar,
+#tbbody,
 #scrollbar {
     pointer-events: auto;
 }
@@ -242,3 +242,19 @@
 #sbbottom:hover {
     cursor: pointer;
 }
+
+#ebback.off,
+#ebforward.off,
+#ebinfo.off,
+#scrollbar.off #sbtop,
+#scrollbar.off #sbbottom,
+#scrollbar.off #sbbar {
+    pointer-events: none;
+}
+
+#ebback.off { background-image: url(/resources/images/frame/ebbackoff.png); }
+#ebforward.off { background-image: url(/resources/images/frame/ebforwardoff.png); }
+#ebinfo.off { background-image: url(/resources/images/frame/ebinfooff.png); }
+#scrollbar.off #sbtop { background-image: url(/resources/images/frame/sbtopoff.png); }
+#scrollbar.off #sbbottom { background-image: url(/resources/images/frame/sbbottomoff.png); }
+#scrollbar.off #sbbar { display: none; }
