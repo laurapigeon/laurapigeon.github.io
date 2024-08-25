@@ -28,14 +28,15 @@
 #titlebar,
 #wfbody,
 #bottombar,
-#explorerbarpanel,
-#explorerbarcontents,
+#ebpanel,
+#ebcontents,
+#ebsearchbar,
 #scrollbar,
 #navigationbar {
     display:flex;
 }
-#explorerbarpanel,
-#explorerbarcontents,
+#ebpanel,
+#ebcontents,
 #titlebar,
 #bottombar,
 #navigationbar {
@@ -45,13 +46,11 @@
     flex-direction: column;
     height: 100%
 }
-#explorerbarpanel,
-#explorerbarcontents,
-#scrollbar {
-    align-items: center;
-}
+#titlebar,
 #navigationbar,
-#titlebar {
+#ebpanel,
+#ebcontents,
+#scrollbar {
     align-items: flex-start;
 }
 #titlebar {
@@ -65,22 +64,24 @@
 #navigationbar {
     top: 9px;
 }
-#scrollbar {
-    width: 9px;
-    height: calc(100% + 27px);
-}
-#explorerbarpanel,
-#explorerbarcontents {
+#ebpanel,
+#ebcontents {
     height: 16px;
 }
-#explorerbarcontents {
-    transform: translate(0px,-16px);
+#ebsearchbar {
+    margin: 2px 1px 4px 1px;
+    height: 10px;
 }
 #explorerbar {
     transform: translate(0px,-5px);
     z-index: 1;
 }
+#ebcontents {
+    transform: translate(0px,-16px);
+}
 #scrollbar {
+    width: 9px;
+    height: calc(100% + 27px);
     transform: translate(0px,-4px);
 }
 #explorerbar,
@@ -95,13 +96,15 @@
 
 #wfbody,
 #bbbody,
+#explorerbar,
 #ebbody,
 #ebpage,
 #ebuser,
+#ebsearchbar,
+#ebsbbody,
 #sbbody,
 #tbbody,
-#nbtext,
-#explorerbar {
+#nbtext {
     flex-grow: 1;
     flex-shrink: 1;
     min-width: 0px;
@@ -110,17 +113,27 @@
 #bbbody {
     height: 4px;
 }
-#ebbody {
+#explorerbar {
     height: 16px;
 }
-#explorerbar {
+#ebbody {
     height: 16px;
 }
 #ebpage,
 #ebuser {
-    margin: 0px 1px 0px 1px;
-    min-width: 0px !important;
+    margin: 4px 1px 4px 1px;
     color: rgb(94, 66, 128);
+}
+#ebsbbody {
+    box-sizing: border-box;
+    border: 0px;
+    height: 10px;
+    color: rgb(220, 175, 240);
+    background-color: rgba(0,0,0,0);
+    background-image: url("/resources/images/frame/ebsbbody.png");
+}
+#ebsbbody:focus {
+    outline: none;
 }
 #sbbody {
     position: relative;
@@ -168,7 +181,7 @@
 }
 #ebback:active,
 #ebforward:active,
-#ebsearch:active {
+#ebcontents.search #ebsearch {
     margin: 0px 1px 1px 0px;
     min-width: 17px;
     min-height: 15px;
@@ -178,7 +191,7 @@
 #ebforward { background-image: url('/resources/images/frame/ebforward.png'); }
 #ebforward:active { background-image: url('/resources/images/frame/ebforwardactive.png'); }
 #ebsearch { background-image: url('/resources/images/frame/ebsearch.png'); }
-#ebsearch:active { background-image: url('/resources/images/frame/ebsearchactive.png'); }
+#ebcontents.search #ebsearch { background-image: url('/resources/images/frame/ebsearchactive.png'); }
 #ebinfo {
     margin: 3px 3px 3px 2px;
     min-width: 12px;
@@ -190,6 +203,17 @@
     min-width: 17px;
     min-height: 15px;
     background-image: url('/resources/images/frame/ebinfoactive.png');
+}
+#ebsbleft {
+    min-width: 1px;
+    min-height: 10px;
+}
+#ebsbsearch {
+    border: 0px;
+    padding: 0px 0px 0px 0px;
+    min-width: 14px;
+    min-height: 10px;
+    background-image: url('/resources/images/frame/ebsbsearch.png');
 }
 #sbtop,
 #sbbottom {
@@ -236,11 +260,23 @@
 #nbrefresh:hover,
 #ebback:hover,
 #ebforward:hover,
+#ebsbsearch:hover,
 #ebsearch:hover,
 #ebinfo:hover,
 #sbtop:hover,
 #sbbottom:hover {
     cursor: pointer;
+}
+
+#ebsearchbar {
+    display: none;
+}
+#ebcontents.search #ebpage,
+#ebcontents.search #ebuser {
+    display: none;
+}
+#ebcontents.search #ebsearchbar {
+    display: flex;
 }
 
 #ebback.off,

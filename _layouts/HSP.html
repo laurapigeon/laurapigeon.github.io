@@ -139,12 +139,12 @@
             <div id="wfbody">
                 <img id="wfleft" src="/resources/images/frame/wfleft.png">
                 <div id="explorerbar">
-                    <div id="explorerbarpanel">
+                    <div id="ebpanel">
                         <img id="ebleft" src="/resources/images/frame/ebleft.png">
                         <img id="ebbody" src="/resources/images/frame/ebbody.png">
                         <img id="ebright" src="/resources/images/frame/ebright.png">
                     </div>
-                    <div id="explorerbarcontents">
+                    <div id="ebcontents">
                         <a id="ebback" href="javascript:history.back()" ondragstart="return false;" ondrop="return false;"></a>
                         <a id="ebforward" href="javascript:history.forward()" ondragstart="return false;" ondrop="return false;"></a>
                         <div class="text" id="ebpage">
@@ -153,6 +153,11 @@
                         <div class="text" id="ebuser">
                             {{ site.user_name }}
                         </div>
+                        <form id="ebsearchbar" action="/pages" method="get">
+                            <img id="ebsbleft" src="/resources/images/frame/ebsbleft.png">
+                            <input type="text" name="search" autocomplete="off" class="text" id="ebsbbody">
+                            <input type="submit" value="" id="ebsbsearch" ondragstart="return false;" ondrop="return false;"></a>
+                        </form>
                         <a id="ebsearch" ondragstart="return false;" ondrop="return false;"></a>
                         {% if site.info_url and site.info_url != "" and site.info_url != nil %}
                         <a id="ebinfo" href={{ site.info_url }} ondragstart="return false;" ondrop="return false;"></a>
