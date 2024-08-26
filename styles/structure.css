@@ -29,10 +29,14 @@ body {
 }
 
 #scaler {
+    width: 100%;
+    height: auto;
+}
+
+body:not(.minimise) #scaler {
     box-sizing: border-box;
     padding: 32px 0px 5px 0px;
     width: 300px;
-    height: auto;
-    transform: scale(4);
     transform-origin: top left;
+    transform: scale(4);
 }

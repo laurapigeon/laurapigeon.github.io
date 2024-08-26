@@ -7,7 +7,7 @@ tags: []
 ---
 
 <img src="/resources/images/poly pigeon.png">
-{: class="free" id="fish" style="--top:5px; --right:5px" }
+{: class="free" style="--top:5px; --right:5px" }
 
 <div class="free" markdown="1" style="--top: 10px; --left:20px;">
 hi im laura (she/they) welcome to my website :)

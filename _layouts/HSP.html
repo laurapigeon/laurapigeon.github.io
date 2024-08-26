@@ -31,6 +31,7 @@
         <script src="/scripts/functions.js"></script>
         <script src="/scripts/remove-half-pixels.js" defer></script>
         <script src="/scripts/set-scrollbar-pos.js" defer></script>
+        <script src="/scripts/set-transform-origin.js" defer></script>
         <style>
             #content {
                 {% if page.background_image and page.background_image != "" and page.background_image != nil %}
@@ -45,14 +46,15 @@
                 {% endif %}
                 {% endif %}
             }
-
             p {
                 {% if page.text_color and page.text_color != "" and page.text_color != nil %}
                 color: var(--color, {{ page.text_color }});
                 {% else %}
                 color: var(--color, {{ site.text_color }});
                 {% endif %}
-
+            }
+                    
+            body:not(.minimise) p {
                 {% if page.font and page.font != "" and page.font != nil %}
                 font-family: var(--font, {{ page.font }});
                 {% else %}
@@ -107,6 +109,7 @@
                 </div>
             </div>
         </div>
+        <div id="browsericon"></div>
         <div id="windowframe">
             <div id="titlebar">
                 <div id="tbleft">
@@ -159,7 +162,7 @@
                         </div>
                         <form id="ebsearchbar" action="/pages" method="get">
                             <img id="ebsbleft" src="/resources/images/frame/ebsbleft.png">
-                            <input type="text" name="search" autocomplete="off" class="text" id="ebsbbody">
+                            <input type="text" name="search" autocomplete="off" placeholder="Search page >Tags and Usernames here!" class="text" id="ebsbbody">
                             <input type="submit" value="" id="ebsbsearch" ondragstart="return false;" ondrop="return false;"></a>
                         </form>
                         <a id="ebsearch" ondragstart="return false;" ondrop="return false;"></a>

@@ -18,6 +18,7 @@ window.addEventListener("load", function() {
 
     const content = document.getElementById("content");
     const paragraphs = content.querySelectorAll("p");
+    
     var i = 0;
     var buffer = 0;
     var prevTimeStamp;
@@ -25,7 +26,7 @@ window.addEventListener("load", function() {
         if (buffer <= 0) {
             paragraphs[i].classList.remove("hidden");
             i += 1;
-            buffer = 150;
+            buffer = (1 + 4*Math.random()**8) * 80;
         }
         if (prevTimeStamp === undefined) {
             prevTimeStamp = timeStamp;
@@ -40,12 +41,17 @@ window.addEventListener("load", function() {
         prevMouseY = mouseY;
         //console.log(deltaT, deltaMouse, buffer, i);
 
-        buffer -= deltaT + deltaMouse / 2;
+        buffer -= deltaT + deltaMouse / 3;
 
         if (i < paragraphs.length) {
             requestAnimationFrame(step);
         }
-        else { window.removeEventListener("mousemove", getMousePos); }
+        else {
+            window.removeEventListener("mousemove", getMousePos);
+            ['load', 'scroll', 'resize'].forEach(function(e) {
+                window.removeEventListener(e, setTransformOrigin);
+            });
+        }
     }
 
     requestAnimationFrame(step);

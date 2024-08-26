@@ -8,6 +8,9 @@
     font-size: 7px;
     line-height: 8px;
 }
+body.minimise #status {
+    display: none;
+}
 
 #statustitle,
 #statuscontent {

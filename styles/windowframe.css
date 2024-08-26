@@ -1,14 +1,36 @@
 #windowframe {
     flex-direction: column;
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 50vh;
+    left: 50vw;
     width: 25%;
     height: 25%;
     pointer-events: none;
-    transform: scale(4);
-    transform-origin: top left;
+    transform: translate(-50%, -50%) scale(4);
+    transition: all 0.5s;
 }
+body.minimise #windowframe {
+    transform: translate(-50%, -50%) scale(6);
+    opacity: 50%;
+    visibility: hidden;
+}
+#browsericon {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    width: 32px;
+    height: 32px;
+    background-image: url("/resources/images/frame/browsericon.png");
+    transition: all 0.5s;
+    transform: scale(4);
+    transform-origin: right bottom;
+}
+body:not(.minimise) #browsericon {
+    transform: scale(4) translate(0px, 40px);
+    opacity: 50%;
+    visibility: hidden;
+}
+#browsericon:active { background-image: url("/resources/images/frame/browsericonactive.png"); }
 
 
 
@@ -128,6 +150,7 @@
 #ebsbbody {
     box-sizing: border-box;
     border: 0px;
+    padding: 1px 1px 1px 1px;
     height: 10px;
     color: rgb(220, 175, 240);
     background-color: rgba(0,0,0,0);
@@ -135,6 +158,14 @@
 }
 #ebsbbody:focus {
     outline: none;
+}
+#ebsbbody::placeholder {
+    color: rgb(181, 129, 227);
+    opacity: 1;
+}
+#ebsbbody::selection {
+    color: rgb(220, 175, 240);
+    background-color: rgba(0,0,0,0);
 }
 #sbbody {
     position: relative;
@@ -251,12 +282,18 @@
     margin: 2px 4px 8px 3px;
     min-width: 15px;
     min-height: 14px;
+    pointer-events: auto;
     background-image: url("/resources/images/frame/tbminimise.png");
+}
+#tbminimise:active {
+    background-image: url("/resources/images/frame/tbminimiseactive.png");
 }
 #tbtitle {
     padding: 1px 1px 0px 1px;
     color: rgb(48, 36, 84);
 }
+#browsericon:hover,
+#tbminimise:hover,
 #nbhome:hover,
 #nbrefresh:hover,
 #ebback:hover,

@@ -21,7 +21,7 @@ paragraphs.forEach(paragraph => {
     tempElement.style.fontFamily = computedStyle.fontFamily;
     tempElement.style.fontSize = computedStyle.fontSize;
     document.body.appendChild(tempElement)
-    
+
     const lines = [];
     let currentLine = '';
     if (computedStyle.width === '0px') {
@@ -41,7 +41,7 @@ paragraphs.forEach(paragraph => {
     
     // Split the text content into words
     const words = paragraph.textContent.trim().split(' ');
-    
+
     // Initialize variables
     //console.log(paragraph.textContent)
     // Loop through each word
@@ -71,18 +71,17 @@ paragraphs.forEach(paragraph => {
             currentLine = testLine;
         }
     }
-    
+
     // Add the last line to the lines array
     lines.push(currentLine);
     
-    const childNodes = paragraph.childNodes;
+    /*const childNodes = paragraph.childNodes;
     for (let i = 0; i < childNodes.length; i++) {
         const node = childNodes[i];
         if (node.nodeType === Node.TEXT_NODE) {
             paragraph.removeChild(node);
         }
-    }
-    
+    }*/
     // Iterate through each line and perform operations
     lines.forEach((line, index) => {
         

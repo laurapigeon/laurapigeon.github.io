@@ -21,7 +21,7 @@ pull one status from a list of randoms (based on computer time?)
 
 tab between links
 
-add reader mode
+add reader mode (minimise)
 
 dynamic loading with mouse shake
 
@@ -36,3 +36,5 @@ home & refresh gifs
 get ellipses in fonts
 
 redirect to 404 when backwards or forwards when not possible
+
+search cheat code
