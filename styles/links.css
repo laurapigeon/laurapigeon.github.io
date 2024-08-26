@@ -1,10 +1,10 @@
-.image[data-url]:hover,
-p[data-url]:hover {
+body:not(.minimise) .image[data-url]:hover,
+body:not(.minimise) p[data-url]:hover {
     cursor: pointer;
 }
 
-.image[data-url]:hover .border,
-p[data-url]:hover .border {
+body:not(.minimise) .image[data-url]:hover .border,
+body:not(.minimise) p[data-url]:hover .border {
     display: inline-block;
 }
 

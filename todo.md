@@ -36,3 +36,5 @@ get ellipses in fonts
 search cheat code
 
 set up every missing yml fallback
+
+replace all links with \<a>s

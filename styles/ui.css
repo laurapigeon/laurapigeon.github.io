@@ -1,16 +1,23 @@
+#ui {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 25vw;
+    height: 25vh;
+    pointer-events: none;
+    transform: scale(4);
+    transform-origin: top left;
+}
 #windowframe {
     flex-direction: column;
-    position: fixed;
-    top: 50vh;
-    left: 50vw;
-    width: 25%;
-    height: 25%;
-    pointer-events: none;
-    transform: translate(-50%, -50%) scale(4);
+    height: 100%;
     transition: all 0.5s;
 }
+body:not(.minimise) #windowframe {
+    filter: url(#crispify);
+}
 body.minimise #windowframe {
-    transform: translate(-50%, -50%) scale(6);
+    transform: scale(1.5);
     opacity: 50%;
     visibility: hidden;
 }
@@ -20,13 +27,12 @@ body.minimise #windowframe {
     bottom: 0px;
     width: 32px;
     height: 32px;
+    pointer-events: auto;
     background-image: url("/resources/images/frame/browsericon.png");
     transition: all 0.5s;
-    transform: scale(4);
-    transform-origin: right bottom;
 }
 body:not(.minimise) #browsericon {
-    transform: scale(4) translate(0px, 40px);
+    transform: translate(0px, 40px);
     opacity: 50%;
     visibility: hidden;
 }

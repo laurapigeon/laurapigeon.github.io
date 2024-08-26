@@ -1,17 +1,3 @@
-['load', 'resize'].forEach(function(e) {
-    window.addEventListener(e, function() {
-        var body = document.body,
-        html = document.documentElement;
-        var height = Math.max(body.clientHeight, body.scrollHeight, body.offsetHeight, 
-                              html.clientHeight, html.scrollHeight, html.offsetHeight);
-        var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-
-        var scrollbar = document.getElementById("scrollbar");
-        if (height <= vh) { scrollbar.classList.add("off"); }
-        else { scrollbar.classList.remove("off"); }
-    });
-});
-
 var ebback = document.getElementById("ebback");
 var ebforward = document.getElementById("ebforward");
 

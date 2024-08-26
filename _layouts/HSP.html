@@ -17,23 +17,17 @@
         <link rel="stylesheet" href="/styles/links.css">
         <link rel="stylesheet" href="/styles/status.css">
         <link rel="stylesheet" href="/styles/structure.css">
-        <link rel="stylesheet" href="/styles/styles.css">
-        <link rel="stylesheet" href="/styles/windowframe.css">
-        <script src="/scripts/get-content-height.js" defer></script>
-        <!-- get content height before configuring scrollbar !! -->
+        <link rel="stylesheet" href="/styles/content.css">
+        <link rel="stylesheet" href="/styles/ui.css">
         <script src="/scripts/disable-buttons.js" defer></script>
         <script src="/scripts/centre-align-shift.js" defer></script>
         <script src="/scripts/add-media-link.js" defer></script>
         <script src="/scripts/delay-load.js" defer></script>
-        <script src="/scripts/add-clickables.js" defer></script>
-        <!-- add media link before add link border !! -->
         <script src="/scripts/add-link-border.js" defer></script>
         <script src="/scripts/functions.js"></script>
-        <script src="/scripts/remove-half-pixels.js" defer></script>
-        <script src="/scripts/set-scrollbar-pos.js" defer></script>
-        <script src="/scripts/set-transform-origin.js" defer></script>
+        <script src="/scripts/add-event-listeners.js" defer></script>
         <style>
-            #content {
+            body:not(.minimise) #content {
                 {% if page.background_image and page.background_image != "" and page.background_image != nil %}
                 background-image: url('/resources/images/backgrounds/{{ page.background_image }}');
                 background-position: {{ page.background_position }};
@@ -46,15 +40,13 @@
                 {% endif %}
                 {% endif %}
             }
-            p {
+            body:not(.minimise) p {
                 {% if page.text_color and page.text_color != "" and page.text_color != nil %}
                 color: var(--color, {{ page.text_color }});
                 {% else %}
                 color: var(--color, {{ site.text_color }});
                 {% endif %}
-            }
-                    
-            body:not(.minimise) p {
+
                 {% if page.font and page.font != "" and page.font != nil %}
                 font-family: var(--font, {{ page.font }});
                 {% else %}
@@ -105,87 +97,100 @@
                 </div>
                 {% endunless %}
                 <div id="content">
+                    <div id="pagetitle">
+                        <a href="{{ site.url }}">{{ site.url | remove:'http://' | split:'/' | first }}</a>
+                        {% if page.title and page.title != "" and page.title != nil %}
+                        <h1>{{ page.title }}</h1>
+                        {% else %}
+                        <h1>{{ site.title }}</h1>
+                        {% endif %}
+                        <div class="credit">{{ site.user_name }}</div>
+                        <div class="readtime">1–60 minutes</div>
+                        <hr>
+                    </div>
                     {{ content }}
                 </div>
             </div>
         </div>
-        <div id="browsericon"></div>
-        <div id="windowframe">
-            <div id="titlebar">
-                <div id="tbleft">
-                    <div id="tbglobe"></div>
-                </div>
-                <div id="tbbody">
-                    <div class="text" id="tbtitle">
-                        HYPNOSPACE EXPLORER
+        <div id="ui">
+            <div id="browsericon"></div>
+            <div id="windowframe">
+                <div id="titlebar">
+                    <div id="tbleft">
+                        <div id="tbglobe"></div>
                     </div>
-                    <div id="navigationbar">
-                        <a id="nbhome" href={{ site.home_url }} ondragstart="return false;" ondrop="return false;"></a>
-                        <dif class="text" id="nbtext">
-                            {% assign pageSlug = page.url | split: "." | first | remove: "/" %}
-                            {% if pageSlug == "" %}
-                            {% assign pageSlug = site.index_name %}
+                    <div id="tbbody">
+                        <div class="text" id="tbtitle">
+                            HYPNOSPACE EXPLORER
+                        </div>
+                        <div id="navigationbar">
+                            <a id="nbhome" href={{ site.home_url }} ondragstart="return false;" ondrop="return false;"></a>
+                            <dif class="text" id="nbtext">
+                                {% assign pageSlug = page.url | split: "." | first | remove: "/" %}
+                                {% if pageSlug == "" %}
+                                {% assign pageSlug = site.index_name %}
+                                {% endif %}
+                                <a class="text nbtext" href={{ site.home_url }}>
+                                    >>
+                                </a>
+                                <a class="text nbtext" href="/">
+                                    {{ site.zone_name | upcase }} >>
+                                </a>
+                                <a class="text nbtext" href="javascript:window.location.reload()">
+                                    {{ pageSlug | upcase }}
+                                </a>
+                            </dif>
+                            <a id="nbrefresh" href="javascript:window.location.reload()" ondragstart="return false;" ondrop="return false;"></a>
+                        </div>
+                    </div>
+                    <div id="tbright">
+                        <div id="tbminimise"></div>
+                    </div>
+                </div>
+                <div id="wfbody">
+                    <img id="wfleft" src="/resources/images/frame/wfleft.png">
+                    <div id="explorerbar">
+                        <div id="ebpanel">
+                            <img id="ebleft" src="/resources/images/frame/ebleft.png">
+                            <img id="ebbody" src="/resources/images/frame/ebbody.png">
+                            <img id="ebright" src="/resources/images/frame/ebright.png">
+                        </div>
+                        <div id="ebcontents">
+                            <a id="ebback" href="javascript:historyBackWFallback()" ondragstart="return false;" ondrop="return false;"></a>
+                            <a id="ebforward" href="javascript:historyForwardWFallback()" ondragstart="return false;" ondrop="return false;"></a>
+                            <div class="text" id="ebpage">
+                                {{ page.title }}
+                            </div>
+                            <div class="text" id="ebuser">
+                                {{ site.user_name }}
+                            </div>
+                            <form id="ebsearchbar" action="/pages" method="get">
+                                <img id="ebsbleft" src="/resources/images/frame/ebsbleft.png">
+                                <input type="text" name="search" autocomplete="off" placeholder="Search page >Tags and Usernames here!" class="text" id="ebsbbody">
+                                <input type="submit" value="" id="ebsbsearch" ondragstart="return false;" ondrop="return false;"></a>
+                            </form>
+                            <a id="ebsearch" ondragstart="return false;" ondrop="return false;"></a>
+                            {% if site.info_url and site.info_url != "" and site.info_url != nil %}
+                            <a id="ebinfo" href={{ site.info_url }} ondragstart="return false;" ondrop="return false;"></a>
+                            {% else %}
+                            <a id="ebinfo" ondragstart="return false;" ondrop="return false;"></a>
                             {% endif %}
-                            <a class="text nbtext" href={{ site.home_url }}>
-                                >>
-                            </a>
-                            <a class="text nbtext" href="/">
-                                {{ site.zone_name | upcase }} >>
-                            </a>
-                            <a class="text nbtext" href="javascript:window.location.reload()">
-                                {{ pageSlug | upcase }}
-                            </a>
-                        </dif>
-                        <a id="nbrefresh" href="javascript:window.location.reload()" ondragstart="return false;" ondrop="return false;"></a>
-                    </div>
-                </div>
-                <div id="tbright">
-                    <div id="tbminimise"></div>
-                </div>
-            </div>
-            <div id="wfbody">
-                <img id="wfleft" src="/resources/images/frame/wfleft.png">
-                <div id="explorerbar">
-                    <div id="ebpanel">
-                        <img id="ebleft" src="/resources/images/frame/ebleft.png">
-                        <img id="ebbody" src="/resources/images/frame/ebbody.png">
-                        <img id="ebright" src="/resources/images/frame/ebright.png">
-                    </div>
-                    <div id="ebcontents">
-                        <a id="ebback" href="javascript:historyBackWFallback()" ondragstart="return false;" ondrop="return false;"></a>
-                        <a id="ebforward" href="javascript:historyForwardWFallback()" ondragstart="return false;" ondrop="return false;"></a>
-                        <div class="text" id="ebpage">
-                            {{ page.title }}
                         </div>
-                        <div class="text" id="ebuser">
-                            {{ site.user_name }}
+                    </div>
+                    <div id="scrollbar">
+                        <div id="sbtop" ondragstart="return false;" ondrop="return false;"></div>
+                        <div id="sbbody">
+                            <img src="/resources/images/frame/scrollbar.png" id="sbbar" ondragstart="return false;" ondrop="return false;">
                         </div>
-                        <form id="ebsearchbar" action="/pages" method="get">
-                            <img id="ebsbleft" src="/resources/images/frame/ebsbleft.png">
-                            <input type="text" name="search" autocomplete="off" placeholder="Search page >Tags and Usernames here!" class="text" id="ebsbbody">
-                            <input type="submit" value="" id="ebsbsearch" ondragstart="return false;" ondrop="return false;"></a>
-                        </form>
-                        <a id="ebsearch" ondragstart="return false;" ondrop="return false;"></a>
-                        {% if site.info_url and site.info_url != "" and site.info_url != nil %}
-                        <a id="ebinfo" href={{ site.info_url }} ondragstart="return false;" ondrop="return false;"></a>
-                        {% else %}
-                        <a id="ebinfo" ondragstart="return false;" ondrop="return false;"></a>
-                        {% endif %}
+                        <div id="sbbottom" ondragstart="return false;" ondrop="return false;"></div>
                     </div>
+                    <img id="wfright" src="/resources/images/frame/wfright.png">
                 </div>
-                <div id="scrollbar">
-                    <div id="sbtop" ondragstart="return false;" ondrop="return false;"></div>
-                    <div id="sbbody">
-                        <img src="/resources/images/frame/scrollbar.png" id="sbbar" ondragstart="return false;" ondrop="return false;">
-                    </div>
-                    <div id="sbbottom" ondragstart="return false;" ondrop="return false;"></div>
+                <div id="bottombar">
+                    <img id="bbleft" src="/resources/images/frame/bbleft.png">
+                    <img id="bbbody" src="/resources/images/frame/bbbody.png">
+                    <img id="bbright" src="/resources/images/frame/bbright.png">
                 </div>
-                <img id="wfright" src="/resources/images/frame/wfright.png">
-            </div>
-            <div id="bottombar">
-                <img id="bbleft" src="/resources/images/frame/bbleft.png">
-                <img id="bbbody" src="/resources/images/frame/bbbody.png">
-                <img id="bbright" src="/resources/images/frame/bbright.png">
             </div>
         </div>
     </body>

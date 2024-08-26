@@ -1,31 +1,28 @@
-html {
-    overflow: scroll;
-    background: rgb(20, 20, 20);
-    -ms-overflow-style: none; /* for Internet Explorer, Edge */
-    scrollbar-width: none; /* for Firefox */
+html:has(body:not(.minimise)) {
+    scrollbar-width: none;
     overflow-y: scroll;
-}
-
-html::-webkit-scrollbar {
-    display: none; /* for Chrome, Safari, and Opera */
 }
 
 body {
     margin: 0;
+    image-rendering: pixelated;
+}
+body:not(.minimise) {
     user-select: none;
+    background-color: rgb(20, 20, 20);
     background-size: auto;
     background-clip: padding-box;
-    background-color: rgba(0,0,0,0);
     background-position: 0% 0%;
-    image-rendering: pixelated;
+}
+body.minimise {
+    padding: 64px;
+    background-color: rgb(28, 27, 34)
 }
 
 #scalercontainer {
     position: relative;
-    top: -8px;
     margin: 0 auto;
     width: 1200px;
-    filter: url(#crispify);
 }
 
 #scaler {
@@ -35,8 +32,16 @@ body {
 
 body:not(.minimise) #scaler {
     box-sizing: border-box;
-    padding: 32px 0px 5px 0px;
+    padding: 36px 0px 18px 0px;
     width: 300px;
     transform-origin: top left;
     transform: scale(4);
+}
+
+.offscreen {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 0px;
+    height: 0px;
 }

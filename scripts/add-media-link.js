@@ -19,16 +19,3 @@ elements.forEach(function(element) {
         }
     });
 });
-
-function isTextSelected() {
-    return window.getSelection().toString().length > 0;
-}
-
-function isClickedOnSelectedText(event) {
-    var selection = window.getSelection();
-    if (selection.rangeCount > 0) {
-        var range = selection.getRangeAt(0);
-        return range.commonAncestorContainer.contains(event.target);
-    }
-    return false;
-}
