@@ -75,13 +75,13 @@ paragraphs.forEach(paragraph => {
     // Add the last line to the lines array
     lines.push(currentLine);
     
-    /*const childNodes = paragraph.childNodes;
+    const childNodes = paragraph.childNodes;
     for (let i = 0; i < childNodes.length; i++) {
         const node = childNodes[i];
         if (node.nodeType === Node.TEXT_NODE) {
             paragraph.removeChild(node);
         }
-    }*/
+    } // this code removes the og text laura
     // Iterate through each line and perform operations
     lines.forEach((line, index) => {
         

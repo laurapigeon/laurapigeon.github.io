@@ -42,11 +42,6 @@ p {
     text-align: var(--text-align, left);
     height: var(--height, fit-content);
     width: var(--width, fit-content);
-    pointer-events: auto;
-}
-body:not(.minimise) p {
-    line-height: 0px;
-    visibility: collapse;
 }
 
 .linebox {
@@ -54,11 +49,6 @@ body:not(.minimise) p {
     height: 8px;
     min-width: 100%;
     pointer-events: none;
-    line-height: 8px;
-    visibility: visible;
-}
-body.minimise .linebox {
-    display: none;
 }
 
 .imagebox {
@@ -67,7 +57,6 @@ body.minimise .linebox {
     margin-left: auto;
     margin-right: auto;
     line-height: 0px;
-    visibility: visible !important;
     align-items: center;
 }
 
@@ -76,23 +65,24 @@ img {
     image-rendering: pixelated;
 }
 
-body:not(.minimise) a,
-body:not(.minimise) a:link,
-body:not(.minimise) a:hover,
-body:not(.minimise) a:visited,
-body:not(.minimise) a:active {
+a, a:link, a:hover, a:visited, a:active {
     color: inherit;
     text-decoration: none;
 }
 
 p.hidden {
-    visibility: hidden !important;
+    visibility: hidden;
 }
 p:not(.hidden) {
     animation: 0.3s ease-out 0s 1 loadWave;
 }
-p.hidden .linebox {
-    visibility: hidden !important;
+
+canvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
 }
 
 @keyframes loadWave {

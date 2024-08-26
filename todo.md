@@ -23,8 +23,6 @@ tab between links
 
 add reader mode (minimise)
 
-dynamic loading with mouse shake
-
 find extra emotes
 
 frame theme dropdown
@@ -35,6 +33,6 @@ home & refresh gifs
 
 get ellipses in fonts
 
-redirect to 404 when backwards or forwards when not possible
-
 search cheat code
+
+set up every missing yml fallback
