@@ -50,7 +50,7 @@ paragraphs.forEach(paragraph => {
         var contentStyle = window.getComputedStyle(content)
         var contentWidth = content.clientWidth - parseFloat(contentStyle.paddingLeft) - parseFloat(contentStyle.paddingRight);
         paragraph.style.width = Math.min(tempElement.offsetWidth, contentWidth) + "px";
-        //console.log(tempElement.offsetWidth, contentWidth);
+        console.log(tempElement.offsetWidth, contentWidth);
         tempElement.textContent = '';
         computedStyle = window.getComputedStyle(paragraph);
     }
@@ -76,8 +76,8 @@ paragraphs.forEach(paragraph => {
         if (tempElement.offsetWidth > paragraphWidth) {
             // Add the current line to the lines array
             lines.push(currentLine);
-            
-            //console.log(`Line: ${testLine} len ${tempElement.offsetWidth} longer than ${paragraphWidth}`);
+            console.log(computedStyle)
+            console.log(`Line: ${testLine} len ${tempElement.offsetWidth} longer than ${paragraphWidth}`);
             
             // Start a new line with the current word
             currentLine = word;

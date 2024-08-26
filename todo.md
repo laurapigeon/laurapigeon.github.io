@@ -38,3 +38,7 @@ search cheat code
 set up every missing yml fallback
 
 replace all links with \<a>s
+
+animate background load
+
+add option to remove procedural load from a page

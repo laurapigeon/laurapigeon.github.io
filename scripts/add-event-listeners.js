@@ -13,15 +13,12 @@ sbbottom.addEventListener("click", () => { window.scrollBy(0, 64); });
 
 const ebsearch = document.getElementById('ebsearch');
 const ebcontents = document.getElementById('ebcontents');
-ebsearch.addEventListener("click", () => { ebcontents.classList.toggle("search"); });
+const ebsbbody = document.getElementById("ebsbbody");
+ebsearch.addEventListener("click", () => { ebcontents.classList.toggle("search"); ebsbbody.focus(); });
+ebsbbody.addEventListener('select', () => { ebsbbody.selectionStart = ebsbbody.selectionEnd; });
 
 const tbminimise = document.getElementById('tbminimise');
-tbminimise.addEventListener("click", () => { document.body.classList.add("minimise"); resetContentHeight();
-});
+tbminimise.addEventListener("click", () => { document.body.classList.add("minimise"); resetContentHeight(); });
 
 const browsericon = document.getElementById('browsericon');
-browsericon.addEventListener("click", () => { document.body.classList.remove("minimise"); getContentHeight();
-});
-
-const ebsbbody = document.getElementById('ebsbbody');
-ebsbbody.addEventListener('select', () => { this.selectionStart = this.selectionEnd; }, false);
+browsericon.addEventListener("click", () => { document.body.classList.remove("minimise"); getContentHeight(); });
