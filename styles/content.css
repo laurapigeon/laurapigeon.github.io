@@ -33,7 +33,11 @@ body:not(.minimise) .free {
     left: var(--left);
     bottom: var(--bottom);
     right: var(--right);
-    margin: 0px;
+}
+
+body:not(.minimise) a.free {
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
 }
 
 body:not(.minimise) .shift {
@@ -53,52 +57,40 @@ body.minimise .center {
     margin-right: auto !important;
 }
 
-p {
+p,
+#content a {
+    display: block;
     position: relative;
-    box-sizing: content-box;
+    margin-top: 1em;
+    margin-bottom: 1em;
     text-align: var(--text-align, left);
 }
 
+#content a {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
 body:not(.minimise) p,
-p.imagebox {
+body:not(.minimise) #content a,
+body:not(.minimise) .imagebox {
     padding-left: var(--padding-left);
     height: var(--height, fit-content);
     width: var(--width, fit-content);
+    font-family: var(--font, "basic");
+    font-size: var(--font-size, 7px);
+    line-height: var(--line-height, 8px);
 }
-body.minimise p:not(.imagebox) {
+
+body.minimise p:not(.imagebox),
+body.minimise #content a:not(.imagebox) {
     width: fit-content;
 }
 
-.linebox {
-    position: relative;
-    height: 8px;
-    min-width: 100%;
-    pointer-events: none;
-    text-wrap: nowrap;
-}
-
-.image[data-url]:hover,
-p[data-url]:hover,
-div[data-url]:hover {
-    cursor: pointer;
-}
-
-.paragraphbox {
-    font-size: 1em;
-}
-
-body:not(.minimise) .paragraphbox {
-    display: none;
-}
-body.minimise .linebox {
-    display: none;
-}
-
 .imagebox {
-    display: flex;
+    display: flex !important;
+    width: var(--width, fit-content);
     justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
     line-height: 0px;
     align-items: center;
 }
@@ -111,17 +103,6 @@ img {
 a, a:link, a:hover, a:visited, a:active {
     color: inherit;
     text-decoration: none;
-}
-
-.emptylink {
-    position: absolute;
-    border: ridge 2px rgb(0, 221, 255);
-    border-bottom-color: rgb(251, 251, 254);
-    padding: 3px;
-    top: -5px;
-    left: -5px;
-    width: 100%;
-    height: 100%;
 }
 
 body.minimise #content a {
@@ -156,10 +137,12 @@ body.minimise #content .readtime {
 }
 
 
-p.hidden {
+p.hidden,
+a.hidden {
     visibility: hidden;
 }
-p:not(.hidden) {
+p:not(.hidden),
+a:not(.hidden) {
     animation: 0.3s ease-out 0s 1 loadWave;
 }
 

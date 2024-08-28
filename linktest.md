@@ -20,4 +20,4 @@ tags: [debug]
 </p>
 
 <img src="/resources/images/under construction.png">
-{: class="free" style="--top: 500px; --right: 10px;" data-url="/" }
+{: .free style="--top: 500px; --right: 10px;" data-url="/" }

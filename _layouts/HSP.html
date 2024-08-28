@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {% if page.title and page.title != "" and page.title != nil %}
+        {% if page.title and page.title != "" %}
         <title>{{ page.title }}</title>
         {% else %}
-        <title>{{ site.title }}</title>
+        <title>{{ site.data.custom.title }}</title>
         {% endif %}
 
-        {% if page.favicon and page.favicon != "" and page.favicon != nil %}
+        {% if page.favicon and page.favicon != "" %}
         <link rel="icon" type="image/png" href="/resources/images/favicons/{{ page.favicon }}" />
         {% else %}
-        <link rel="icon" type="image/png" href="/resources/images/favicons/{{ site.favicon }}" />
+        <link rel="icon" type="image/png" href="/resources/images/favicons/{{ site.data.custom.favicon }}" />
         {% endif %}
 
         <link rel="stylesheet" href="/styles/fonts.css">
@@ -20,7 +20,6 @@
         <link rel="stylesheet" href="/styles/content.css">
         <link rel="stylesheet" href="/styles/ui.css">
         <script src="/scripts/disable-buttons.js" defer></script>
-        <script src="/scripts/centre-align-shift.js" defer></script>
         <script src="/scripts/add-media-link.js" defer></script>
         <script src="/scripts/delay-load.js" defer></script>
         <script src="/scripts/add-link-border.js" defer></script>
@@ -28,35 +27,24 @@
         <script src="/scripts/add-event-listeners.js" defer></script>
         <style>
             body:not(.minimise) #content {
-                {% if page.background_image and page.background_image != "" and page.background_image != nil %}
+                {% if page.background_image and page.background_image != "" %}
                 background-image: url('/resources/images/backgrounds/{{ page.background_image }}');
                 background-position: {{ page.background_position }};
                 background-color: rgba(0,0,0,0);
                 {% else %}
-                {% if page.background_color and page.background_color != "" and page.background_color != nil %}
+                {% if page.background_color and page.background_color != "" %}
                 background-color: {{ page.background_color }};
                 {% else %}
-                background-color: {{ site.background_color }};
+                background-color: {{ site.data.custom.background_color }};
                 {% endif %}
                 {% endif %}
             }
-            body:not(.minimise) p {
-                {% if page.text_color and page.text_color != "" and page.text_color != nil %}
+            body:not(.minimise) p,
+            body:not(.minimise) #content a {
+                {% if page.text_color and page.text_color != "" %}
                 color: var(--color, {{ page.text_color }});
                 {% else %}
-                color: var(--color, {{ site.text_color }});
-                {% endif %}
-
-                {% if page.font and page.font != "" and page.font != nil %}
-                font-family: var(--font, {{ page.font }});
-                {% else %}
-                font-family: var(--font, {{ site.font }});
-                {% endif %}
-
-                {% if page.font_size and page.font_size != "" and page.font_size != nil %}
-                font-size: var(--font-size, {{ page.font_size }});
-                {% else %}
-                font-size: var(--font-size, {{ site.font_size }});
+                color: var(--color, {{ site.data.custom.text_color }});
                 {% endif %}
             }
         </style>
@@ -78,34 +66,34 @@
                 <div id="status">
                     <div id="statustitle">
                         <div id="statusname">
-                            {{ site.real_name | upcase }}'S STATUS
+                            {{ site.data.custom.real_name | upcase }}'S STATUS
                         </div>
                         <div id="statusupdate">
-                            UPDATED {{ site.status_updated }}
+                            UPDATED {{ site.data.custom.status_updated }}
                         </div>
                     </div>
                     <div id="statuscontent">
                         <div id="statusemotebg">
-                            {% if site.status_emote and site.status_emote != "" and site.status_emote != nil %}
-                            <img src="/resources/images/emotes/{{ site.status_emote }}">
+                            {% if site.data.custom.status_emote and site.data.custom.status_emote != "" %}
+                            <img src="/resources/images/emotes/{{ site.data.custom.status_emote }}">
                             {% endif %}
                         </div>
                         <div id="statustext">
-                            {{ site.status_text }}
+                            {{ site.data.custom.status_text }}
                         </div>
                     </div>
                 </div>
                 {% endunless %}
                 <div id="content">
                     <div id="pagetitle">
-                        <a href="{{ site.url }}">{{ site.url | remove:'https://' | split:'/' | first }}</a>
-                        {% if page.title and page.title != "" and page.title != nil %}
+                        <a href="{{ site.data.custom.url }}">{{ site.data.custom.url | remove:'https://' | split:'/' | first }}</a>
+                        {% if page.title and page.title != "" %}
                         <h1>{{ page.title }}</h1>
                         {% else %}
-                        <h1>{{ site.title }}</h1>
+                        <h1>{{ site.data.custom.title }}</h1>
                         {% endif %}
-                        <div class="credit">{{ site.user_name }}</div>
-                        <div class="readtime">1–60 minutes</div>
+                        <div class="credit">{{ site.data.custom.user_name }}</div>
+                        <div class="readtime">1-60 minutes</div>
                         <hr>
                     </div>
                     {{ content }}
@@ -124,17 +112,17 @@
                             HYPNOSPACE EXPLORER
                         </div>
                         <div id="navigationbar">
-                            <a id="nbhome" href={{ site.home_url }} ondragstart="return false;" ondrop="return false;"></a>
+                            <a id="nbhome" href={{ site.data.custom.home_url }} ondragstart="return false;" ondrop="return false;"></a>
                             <dif class="text" id="nbtext">
                                 {% assign pageSlug = page.url | split: "." | first | remove: "/" %}
                                 {% if pageSlug == "" %}
-                                {% assign pageSlug = site.index_name %}
+                                {% assign pageSlug = site.data.custom.index_name %}
                                 {% endif %}
-                                <a class="text nbtext" href={{ site.home_url }}>
+                                <a class="text nbtext" href={{ site.data.custom.home_url }}>
                                     >>
                                 </a>
                                 <a class="text nbtext" href="/">
-                                    {{ site.zone_name | upcase }} >>
+                                    {{ site.data.custom.zone_name | upcase }} >>
                                 </a>
                                 <a class="text nbtext" href="javascript:window.location.reload()">
                                     {{ pageSlug | upcase }}
@@ -162,7 +150,7 @@
                                 {{ page.title }}
                             </div>
                             <div class="text" id="ebuser">
-                                {{ site.user_name }}
+                                {{ site.data.custom.user_name }}
                             </div>
                             <form id="ebsearchbar" action="/pages" method="get">
                                 <img id="ebsbleft" src="/resources/images/frame/ebsbleft.png">
@@ -170,8 +158,8 @@
                                 <input type="submit" value="" id="ebsbsearch" ondragstart="return false;" ondrop="return false;"></a>
                             </form>
                             <a id="ebsearch" ondragstart="return false;" ondrop="return false;"></a>
-                            {% if site.info_url and site.info_url != "" and site.info_url != nil %}
-                            <a id="ebinfo" href={{ site.info_url }} ondragstart="return false;" ondrop="return false;"></a>
+                            {% if site.data.custom.info_url and site.data.custom.info_url != "" %}
+                            <a id="ebinfo" href={{ site.data.custom.info_url }} ondragstart="return false;" ondrop="return false;"></a>
                             {% else %}
                             <a id="ebinfo" ondragstart="return false;" ondrop="return false;"></a>
                             {% endif %}

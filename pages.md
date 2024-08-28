@@ -9,21 +9,21 @@ tags: [list, debug]
 
 {% for tag in site.tag_list %}
 \-\- {{ tag }} \-\-
-{: class="center" style="--color: aquamarine;" }
+{: .center style="--color: aquamarine;" }
 {% for page in site.pages %}
 {% if page.list_page == true %}
 {% for page_tag in page.tags %}
 {% if page_tag == tag %}
 {% assign pageSlug = page.url | split: "." | first %}
 {{ pageSlug }}
-{: class="center" data-url="{{ pageSlug }}"}
+{: .center data-url="{{ pageSlug }}"}
 {% endif %}
 {% endfor %}
 {% endif %}
 {% endfor %}
 {% endfor %}
 \-\- other \-\-
-{: class="center" style="--color: aquamarine;" }
+{: .center style="--color: aquamarine;" }
 {% for page in site.pages %}
 {% if page.list_page == true %}
 {% assign is_other = true %}
@@ -35,7 +35,7 @@ tags: [list, debug]
 {% if is_other %}
 {% assign pageSlug = page.url | split: "." | first %}
 {{ pageSlug }}
-{: class="center" data-url="{{ pageSlug }}"}
+{: .center. data-url="{{ pageSlug }}"}
 {% endif %}
 {% endif %}
 {% endfor %}

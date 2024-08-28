@@ -42,3 +42,7 @@ replace all links with \<a>s
 animate background load
 
 add option to remove procedural load from a page
+
+data load time and data ignore for height calc
+
+hover link title

@@ -7,7 +7,7 @@ tags: [discussion]
 
 so many years ago i was active on a minecraft redstone tech server, and i was working on tilings for the floor of my plot. a friend idly built these polyominoes and said they tile and i was like \"wow cool\" and took a screenshot
 
-<p class="imagebox" style="--width: 100px">
+<p class="imagebox center" style="--width: 100px">
     <img src="/resources/images/funtiling/tile-0.png">
     <img src="/resources/images/funtiling/tile-1.png">
     <img src="/resources/images/funtiling/tile-2.png">
@@ -17,7 +17,7 @@ and then a couple years later i was looking through my minecraft screenshots and
 
 my first thought was to just randomly append them together to see how they fit and to see what stuck. although this got me quite far, i consistently ran into local situations that didnt have solutions, and concerningly the more i added the more of these situations i seemed forced into
 
-<p class="imagebox">
+<p class="imagebox center">
     <img src="/resources/images/funtiling/manual shoving.png">
 </p>
 
@@ -28,7 +28,7 @@ this reminded me of what id heard of the penrose tiling via numberphile, so i to
 
 the more i stared at my local attempts, the more i started to notice vaguely rectangular blocks composed of different combinations of the three tiles, that tended to slot next to each other in the successful areas, but were broken or offset when i would reach a problem. as per usual, i set out to catalogue them, to figure out more. i gave each a corresponding colour, as i noticed successful areas never had multiple of these slanted rectangles touching each other
 
-<p class="imagebox" style="--width: 283px">
+<p class="imagebox center" style="--width: 283px">
     <img src="/resources/images/funtiling/metatile-red.png">
     <img src="/resources/images/funtiling/metatile-yellow.png">
     <img src="/resources/images/funtiling/metatile-green.png">
@@ -39,7 +39,7 @@ the more i stared at my local attempts, the more i started to notice vaguely rec
 
 with these six metatiles in my toolset, i could now think of the problem as 1x1 squares of one type, 1x2 rectangles of two types, and 2x2 squares of three types, tiling a grid. in the successful areas of my manual attempts, a few things were true: seams were continuous, i.e. length 1 sides met length 1 sides and likewise for length 2; following a seam, there was never more than one length 1 side in a row, and never more than two length 2 sides in a row, in both directions; two of the same metatile were never orthogonally adjacent and blue cannot border pink or green. these rules alone construct lovely, simple, tartan-esque patterns
 
-<p class="imagebox">
+<p class="imagebox center">
     <img src="/resources/images/funtiling/tartan large.png">
 </p>
 
@@ -47,7 +47,7 @@ trying to convert these designs into full tilings, however, shows there is somet
 
 undeterred, i kept looking for more analysable restrictions. i tried looking into the binary pattern of edge lengths, and noticed not only can there be no more than two length 2s in a row before being separated by a length 1, there cannot be more than two instances of two length 2s in a row before being separated by an instance of one length 2. this heavily implied to me that i would find progress in attempting a recursive extension of my rule definitions, so i set about looking for equivalent colours at one tier larger:
 
-<p class="imagebox">
+<p class="imagebox center">
     <img src="/resources/images/funtiling/metametatiles.png">
 </p>
 
@@ -55,13 +55,13 @@ sure enough, with some careful observation of the various symmetries and rules o
 
 i proceeded to create larger and larger tiers of structure, and new versions of the polyomino to rid 2x2px filled sections for a more uniform aesthetic, until i had a blue tier 5 which exceeded the 1920x1080 computer monitor corners to make desktop backgrounds. the exponential nature of recursive generation is really cool, so heres the tile shopping list for the blue tier 5:
 
-<p class="imagebox">
+<p class="imagebox center">
     <img src="/resources/images/funtiling/shopping list.png">
 </p>
 
 and here is a gallery of downloadable desktop backgrounds!
 
-<p class="imagebox" data-url="/tilinggallery">
+<p class="imagebox center" data-url="/tilinggallery">
     <img src="/resources/images/funtiling/gallery-thumb.png">
 </p>
 

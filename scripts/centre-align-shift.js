@@ -1,4 +1,5 @@
 // Create temporary element to test line lengths
+/*
 const tempElement = document.createElement('span');
 tempElement.style.whiteSpace = 'nowrap';
 tempElement.style.visibility = 'hidden';
@@ -10,29 +11,31 @@ var paragraphs = content.querySelectorAll('p');
 paragraphs.forEach(paragraph => {
     const textContent = paragraph.textContent;
 
-    var paragraphbox;
+    var contentsbox;
     if (paragraph.hasAttribute("data-url")) {
-        paragraphbox = document.createElement('a');
-        paragraphbox.href = paragraph.getAttribute("data-url");
+        contentsbox = document.createElement('a');
+        contentsbox.href = paragraph.getAttribute("data-url");
         if (textContent.trim().length === 0) {
-            paragraphbox.classList.add("emptylink");
+            contentsbox.classList.add("emptylink");
         }
     }
     else {
+        contentsbox = document.createElement('div');
         if (textContent.trim().length === 0) {
             return;
         }
-        paragraphbox = document.createElement('div');
     }
-    paragraphbox.classList.add('paragraphbox');
-    paragraphbox.textContent = textContent;
-    paragraph.appendChild(paragraphbox);
-
-    //console.log(paragraph.textContent);
-    if (textContent.trim().length === 0) {
-        //console.log("see its going now bye");
-        return;
-    }
+    contentsbox.classList.add('paragraphbox');
+    contentsbox.textContent = textContent;
+    paragraph.appendChild(contentsbox);
+    
+    const childNodes = paragraph.childNodes;
+    for (let i = 0; i < childNodes.length; i++) {
+        const node = childNodes[i];
+        if (node.nodeType === Node.TEXT_NODE) {
+            paragraph.removeChild(node);
+        }
+    } // this code removes the og text laura
 
     // Get the computed style of the paragraph
     var computedStyle = window.getComputedStyle(paragraph);
@@ -95,13 +98,6 @@ paragraphs.forEach(paragraph => {
     // Add the last line to the lines array
     lines.push(currentLine);
     
-    const childNodes = paragraph.childNodes;
-    for (let i = 0; i < childNodes.length; i++) {
-        const node = childNodes[i];
-        if (node.nodeType === Node.TEXT_NODE) {
-            paragraph.removeChild(node);
-        }
-    } // this code removes the og text laura
     // Iterate through each line and perform operations
     lines.forEach((line, index) => {
         
@@ -123,9 +119,10 @@ paragraphs.forEach(paragraph => {
         //}
         paragraph.appendChild(linebox);
     });
-        //console.log(`colour was ${computedStyle.color}`)
+    //console.log(`colour was ${computedStyle.color}`)
 });
 //tempElement.textContent = 'Lorem ipsum dolor sit amet,';
 //console.log(`Line: Lorem ipsum dolor sit amet, len ${tempElement.offsetWidth}`);
 
 document.body.removeChild(tempElement)
+*/

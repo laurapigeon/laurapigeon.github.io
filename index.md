@@ -7,9 +7,9 @@ tags: []
 ---
 
 <img src="/resources/images/poly pigeon.png">
-{: class="free" style="--top:5px; --right:5px" }
+{: .free style="--top:5px; --right:5px" }
 
-<div class="free" markdown="1" style="--top: 10px; --left:20px;">
+<div class="free" style="--top:10px; --left:20px;">
 hi im laura (she/they) welcome to my website :)
 
 i like systems and pigeons
@@ -25,4 +25,4 @@ heres a story about how i messed around with an aperiodic polyomino tiling for d
 </div>
 
 Link Tree
-{: class="free" style="--top:110px; --right:2px;" data-url="/pages" }
+{: .free style="--top:112px; --right:0px;" data-url="/pages" }

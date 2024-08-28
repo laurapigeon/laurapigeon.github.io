@@ -1,9 +1,9 @@
 window.addEventListener('load', getContentHeight);
 window.addEventListener("load", laggyUnhide);
 window.addEventListener('load', alignCentered);
-['load', 'resize'].forEach(e => { window.addEventListener(e, disableScrollbar); });
-['load', 'scroll', 'resize'].forEach(e => { window.addEventListener(e, setScrollbarPos); });
-['load', 'scroll', 'resize'].forEach(e => { window.addEventListener(e, setTransformOrigin); });
+['load', 'resize'].forEach(event => { window.addEventListener(event, disableScrollbar); });
+['load', 'scroll', 'resize'].forEach(event => { window.addEventListener(event, setScrollbarPos); });
+['load', 'scroll', 'resize'].forEach(event => { window.addEventListener(event, setTransformOrigin); });
 
 const sbtop = document.getElementById('sbtop');
 sbtop.addEventListener("click", () => { window.scrollBy(0, -64); });

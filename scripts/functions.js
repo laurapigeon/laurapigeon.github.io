@@ -49,7 +49,7 @@ function laggyUnhide() {
     window.addEventListener("mousemove", getMousePos);
 
     const content = document.getElementById("content");
-    const paragraphs = content.querySelectorAll("p");
+    const paragraphs = content.querySelectorAll("p, a");
     
     var i = 0;
     var buffer = 0;
@@ -105,15 +105,12 @@ function getContentHeight() {
     // Calculate the new height of the content boxes based on the text boxes within
     var content = document.getElementById('content');
 
-    const contentelements = content.querySelectorAll('p');
+    const contentelements = content.querySelectorAll('p, a');
     
     let maxHeight = 0;
     contentelements.forEach(contentelement => {
         var bottomMargin = parseInt(window.getComputedStyle(contentelement).marginBottom);
         var height = contentelement.offsetTop + contentelement.offsetHeight + bottomMargin;
-        if (contentelement.hasAttribute("data-url")) {
-            height += 2;
-        }
         maxHeight = Math.max(maxHeight, height);
     });
     content.style.height = maxHeight + 'px';
@@ -121,7 +118,7 @@ function getContentHeight() {
     // Calculate the dimensions of the scaler container based on the scalers height
     var scaler = document.getElementById('scaler');
     var scalercontainer = document.getElementById('scalercontainer');
-    scalercontainer.style.height = scaler.offsetHeight + 'px';
+    scalercontainer.style.height = scaler.offsetHeight * 4 + 'px';
     window.scrollTo(0, 0);
 }
 
@@ -147,7 +144,7 @@ function setScrollbarPos() {
 
 function setTransformOrigin() {
     var content = document.getElementById('content');
-    var paragraphs = content.querySelectorAll('p');
+    var paragraphs = content.querySelectorAll('p, a');
 
     // Loop through paragraphs replacing text contents with lineboxes
     paragraphs.forEach(paragraph => {
