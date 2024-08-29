@@ -115,11 +115,14 @@ a, a:link, a:hover, a:visited, a:active {
 body.minimise a.p {
     color: rgb(0, 221, 255);
     text-decoration: underline rgb(251, 251, 254);
-}
-body.minimise a.p {
     padding-bottom: 4px;
     font-size: 0.9em;
     line-height: 1.48em;
+}
+body.minimise a.imagebox.p {
+    border: ridge 2px rgb(0, 221, 255);
+    border-bottom-color: rgb(251, 251, 254);
+    padding: 3px;
 }
 
 body.minimise h1 {
@@ -144,7 +147,7 @@ body.minimise .readtime {
 }
 
 
-.p.hidden {
+body:not(.minimise) .p.hidden {
     visibility: hidden;
 }
 .p:not(.hidden) {

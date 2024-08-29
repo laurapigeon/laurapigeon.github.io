@@ -102,6 +102,7 @@ body:not(.minimise) #browsericon {
     height: 10px;
 }
 #explorerbar {
+    height: 16px;
     transform: translate(0px,-5px);
     z-index: 1;
 }
@@ -112,6 +113,7 @@ body:not(.minimise) #browsericon {
     width: 9px;
     height: calc(100% + 27px);
     transform: translate(0px,-4px);
+    z-index: 2;
 }
 #explorerbar,
 #tbbody,
@@ -141,12 +143,11 @@ body:not(.minimise) #browsericon {
 }
 #bbbody {
     height: 4px;
-}
-#explorerbar {
-    height: 16px;
+    background-image: url("/resources/images/frame/bbbody.png");
 }
 #ebbody {
-    height: 16px;
+    min-height: 16px;
+    background-image: url("/resources/images/frame/ebbody.png");
 }
 #ebpage,
 #ebuser {
@@ -157,7 +158,7 @@ body:not(.minimise) #browsericon {
     box-sizing: border-box;
     border: 0px;
     padding: 1px 1px 1px 1px;
-    height: 10px;
+    min-height: 10px;
     color: rgb(220, 175, 240);
     background-color: rgba(0,0,0,0);
     background-image: url("/resources/images/frame/ebsbbody.png");
@@ -175,12 +176,12 @@ body:not(.minimise) #browsericon {
 }
 #sbbody {
     position: relative;
-    width: 9px;
+    min-width: 9px;
     background-image: url("/resources/images/frame/sbbody.png");
 }
 #tbbody {
     position: relative;
-    height: 19px;
+    min-height: 19px;
     background-image: url("/resources/images/frame/tbbody.png");
 }
 #nbtext {
@@ -191,8 +192,11 @@ body:not(.minimise) #browsericon {
 }
 #wfleft,
 #wfright {
-    width: 5px;
+    min-width: 5px;
+    z-index: 2;
 }
+#wfleft { background-image: url("/resources/images/frame/wfleft.png"); }
+#wfright { background-image: url("/resources/images/frame/wfright.png"); }
 #ebuser {
     text-align: right;
 }
@@ -210,6 +214,13 @@ body:not(.minimise) #browsericon {
     min-height: 24px;
     background-image: url("/resources/images/frame/tbright.png");
 }
+#ebleft,
+#ebright {
+    min-width: 53px;
+    min-height: 16px;
+}
+#ebleft { background-image: url("/resources/images/frame/ebleft.png"); }
+#ebright { background-image: url("/resources/images/frame/ebright.png"); }
 #ebback,
 #ebforward,
 #ebsearch {
@@ -245,6 +256,7 @@ body:not(.minimise) #browsericon {
 #ebsbleft {
     min-width: 1px;
     min-height: 10px;
+    background-image: url("/resources/images/frame/ebsbleft.png");
 }
 #ebsbsearch {
     border: 0px;
@@ -262,7 +274,12 @@ body:not(.minimise) #browsericon {
 #sbtop:active { background-image: url("/resources/images/frame/sbtopactive.png"); }
 #sbbottom { background-image: url("/resources/images/frame/sbbottom.png"); }
 #sbbottom:active { background-image: url("/resources/images/frame/sbbottomactive.png"); }
-#sbbar { margin-top: var(--auto-margin-top, 0px); }
+#sbbar {
+    margin-top: var(--auto-margin-top, 0px);
+    min-width: 9px;
+    min-height: 26px;
+    background-image: url("/resources/images/frame/sbbar.png");
+}
 #nbhome {
     padding: 0px 1px 0px 0px;
     min-width: 12px;
@@ -299,6 +316,19 @@ body:not(.minimise) #browsericon {
     padding: 1px 1px 0px 1px;
     color: rgb(48, 36, 84);
 }
+#bbleft,
+#bbright {
+    min-height: 27px;
+}
+#bbleft {
+    min-width: 19px;
+    background-image: url("/resources/images/frame/bbleft.png");
+}
+#bbright {
+    min-width: 6px;
+    background-image: url("/resources/images/frame/bbright.png");
+}
+
 #browsericon:hover,
 #tbminimise:hover,
 #nbhome:hover,
