@@ -18,7 +18,8 @@ body:not(.minimise) a:hover .border {
     padding: 1px;
 }
 
-.borderedge {
+.solidborderedge,
+.shadowborderedge {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -36,6 +37,22 @@ body:not(.minimise) a:hover .border {
     pointer-events: none;
     /*mix-blend-mode: overlay;
     background-color: rgba(255 164 164 / 1);*/
+}
+
+.solidborderedge {
+    top: -1px;
+    left: -1px;
+    padding: 1px 0px 0px 1px;
+    border-image-source: url("/resources/images/ants/border-1.png");
+    animation-name: antcrawl;
+}
+
+.shadowborderedge {
+    top: 0px;
+    left: 0px;
+    padding:  0px 1px 1px 0px;
+    border-image-source: url("/resources/images/ants/border-shadow-1.png");
+    animation-name: antcrawlshadow;
 }
 
 .bordercorner {

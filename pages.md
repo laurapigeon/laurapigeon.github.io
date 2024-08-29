@@ -7,7 +7,7 @@ list_page: true
 tags: [list, debug]
 ---
 
-{% for tag in site.tag_list %}
+{% for tag in site.data.custom.tag_list %}
 \-\- {{ tag }} \-\-
 {: .center style="--color: aquamarine;" }
 {% for page in site.pages %}
@@ -27,7 +27,7 @@ tags: [list, debug]
 {% for page in site.pages %}
 {% if page.list_page == true %}
 {% assign is_other = true %}
-{% for tag in site.tag_list %}
+{% for tag in site.data.custom.tag_list %}
 {% if page.tags contains tag %}
 {% assign is_other = false %}
 {% endif %}
@@ -35,7 +35,7 @@ tags: [list, debug]
 {% if is_other %}
 {% assign pageSlug = page.url | split: "." | first %}
 {{ pageSlug }}
-{: .center. data-url="{{ pageSlug }}"}
+{: .center data-url="{{ pageSlug }}"}
 {% endif %}
 {% endif %}
 {% endfor %}

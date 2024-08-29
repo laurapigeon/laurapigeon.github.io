@@ -31,8 +31,8 @@ function alignCentered() {
         //console.log(elementMargin);
         if (elementMargin % 1 !== 0) {
             //console.log(element.textContent)
-            element.style.marginLeft = Math.floor(elementMargin) + "px";
-            element.style.marginRight = Math.ceil(elementMargin) + "px";
+            element.style.setProperty("--auto-margin-left", Math.floor(elementMargin) + "px");
+            element.style.setProperty("--auto-margin-right", Math.ceil(elementMargin) + "px");
         }
     });
 }
@@ -113,20 +113,12 @@ function getContentHeight() {
         var height = contentelement.offsetTop + contentelement.offsetHeight + bottomMargin;
         maxHeight = Math.max(maxHeight, height);
     });
-    content.style.height = maxHeight + 'px';
+    content.style.setProperty("--auto-height", maxHeight + "px");
 
     // Calculate the dimensions of the scaler container based on the scalers height
     var scaler = document.getElementById('scaler');
     var scalercontainer = document.getElementById('scalercontainer');
-    scalercontainer.style.height = scaler.offsetHeight * 4 + 'px';
-    window.scrollTo(0, 0);
-}
-
-function resetContentHeight() {
-    var scalercontainer = document.getElementById('scalercontainer');
-    var content = document.getElementById('content');
-    scalercontainer.style.height = '';
-    content.style.height = '';
+    scalercontainer.style.setProperty("--auto-height", scaler.offsetHeight * 4 + 'px');
     window.scrollTo(0, 0);
 }
 
@@ -138,7 +130,7 @@ function setScrollbarPos() {
     var scrollAmount = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight);
     var scrollbar = document.getElementById("sbbar");
     var barPosition = scrollAmount * (parseFloat(window.innerHeight) * 0.25 - 68)
-    scrollbar.style.marginTop = barPosition + "px";
+    scrollbar.style.setProperty("--auto-margin-top", barPosition + "px");
     //console.log(barPosition);
 }
 
@@ -154,7 +146,7 @@ function setTransformOrigin() {
         var transformOriginX = (vw / 2 - parseFloat(viewportOffset.left)) / 4 + "px";
         var transformOriginY = (vh / 2 - parseFloat(viewportOffset.top)) / 4 + "px";
         //console.log(paragraph.textContent, vw, viewportOffset.left);
-        paragraph.style.transformOrigin = transformOriginX + " " + transformOriginY;
+        paragraph.style.setProperty("--auto-transform-origin", transformOriginX + " " + transformOriginY);
     });
 }
 

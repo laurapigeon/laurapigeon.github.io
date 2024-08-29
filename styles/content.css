@@ -9,11 +9,13 @@
     padding: 0px 7px 0px 7px;
 }
 body:not(.minimise) #content {
+    height: var(--auto-height, auto);
     filter: url(#crispify);
 }
 body.minimise #content {
     font-size: 20px;
     max-width: 30em;
+    height: auto;
     margin: auto;
     font-weight: 400;
     color: rgb(251, 251, 254);
@@ -49,12 +51,13 @@ body:not(.minimise) .shift {
 
 body:not(.minimise) .center {
     display: block;
+    margin-left: var(--auto-margin-left, auto);
+    margin-right: var(--auto-margin-right, auto);
+}
+
+body.minimise .center {
     margin-left: auto;
     margin-right: auto;
-}
-body.minimise .center {
-    margin-left: auto !important;
-    margin-right: auto !important;
 }
 
 p,
@@ -66,7 +69,7 @@ p,
     text-align: var(--text-align, left);
 }
 
-#content a {
+#content a:not(.center) {
     margin-left: 2px;
     margin-right: 2px;
 }
@@ -80,6 +83,7 @@ body:not(.minimise) .imagebox {
     font-family: var(--font, "basic");
     font-size: var(--font-size, 7px);
     line-height: var(--line-height, 8px);
+    transform-origin: var(--auto-transform-origin);
 }
 
 body.minimise p:not(.imagebox),

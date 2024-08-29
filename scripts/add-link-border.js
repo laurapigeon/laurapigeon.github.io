@@ -2,21 +2,11 @@ const borders = document.querySelectorAll('.border');
 borders.forEach(function(border) {
     //console.log("added");
     const edge = document.createElement('div');
-    edge.classList.add('borderedge');
-    edge.style.top = '-1px';
-    edge.style.left = '-1px';
-    edge.style.padding = '1px 0px 0px 1px';
-    edge.style.borderImageSource = 'url("/resources/images/ants/border-1.png")';
-    edge.style.animationName = 'antcrawl';
+    edge.classList.add('solidborderedge');
     border.appendChild(edge);
 
     const edgeshadow = document.createElement('div');
-    edgeshadow.classList.add('borderedge');
-    edgeshadow.style.top = '0px';
-    edgeshadow.style.left = '0px';
-    edgeshadow.style.padding = '0px 1px 1px 0px';
-    edgeshadow.style.borderImageSource = 'url("/resources/images/ants/border-shadow-1.png")';
-    edgeshadow.style.animationName = 'antcrawlshadow';
+    edgeshadow.classList.add('shadowborderedge');
     border.appendChild(edgeshadow);
     
     var images = ["border-shadow-corner.png", "border-corner.png"]

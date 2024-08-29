@@ -24,6 +24,12 @@ body.minimise {
     margin: 0 auto;
     width: 1200px;
 }
+body:not(.minimise) #scalercontainer {
+    height: var(--auto-height, auto);
+}
+body.minimise #scalercontainer {
+    height: auto;
+}
 
 #scaler {
     width: 100%;

@@ -18,7 +18,7 @@ ebsearch.addEventListener("click", () => { ebcontents.classList.toggle("search")
 ebsbbody.addEventListener('select', () => { ebsbbody.selectionStart = ebsbbody.selectionEnd; });
 
 const tbminimise = document.getElementById('tbminimise');
-tbminimise.addEventListener("click", () => { document.body.classList.add("minimise"); resetContentHeight(); });
+tbminimise.addEventListener("click", () => { document.body.classList.add("minimise"); window.scrollTo(0, 0); });
 
 const browsericon = document.getElementById('browsericon');
-browsericon.addEventListener("click", () => { document.body.classList.remove("minimise"); getContentHeight(); });
+browsericon.addEventListener("click", () => { document.body.classList.remove("minimise"); window.scrollTo(0, 0); });

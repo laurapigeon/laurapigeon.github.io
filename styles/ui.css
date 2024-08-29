@@ -262,6 +262,7 @@ body:not(.minimise) #browsericon {
 #sbtop:active { background-image: url("/resources/images/frame/sbtopactive.png"); }
 #sbbottom { background-image: url("/resources/images/frame/sbbottom.png"); }
 #sbbottom:active { background-image: url("/resources/images/frame/sbbottomactive.png"); }
+#sbbar { margin-top: var(--auto-margin-top, 0px); }
 #nbhome {
     padding: 0px 1px 0px 0px;
     min-width: 12px;
