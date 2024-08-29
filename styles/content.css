@@ -30,23 +30,15 @@ body:not(.minimise) #pagetitle {
 }
 
 body:not(.minimise) .free {
-    position: absolute !important;
+    position: absolute;
     top: var(--top);
     left: var(--left);
     bottom: var(--bottom);
     right: var(--right);
 }
 
-body:not(.minimise) a.free {
-    margin-top: 2px !important;
-    margin-bottom: 2px !important;
-}
-
-body:not(.minimise) .shift {
-    margin-top: var(--top, 7px);
-    margin-left: var(--left, 0px);
-    margin-bottom: var(--bottom, 7px);
-    margin-right: var(--right, 0px);
+body:not(.minimise) .p.free {
+    margin: 2px 2px 2px 2px;
 }
 
 body:not(.minimise) .center {
@@ -55,28 +47,40 @@ body:not(.minimise) .center {
     margin-right: var(--auto-margin-right, auto);
 }
 
-body.minimise .center {
+body.minimise .p.center {
     margin-left: auto;
     margin-right: auto;
 }
 
-p,
-#content a {
+body:not(.minimise) :not(.p).shift {
+    margin-top: var(--top);
+    margin-left: var(--left);
+    margin-bottom: var(--bottom);
+    margin-right: var(--right);
+}
+
+body:not(.minimise) .p.shift {
+    margin-top: var(--top, 1em);
+    margin-left: var(--left, 2px);
+    margin-bottom: var(--bottom, 1em);
+    margin-right: var(--right, 2px);
+}
+
+
+.p {
     display: block;
     position: relative;
-    margin-top: 1em;
-    margin-bottom: 1em;
     text-align: var(--text-align, left);
 }
 
-#content a:not(.center) {
+.p:not(.center):not(.shift):not(.free) {
+    margin-top: 1em;
     margin-left: 2px;
+    margin-bottom: 1em;
     margin-right: 2px;
 }
 
-body:not(.minimise) p,
-body:not(.minimise) #content a,
-body:not(.minimise) .imagebox {
+body:not(.minimise) .p {
     padding-left: var(--padding-left);
     height: var(--height, fit-content);
     width: var(--width, fit-content);
@@ -86,12 +90,11 @@ body:not(.minimise) .imagebox {
     transform-origin: var(--auto-transform-origin);
 }
 
-body.minimise p:not(.imagebox),
-body.minimise #content a:not(.imagebox) {
+body.minimise .p:not(.imagebox) {
     width: fit-content;
 }
 
-.imagebox {
+.p.imagebox {
     display: flex !important;
     width: var(--width, fit-content);
     justify-content: space-between;
@@ -109,17 +112,17 @@ a, a:link, a:hover, a:visited, a:active {
     text-decoration: none;
 }
 
-body.minimise #content a {
+body.minimise a.p {
     color: rgb(0, 221, 255);
     text-decoration: underline rgb(251, 251, 254);
 }
-body.minimise #pagetitle a {
+body.minimise a.p {
     padding-bottom: 4px;
     font-size: 0.9em;
     line-height: 1.48em;
 }
 
-body.minimise #content h1 {
+body.minimise h1 {
     margin: 30px 0;
     padding: 0;
     width: 100%;
@@ -127,7 +130,7 @@ body.minimise #content h1 {
     line-height: 1.25em;
 }
 
-body.minimise #content .credit {
+body.minimise .credit {
     margin: 0 0 10px;
     padding: 0;
     font-style: italic;
@@ -135,18 +138,16 @@ body.minimise #content .credit {
     line-height: 1.48em;
 }
 
-body.minimise #content .readtime {
+body.minimise .readtime {
     margin: 0 0 15px;
     font-size: 0.65em;
 }
 
 
-p.hidden,
-a.hidden {
+.p.hidden {
     visibility: hidden;
 }
-p:not(.hidden),
-a:not(.hidden) {
+.p:not(.hidden) {
     animation: 0.3s ease-out 0s 1 loadWave;
 }
 

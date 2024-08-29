@@ -162,3 +162,9 @@ function isClickedOnSelectedText(event) {
     }
     return false;
 }
+
+function defineContentParagraphs() {
+    var content = document.getElementById('content');
+    const contentelements = content.querySelectorAll('p, a');
+    contentelements.forEach(contentelement => {contentelement.classList.add("p")});
+}

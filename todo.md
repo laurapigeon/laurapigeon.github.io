@@ -46,3 +46,5 @@ add option to remove procedural load from a page
 data load time and data ignore for height calc
 
 hover link title
+
+save page position everywhere?? / in minimise

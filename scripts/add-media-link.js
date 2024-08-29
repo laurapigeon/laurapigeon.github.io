@@ -1,3 +1,5 @@
+defineContentParagraphs();
+
 const elements = document.querySelectorAll('p[data-url]');
 
 elements.forEach(function(element) {
