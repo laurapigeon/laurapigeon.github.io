@@ -45,7 +45,7 @@ body:not(.minimise) #browsericon {
 }
 
 #browsericon,
-#bbbody, #ebbody, #ebsbbody, #sbbody, #tbbody,
+#bbbody, #ebbody, #ebsbbody, #sbbody, #tbbody, #mbbody,
 #wfleft, #wfright,
 #tbleft, #tbright,
 #ebleft, #ebright,
@@ -54,9 +54,12 @@ body:not(.minimise) #browsericon {
 #sbtop, #sbbottom, #sbbar,
 #nbhome, #nbrefresh,
 #tbglobe, #tbminimise,
-#bbleft, #bbright {
+#bbleft, #bbright,
+#mbstamp, #mbmusic, #mbright {
     background-image: url("/resources/images/sprites.png");
 }
+
+
 
 
 
@@ -71,18 +74,15 @@ body:not(.minimise) #browsericon {
     white-space: nowrap;
 }
 
-#windowframe, #titlebar, #wfbody, #bottombar, #ebpanel, #ebcontents, #ebsearchbar, #scrollbar, #navigationbar {
-    display:flex;
+#windowframe, #titlebar, #wfbody, #bottombar, #ebpanel, #ebcontents, #ebsearchbar, #scrollbar, #navigationbar, #mediabar {
+    display: flex;
 }
-#ebpanel, #ebcontents, #titlebar, #bottombar, #navigationbar {
+#ebpanel, #ebcontents, #titlebar, #bottombar, #navigationbar, #explorerbar, #mediabar {
     width: 100%;
 }
 #scrollbar {
     flex-direction: column;
     height: 100%
-}
-#titlebar, #navigationbar, #ebpanel, #ebcontents, #scrollbar {
-    align-items: flex-start;
 }
 #titlebar {
     height: 24px;
@@ -92,9 +92,6 @@ body:not(.minimise) #browsericon {
     align-items: flex-end;
     height: 27px;
 }
-#navigationbar {
-    top: 9px;
-}
 #ebpanel, #ebcontents {
     height: 16px;
 }
@@ -102,29 +99,43 @@ body:not(.minimise) #browsericon {
     margin: 2px 1px 4px 1px;
     height: 10px;
 }
-#explorerbar {
-    height: 16px;
-    transform: translate(0px,-5px);
-    z-index: 1;
-}
-#ebcontents {
-    transform: translate(0px,-16px);
-}
 #scrollbar {
     width: 9px;
     height: calc(100% + 27px);
     transform: translate(0px,-4px);
     z-index: 2;
 }
-#explorerbar, #tbbody, #scrollbar {
-    pointer-events: auto;
+#mediabar {
+    position: absolute;
+    bottom: -23px;
+    height: 22px;
 }
 
 
 
 
 
-#wfbody, #bbbody, #explorerbar, #ebbody, #ebpage, #ebuser, #ebsearchbar, #ebsbbody, #sbbody, #tbbody, #nbtext {
+#explorerbar {
+    position: absolute;
+    top: -5px;
+    height: 16px;
+    z-index: 1;
+}
+#ebcontents {
+    transform: translate(0px,-16px);
+}
+#explorerbar, #tbbody, #scrollbar, #mediabar {
+    pointer-events: auto;
+}
+#wfcontents {
+    position: relative;
+}
+
+
+
+
+
+#wfbody, #bbbody, #wfcontents, #ebbody, #ebpage, #ebuser, #ebsearchbar, #ebsbbody, #sbbody, #tbbody, #nbtext {
     flex-grow: 1;
     flex-shrink: 1;
     min-width: 0px;
@@ -180,8 +191,6 @@ body:not(.minimise) #browsericon {
 }
 #nbtext {
     padding: 1px 2px 0px 0px;
-    top: 10px;
-    left: 14px;
     color: rgb(220, 175, 240);
 }
 #wfleft, #wfright {
@@ -197,6 +206,17 @@ body:not(.minimise) #browsericon {
     background-size: 253px 1230000px;
 }
 #ebuser { text-align: right; }
+#mbbody {
+    margin: 5px 0px 5px 0px;
+    background-position: -1380000px -62px;
+    background-size: 2530000px 123px;
+    flex-grow: 0;
+    transition: flex-grow 0.2s linear;
+}
+#mediabar:not(.disabled) #mbmusic:hover ~ #mbbody,
+#mediabar:not(.disabled) #mbbody:hover,
+#mediabar:not(.disabled) #mbbody:has(~ #mbright:hover) { flex-grow: 1; }
+
 
 
 
@@ -272,18 +292,18 @@ body:not(.minimise) #browsericon {
 }
 #scrollbar.off #sbbar { display: none; }
 #nbhome {
-    margin: 0px 1px 0px 0px;
     min-width: 12px;
     min-height: 10px;
     background-position: -46px -31px;
     animation: home-color 1s step-end infinite;
 }
 #nbrefresh {
-    margin: 2px 1px 0px 0px;
+    margin: 2px 1px 2px 0px;
     min-width: 9px;
     min-height: 6px;
     background-position: -147px -57px;
 }
+#nbtextfirst { padding: 0px 0px 0px 2px; }
 .nbtext { padding: 0px 0px 0px 1px; }
 #tbglobe {
     margin: 3px 1px 5px 4px;
@@ -312,8 +332,29 @@ body:not(.minimise) #browsericon {
     min-width: 6px;
     background-position: -38px -25px;
 }
+#mbstamp, #mbmusic, #mbright { min-height: 22px; }
+#mbstamp {
+    min-width: 26px;
+    background-position: -112px -57px;
+}
+#mbmusic { min-width: 37px; }
+#mediabar.disabled #mbmusic { background-position: -75px -57px; }
+#mediabar:not(.disabled) #mbmusic { background-position: -75px -79px; }
+#mediabar:not(.disabled) #mbmusic:active { background-position: -75px -101px; }
+#mediabar:not(.disabled).off #mbmusic { background-position: -112px -79px; }
+#mediabar:not(.disabled).off #mbmusic:active { background-position: -112px -101px; }
+#mbright {
+    visibility: hidden;
+    margin: 0px 1px 0px 0px;
+    min-width: 4px;
+    background-position: -139px -57px;
+    transition-delay: 0.2s;
+}
+#mediabar:not(.disabled) #mbmusic:hover ~ #mbright,
+#mediabar:not(.disabled) #mbbody:hover ~ #mbright,
+#mediabar:not(.disabled) #mbright:hover { visibility: visible; transition-delay: 0s; }
 
-#browsericon:hover, #tbminimise:hover, #ebsbsearch:hover, #sbtop:hover, #sbbottom:hover { cursor: pointer; }
+#browsericon:hover, #tbminimise:hover, #ebsbsearch:hover, #sbtop:hover, #sbbottom:hover, #mediabar:not(.disabled) #mbmusic { cursor: pointer; }
 
 #ebsearchbar { display: none; }
 #ebcontents.search #ebpage, #ebcontents.search #ebuser { display: none; }

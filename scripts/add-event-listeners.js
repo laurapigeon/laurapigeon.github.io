@@ -17,8 +17,12 @@ const ebsbbody = document.getElementById("ebsbbody");
 ebsearch.addEventListener("click", () => { ebcontents.classList.toggle("search"); ebsbbody.focus(); });
 ebsbbody.addEventListener('select', () => { ebsbbody.selectionStart = ebsbbody.selectionEnd; });
 
+const mbmusic = document.getElementById('mbmusic');
+const mediabar = document.getElementById('mediabar');
+mbmusic.addEventListener("click", () => { mediabar.classList.toggle("off"); });
+
 const tbminimise = document.getElementById('tbminimise');
 tbminimise.addEventListener("click", () => { document.body.classList.add("minimise"); }); // window.scrollTo(0, 0);
 
 const browsericon = document.getElementById('browsericon');
-browsericon.addEventListener("click", () => { document.body.classList.remove("minimise"); setScrollbarPos() });
+browsericon.addEventListener("dblclick", () => { document.body.classList.remove("minimise"); setScrollbarPos() });

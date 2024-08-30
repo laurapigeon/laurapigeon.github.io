@@ -9,7 +9,7 @@ tags: []
 <img src="/resources/images/poly pigeon.png">
 {: .free style="--top:5px; --right:5px" }
 
-<div class="free" style="--top:10px; --left:20px;">
+<div class="free" style="--top:10px; --left:20px; --width:260px">
 hi im laura (she/they) welcome to my website :)
 
 i like systems and pigeons
@@ -22,7 +22,9 @@ heres how you can contact me
 
 heres a story about how i messed around with an aperiodic polyomino tiling for dozens of hours :)
 {: data-url="/funtiling" style="--color: rgb(164, 255, 164);"}
+
+also just try clicking around the site! i made this based on the game hypnospace outlaw and it took a looooot of work, but no button does nothing, so try them out :D
 </div>
 
 Link Tree
-{: .free style="--top:112px; --right:0px;" data-url="/pages" }
+{: .free style="--top:140px; --right:0px;" data-url="/pages" }

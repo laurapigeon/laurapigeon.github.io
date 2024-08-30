@@ -38,7 +38,7 @@ body.minimise #scalercontainer {
 
 body:not(.minimise) #scaler {
     box-sizing: border-box;
-    padding: 36px 0px 18px 0px;
+    padding: 36px 0px 26px 0px;
     width: 300px;
     transform-origin: top left;
     transform: scale(4);

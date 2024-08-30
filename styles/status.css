@@ -32,25 +32,50 @@ body.minimise #status {
     height: 31px;
 }
 
-#statusemotebg {
-    display: grid;
-    justify-content: center;
-    align-content: end;
-    box-sizing: border-box;
-    padding: 0px 0px 3px 0px;
+#statusemote, #statustext { display: flex; }
+#statusemote {
     width: 31px;
     height: 31px;
-    background-image: url("/resources/images/status/emote.png");
 }
-
 #statustext {
-    box-sizing: border-box;
-    padding: 2px 6px 2px 6px;
     width: 251px;
     height: 31px;
-    background-image: url("/resources/images/status/text.png");
+}
+
+#statusemotebody, #statustextbody, #statusemoteleft, #statusemoteright, #statustextleft, #statustextright, #statusemoteicon {
+    background-image: url("/resources/images/sprites.png");
+    height: 31px;
+}
+
+#statusemotebody, #statustextbody {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0px;
+    min-height: 0px;
+    box-sizing: border-box;
+    background-size: 2530000px 123px;
+}
+#statusemotebody { 
+    padding: 1px 2px 3px 1px;
+    background-position: -550000px 0px;
+}
+#statustextbody {
+    padding: 2px 4px 2px 4px;
     line-height: 8px;
     overflow: hidden;
     text-overflow: ellipsis;
     color: rgb(235, 228, 221);
+    background-position: -600000px 0px;
+}
+
+#statusemoteleft, #statusemoteright, #statustextleft, #statustextright { min-width: 2px; }
+#statusemoteleft { background-position: -53px 0px; }
+#statusemoteright { background-position: -56px 0px; }
+#statustextleft { background-position: -58px 0px; }
+#statustextright { background-position: -61px 0px; }
+
+#statusemoteicon {
+    width: 24px;
+    height: 27px;
+    background-position: -157px -29px;
 }

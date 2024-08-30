@@ -73,13 +73,19 @@
                         </div>
                     </div>
                     <div id="statuscontent">
-                        <div id="statusemotebg">
-                            {% if site.data.custom.status_emote and site.data.custom.status_emote != "" %}
-                            <img src="/resources/images/emotes/{{ site.data.custom.status_emote }}">
-                            {% endif %}
+                        <div id="statusemote">
+                            <div id="statusemoteleft"></div>
+                            <div id="statusemotebody">
+                                    <div id="statusemoteicon"></div>
+                            </div>
+                            <div id="statusemoteright"></div>
                         </div>
                         <div id="statustext">
-                            {{ site.data.custom.status_text }}
+                            <div id="statustextleft"></div>
+                            <div id="statustextbody">
+                                {{ site.data.custom.status_text }}
+                            </div>
+                            <div id="statustextright"></div>
                         </div>
                     </div>
                 </div>
@@ -118,7 +124,7 @@
                                 {% if pageSlug == "" %}
                                 {% assign pageSlug = site.data.custom.index_name %}
                                 {% endif %}
-                                <a class="text nbtext" href={{ site.data.custom.home_url }}>
+                                <a id="nbtextfirst" class="text" href={{ site.data.custom.home_url }}>
                                     >>
                                 </a>
                                 <a class="text nbtext" href="/">
@@ -137,33 +143,41 @@
                 </div>
                 <div id="wfbody">
                     <div id="wfleft"></div>
-                    <div id="explorerbar">
-                        <div id="ebpanel">
-                            <div id="ebleft"></div>
-                            <div id="ebbody"></div>
-                            <div id="ebright"></div>
+                    <div id="wfcontents">
+                        <div id="explorerbar">
+                            <div id="ebpanel">
+                                <div id="ebleft"></div>
+                                <div id="ebbody"></div>
+                                <div id="ebright"></div>
+                            </div>
+                            <div id="ebcontents">
+                                <a id="ebback" href="javascript:historyBackWFallback()" ondragstart="return false;" ondrop="return false;"></a>
+                                <a id="ebforward" href="javascript:historyForwardWFallback()" ondragstart="return false;" ondrop="return false;"></a>
+                                <a id="ebsafe" ondragstart="return false;" ondrop="return false;"></a>
+                                <div class="text" id="ebpage">
+                                    {{ page.title }}
+                                </div>
+                                <div class="text" id="ebuser">
+                                    {{ site.data.custom.user_name }}
+                                </div>
+                                <form id="ebsearchbar" action="/pages" method="get">
+                                    <div id="ebsbleft"></div>
+                                    <input type="text" name="search" autocomplete="off" placeholder="Search page >Tags and Usernames here!" class="text" id="ebsbbody">
+                                    <input type="submit" value="" id="ebsbsearch" ondragstart="return false;" ondrop="return false;"></a>
+                                </form>
+                                <a id="ebsearch" ondragstart="return false;" ondrop="return false;"></a>
+                                {% if site.data.custom.info_url and site.data.custom.info_url != "" %}
+                                <a id="ebinfo" href={{ site.data.custom.info_url }} ondragstart="return false;" ondrop="return false;"></a>
+                                {% else %}
+                                <a id="ebinfo" ondragstart="return false;" ondrop="return false;"></a>
+                                {% endif %}
+                            </div>
                         </div>
-                        <div id="ebcontents">
-                            <a id="ebback" href="javascript:historyBackWFallback()" ondragstart="return false;" ondrop="return false;"></a>
-                            <a id="ebforward" href="javascript:historyForwardWFallback()" ondragstart="return false;" ondrop="return false;"></a>
-                            <a id="ebsafe" ondragstart="return false;" ondrop="return false;"></a>
-                            <div class="text" id="ebpage">
-                                {{ page.title }}
-                            </div>
-                            <div class="text" id="ebuser">
-                                {{ site.data.custom.user_name }}
-                            </div>
-                            <form id="ebsearchbar" action="/pages" method="get">
-                                <div id="ebsbleft"></div>
-                                <input type="text" name="search" autocomplete="off" placeholder="Search page >Tags and Usernames here!" class="text" id="ebsbbody">
-                                <input type="submit" value="" id="ebsbsearch" ondragstart="return false;" ondrop="return false;"></a>
-                            </form>
-                            <a id="ebsearch" ondragstart="return false;" ondrop="return false;"></a>
-                            {% if site.data.custom.info_url and site.data.custom.info_url != "" %}
-                            <a id="ebinfo" href={{ site.data.custom.info_url }} ondragstart="return false;" ondrop="return false;"></a>
-                            {% else %}
-                            <a id="ebinfo" ondragstart="return false;" ondrop="return false;"></a>
-                            {% endif %}
+                        <div id="mediabar">
+                            <div id="mbstamp"></div>
+                            <div id="mbmusic"></div>
+                            <div id="mbbody"></div>
+                            <div id="mbright"></div>
                         </div>
                     </div>
                     <div id="scrollbar">
