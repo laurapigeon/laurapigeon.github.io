@@ -9,6 +9,9 @@ var params = new URLSearchParams(location.search);
 if (params.get("redir") == "back") { ebback.classList.add("off"); }
 if (params.get("redir") == "forward") { ebforward.classList.add("off"); }
 
+var ebsafe = document.getElementById("ebsafe");
+if (true) { ebsafe.classList.add("off"); }
+
 var ebinfo = document.getElementById("ebinfo");
 var href = ebinfo.getAttribute('href');
 

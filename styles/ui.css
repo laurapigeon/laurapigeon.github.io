@@ -23,22 +23,40 @@ body.minimise #windowframe {
 }
 #browsericon {
     position: fixed;
-    right: 0px;
+    right: 3px;
     bottom: 0px;
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 30px;
     pointer-events: auto;
-    background-image: url("/resources/images/frame/browsericon.png");
-    transition: all 0.5s;
+    background-position: 0px 71px;
+    transition: all 0.5s, background-position 0s, margin-bottom 0s;
+}
+#browsericon:not(:active) {
+    margin-bottom: 1px;
 }
 body:not(.minimise) #browsericon {
     transform: translate(0px, 40px);
     opacity: 50%;
     visibility: hidden;
 }
-#browsericon:active { background-image: url("/resources/images/frame/browsericonactive.png"); }
+#browsericon:active {
+    margin-bottom: 0px;
+    background-position: 0px 41px; 
+}
 
-
+#browsericon,
+#bbbody, #ebbody, #ebsbbody, #sbbody, #tbbody,
+#wfleft, #wfright,
+#tbleft, #tbright,
+#ebleft, #ebright,
+#ebback, #ebforward, #ebsafe, #ebsearch, #ebinfo,
+#ebsbleft, #ebsbsearch,
+#sbtop, #sbbottom, #sbbar,
+#nbhome, #nbrefresh,
+#tbglobe, #tbminimise,
+#bbleft, #bbright {
+    background-image: url("/resources/images/sprites.png");
+}
 
 
 
@@ -53,33 +71,17 @@ body:not(.minimise) #browsericon {
     white-space: nowrap;
 }
 
-#windowframe,
-#titlebar,
-#wfbody,
-#bottombar,
-#ebpanel,
-#ebcontents,
-#ebsearchbar,
-#scrollbar,
-#navigationbar {
+#windowframe, #titlebar, #wfbody, #bottombar, #ebpanel, #ebcontents, #ebsearchbar, #scrollbar, #navigationbar {
     display:flex;
 }
-#ebpanel,
-#ebcontents,
-#titlebar,
-#bottombar,
-#navigationbar {
+#ebpanel, #ebcontents, #titlebar, #bottombar, #navigationbar {
     width: 100%;
 }
 #scrollbar {
     flex-direction: column;
     height: 100%
 }
-#titlebar,
-#navigationbar,
-#ebpanel,
-#ebcontents,
-#scrollbar {
+#titlebar, #navigationbar, #ebpanel, #ebcontents, #scrollbar {
     align-items: flex-start;
 }
 #titlebar {
@@ -93,8 +95,7 @@ body:not(.minimise) #browsericon {
 #navigationbar {
     top: 9px;
 }
-#ebpanel,
-#ebcontents {
+#ebpanel, #ebcontents {
     height: 16px;
 }
 #ebsearchbar {
@@ -115,9 +116,7 @@ body:not(.minimise) #browsericon {
     transform: translate(0px,-4px);
     z-index: 2;
 }
-#explorerbar,
-#tbbody,
-#scrollbar {
+#explorerbar, #tbbody, #scrollbar {
     pointer-events: auto;
 }
 
@@ -125,32 +124,24 @@ body:not(.minimise) #browsericon {
 
 
 
-#wfbody,
-#bbbody,
-#explorerbar,
-#ebbody,
-#ebpage,
-#ebuser,
-#ebsearchbar,
-#ebsbbody,
-#sbbody,
-#tbbody,
-#nbtext {
+#wfbody, #bbbody, #explorerbar, #ebbody, #ebpage, #ebuser, #ebsearchbar, #ebsbbody, #sbbody, #tbbody, #nbtext {
     flex-grow: 1;
     flex-shrink: 1;
     min-width: 0px;
     min-height: 0px;
 }
+
 #bbbody {
     height: 4px;
-    background-image: url("/resources/images/frame/bbbody.png");
+    background-position: -190000px -48px;
+    background-size: 2530000px 123px;
 }
 #ebbody {
     min-height: 16px;
-    background-image: url("/resources/images/frame/ebbody.png");
+    background-position: -990000px -41px;
+    background-size: 2530000px 123px;
 }
-#ebpage,
-#ebuser {
+#ebpage, #ebuser {
     margin: 4px 1px 4px 1px;
     color: rgb(94, 66, 128);
 }
@@ -161,7 +152,8 @@ body:not(.minimise) #browsericon {
     min-height: 10px;
     color: rgb(220, 175, 240);
     background-color: rgba(0,0,0,0);
-    background-image: url("/resources/images/frame/ebsbbody.png");
+    background-position: -1270000px -10px;
+    background-size: 2530000px 123px;
 }
 #ebsbbody:focus {
     outline: none;
@@ -177,12 +169,14 @@ body:not(.minimise) #browsericon {
 #sbbody {
     position: relative;
     min-width: 9px;
-    background-image: url("/resources/images/frame/sbbody.png");
+    background-position: -128px -270000px;
+    background-size: 253px 1230000px;
 }
 #tbbody {
     position: relative;
     min-height: 19px;
-    background-image: url("/resources/images/frame/tbbody.png");
+    background-position: -210000px 0px;
+    background-size: 2530000px 123px;
 }
 #nbtext {
     padding: 1px 2px 0px 0px;
@@ -190,16 +184,19 @@ body:not(.minimise) #browsericon {
     left: 14px;
     color: rgb(220, 175, 240);
 }
-#wfleft,
-#wfright {
+#wfleft, #wfright {
     min-width: 5px;
     z-index: 2;
 }
-#wfleft { background-image: url("/resources/images/frame/wfleft.png"); }
-#wfright { background-image: url("/resources/images/frame/wfright.png"); }
-#ebuser {
-    text-align: right;
+#wfleft {
+    background-position: 0px -240000px;
+    background-size: 253px 1230000px;
 }
+#wfright {
+    background-position: -39px -240000px;
+    background-size: 253px 1230000px;
+}
+#ebuser { text-align: right; }
 
 
 
@@ -207,165 +204,129 @@ body:not(.minimise) #browsericon {
 #tbleft {
     min-width: 21px;
     min-height: 24px;
-    background-image: url("/resources/images/frame/tbleft.png");
+    background-position: 0px 0px;
 }
 #tbright {
     min-width: 22px;
     min-height: 24px;
-    background-image: url("/resources/images/frame/tbright.png");
+    background-position: -22px 0px;
 }
 #ebleft,
 #ebright {
     min-width: 53px;
     min-height: 16px;
 }
-#ebleft { background-image: url("/resources/images/frame/ebleft.png"); }
-#ebright { background-image: url("/resources/images/frame/ebright.png"); }
-#ebback,
-#ebforward,
-#ebsearch {
+#ebleft { background-position: -46px -41px; }
+#ebright { background-position: -100px -41px; }
+#ebback, #ebforward, #ebsafe, #ebsearch {
     margin: 3px 3px 3px 2px;
     min-width: 13px;
     min-height: 10px;
 }
-#ebback:active,
-#ebforward:active,
-#ebcontents.search #ebsearch {
-    margin: 0px 1px 1px 0px;
-    min-width: 17px;
-    min-height: 15px;
-}
-#ebback { background-image: url('/resources/images/frame/ebback.png'); }
-#ebback:active { background-image: url('/resources/images/frame/ebbackactive.png'); }
-#ebforward { background-image: url('/resources/images/frame/ebforward.png'); }
-#ebforward:active { background-image: url('/resources/images/frame/ebforwardactive.png'); }
-#ebsearch { background-image: url('/resources/images/frame/ebsearch.png'); }
-#ebcontents.search #ebsearch { background-image: url('/resources/images/frame/ebsearchactive.png'); }
 #ebinfo {
     margin: 3px 3px 3px 2px;
     min-width: 12px;
     min-height: 10px;
-    background-image: url('/resources/images/frame/ebinfo.png');
 }
-#ebinfo:active {
-    margin: 0px 0px 1px 0px;
-    min-width: 17px;
-    min-height: 15px;
-    background-image: url('/resources/images/frame/ebinfoactive.png');
-}
+#ebback { background-position: -63px 0px; }
+#ebback:active { background-position: -63px -10px; }
+#ebback.off { background-position: -63px -10px; }
+#ebforward { background-position: -76px 0px; }
+#ebforward:active { background-position: -76px -10px; }
+#ebforward.off { background-position: -76px -20px; }
+#ebsafe { background-position: -89px 0px; }
+#ebsafe:active { background-position: -89px -10px; }
+#ebsafe.off { background-position: -89px -20px; }
+#ebsearch { background-position: -114px 0px; }
+#ebcontents.search #ebsearch { background-position: -114px -10px; }
+#ebinfo { background-position: -102px 0px; }
+#ebinfo:active { background-position: -102px -10px; }
+#ebinfo.off { background-position: -102px -20px; }
 #ebsbleft {
     min-width: 1px;
     min-height: 10px;
-    background-image: url("/resources/images/frame/ebsbleft.png");
+    background-position: -127px 0px;
 }
 #ebsbsearch {
     border: 0px;
     padding: 0px 0px 0px 0px;
     min-width: 14px;
     min-height: 10px;
-    background-image: url('/resources/images/frame/ebsbsearch.png');
+    background-position: -114px -20px;
 }
-#sbtop,
-#sbbottom {
+#sbtop, #sbbottom {
     min-width: 9px;
     min-height: 9px;
 }
-#sbtop { background-image: url("/resources/images/frame/sbtop.png"); }
-#sbtop:active { background-image: url("/resources/images/frame/sbtopactive.png"); }
-#sbbottom { background-image: url("/resources/images/frame/sbbottom.png"); }
-#sbbottom:active { background-image: url("/resources/images/frame/sbbottomactive.png"); }
+#sbtop { background-position: -128px 0px; }
+#sbtop:active { background-position: -128px -9px; }
+#scrollbar.off #sbtop { background-position: -128px -18px; }
+#sbbottom { background-position: -137px 0px; }
+#sbbottom:active { background-position: -137px -9px; }
+#scrollbar.off #sbbottom { background-position: -137px -18px; }
 #sbbar {
     margin-top: var(--auto-margin-top, 0px);
     min-width: 9px;
     min-height: 26px;
-    background-image: url("/resources/images/frame/sbbar.png");
+    background-position: -44px 0px;
 }
+#scrollbar.off #sbbar { display: none; }
 #nbhome {
-    padding: 0px 1px 0px 0px;
+    margin: 0px 1px 0px 0px;
     min-width: 12px;
     min-height: 10px;
-    background-repeat: no-repeat;
-    background-image: url("/resources/images/frame/nbhome00.png");
+    background-position: -46px -31px;
+    animation: home-color 1s step-end infinite;
 }
 #nbrefresh {
     margin: 2px 1px 0px 0px;
     min-width: 9px;
     min-height: 6px;
-    background-image: url("/resources/images/frame/nbrefresh.png");
+    background-position: -147px -57px;
 }
-.nbtext {
-    padding: 0px 0px 0px 1px;
-}
+.nbtext { padding: 0px 0px 0px 1px; }
 #tbglobe {
     margin: 3px 1px 5px 4px;
     min-width: 16px;
     min-height: 16px;
-    background-image: url("/resources/images/frame/tbglobe.png");
+    background-position: -237px 0px;
 }
 #tbminimise {
     margin: 2px 4px 8px 3px;
     min-width: 15px;
     min-height: 14px;
     pointer-events: auto;
-    background-image: url("/resources/images/frame/tbminimise.png");
+    background-position: -23px -24px;
 }
-#tbminimise:active {
-    background-image: url("/resources/images/frame/tbminimiseactive.png");
-}
+#tbminimise:active { background-position: -23px -38px; }
 #tbtitle {
     padding: 1px 1px 0px 1px;
     color: rgb(48, 36, 84);
 }
-#bbleft,
-#bbright {
-    min-height: 27px;
-}
+#bbleft, #bbright { min-height: 27px; }
 #bbleft {
     min-width: 19px;
-    background-image: url("/resources/images/frame/bbleft.png");
+    background-position: 0px -25px;
 }
 #bbright {
     min-width: 6px;
-    background-image: url("/resources/images/frame/bbright.png");
+    background-position: -38px -25px;
 }
 
-#browsericon:hover,
-#tbminimise:hover,
-#nbhome:hover,
-#nbrefresh:hover,
-#ebback:hover,
-#ebforward:hover,
-#ebsbsearch:hover,
-#ebsearch:hover,
-#ebinfo:hover,
-#sbtop:hover,
-#sbbottom:hover {
-    cursor: pointer;
-}
+#browsericon:hover, #tbminimise:hover, #ebsbsearch:hover, #sbtop:hover, #sbbottom:hover { cursor: pointer; }
 
-#ebsearchbar {
-    display: none;
-}
-#ebcontents.search #ebpage,
-#ebcontents.search #ebuser {
-    display: none;
-}
-#ebcontents.search #ebsearchbar {
-    display: flex;
-}
+#ebsearchbar { display: none; }
+#ebcontents.search #ebpage, #ebcontents.search #ebuser { display: none; }
+#ebcontents.search #ebsearchbar { display: flex; }
 
-#ebback.off,
-#ebforward.off,
-#ebinfo.off,
-#scrollbar.off #sbtop,
-#scrollbar.off #sbbottom,
-#scrollbar.off #sbbar {
-    pointer-events: none;
-}
+#ebback.off, #ebforward.off, #ebsafe, #ebinfo.off, #scrollbar.off #sbtop, #scrollbar.off #sbbottom, #scrollbar.off #sbbar { pointer-events: none; }
 
-#ebback.off { background-image: url(/resources/images/frame/ebbackoff.png); }
-#ebforward.off { background-image: url(/resources/images/frame/ebforwardoff.png); }
-#ebinfo.off { background-image: url(/resources/images/frame/ebinfooff.png); }
-#scrollbar.off #sbtop { background-image: url(/resources/images/frame/sbtopoff.png); }
-#scrollbar.off #sbbottom { background-image: url(/resources/images/frame/sbbottomoff.png); }
-#scrollbar.off #sbbar { display: none; }
+@keyframes home-color {
+    0%, 100% {  background-position: -46px -31px; }
+    14.2857142857% { background-position: -58px -31px; }
+    28.5714285714% { background-position: -70px -31px; }
+    42.8571428571% { background-position: -82px -31px; }
+    57.1428571429% { background-position: -94px -31px; }
+    71.4285714286% { background-position: -106px -31px; }
+    85.7142857143% { background-position: -118px -31px; }
+}

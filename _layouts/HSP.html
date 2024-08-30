@@ -84,18 +84,18 @@
                     </div>
                 </div>
                 {% endunless %}
+                <div id="pagetitle">
+                    <a href="{{ site.url }}">{{ site.url | split: "//" | last | split: "/" | first }}</a>
+                    {% if page.title and page.title != "" %}
+                    <h1>{{ page.title }}</h1>
+                    {% else %}
+                    <h1>{{ site.data.custom.title }}</h1>
+                    {% endif %}
+                    <div class="credit">{{ site.data.custom.user_name }}</div>
+                    <div id="readtime"></div>
+                    <hr>
+                </div>
                 <div id="content">
-                    <div id="pagetitle">
-                        <a href="{{ site.data.custom.url }}">{{ site.data.custom.url | remove:'https://' | split:'/' | first }}</a>
-                        {% if page.title and page.title != "" %}
-                        <h1>{{ page.title }}</h1>
-                        {% else %}
-                        <h1>{{ site.data.custom.title }}</h1>
-                        {% endif %}
-                        <div class="credit">{{ site.data.custom.user_name }}</div>
-                        <div class="readtime">1-60 minutes</div>
-                        <hr>
-                    </div>
                     {{ content }}
                 </div>
             </div>
@@ -146,6 +146,7 @@
                         <div id="ebcontents">
                             <a id="ebback" href="javascript:historyBackWFallback()" ondragstart="return false;" ondrop="return false;"></a>
                             <a id="ebforward" href="javascript:historyForwardWFallback()" ondragstart="return false;" ondrop="return false;"></a>
+                            <a id="ebsafe" ondragstart="return false;" ondrop="return false;"></a>
                             <div class="text" id="ebpage">
                                 {{ page.title }}
                             </div>

@@ -1,4 +1,5 @@
 defineContentParagraphs();
+setReadingTime();
 
 const elements = document.querySelectorAll('p[data-url]');
 

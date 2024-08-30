@@ -1,4 +1,5 @@
-#content {
+#content,
+#pagetitle {
     position: relative;
     box-sizing: border-box;
     background-repeat: repeat;
@@ -6,13 +7,14 @@
     background-clip: padding-box;
     background-position: 0% 0%;
     overflow: hidden;
-    padding: 0px 7px 0px 7px;
 }
 body:not(.minimise) #content {
+    padding: 0px 7px 0px 7px;
     height: var(--auto-height, auto);
     filter: url(#crispify);
 }
-body.minimise #content {
+body.minimise #content,
+body.minimise #pagetitle {
     font-size: 20px;
     max-width: 30em;
     height: auto;
@@ -74,10 +76,12 @@ body:not(.minimise) .p.shift {
 }
 
 .p:not(.center):not(.shift):not(.free) {
-    margin-top: 1em;
     margin-left: 2px;
-    margin-bottom: 1em;
     margin-right: 2px;
+}
+.p:not(.shift):not(.free) {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 body:not(.minimise) .p {
@@ -112,14 +116,17 @@ a, a:link, a:hover, a:visited, a:active {
     text-decoration: none;
 }
 
+body.minimise #pagetitle a,
 body.minimise a.p {
     color: rgb(0, 221, 255);
     text-decoration: underline rgb(251, 251, 254);
-    padding-bottom: 4px;
+}
+body.minimise #pagetitle a {
     font-size: 0.9em;
     line-height: 1.48em;
+    padding-bottom: 4px;
 }
-body.minimise a.imagebox.p {
+body.minimise a.imagebox {
     border: ridge 2px rgb(0, 221, 255);
     border-bottom-color: rgb(251, 251, 254);
     padding: 3px;
@@ -141,7 +148,7 @@ body.minimise .credit {
     line-height: 1.48em;
 }
 
-body.minimise .readtime {
+body.minimise #readtime {
     margin: 0 0 15px;
     font-size: 0.65em;
 }
@@ -155,19 +162,9 @@ body:not(.minimise) .p.hidden {
 }
 
 @keyframes loadWave {
-    0% {
-        transform: scale(0.9);
-    }
-    25% {
-        transform: scale(1.03);
-    }
-    50% {
-        transform: scale(0.95);
-    }
-    75% {
-        transform: scale(1.01);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(0.9); }
+    25% { transform: scale(1.03); }
+    50% { transform: scale(0.95); }
+    75% { transform: scale(1.01); }
+    100% { transform: scale(1); }
 }

@@ -168,3 +168,11 @@ function defineContentParagraphs() {
     const contentelements = content.querySelectorAll('p, a');
     contentelements.forEach(contentelement => {contentelement.classList.add("p")});
 }
+
+function setReadingTime() {
+  const text = document.getElementById("content").innerText;
+  const words = text.trim().split(/\s+/).length;
+  const hightime = Math.ceil(words / 225);
+  const lowtime = Math.floor(words / 265);
+  document.getElementById("readtime").innerText = lowtime + "–" + hightime + " minutes";
+}

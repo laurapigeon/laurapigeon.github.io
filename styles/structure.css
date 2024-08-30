@@ -22,9 +22,9 @@ body.minimise {
 #scalercontainer {
     position: relative;
     margin: 0 auto;
-    width: 1200px;
 }
 body:not(.minimise) #scalercontainer {
+    width: 1200px;
     height: var(--auto-height, auto);
 }
 body.minimise #scalercontainer {
