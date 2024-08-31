@@ -70,7 +70,6 @@ body:not(.minimise) #browsericon {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
-    box-sizing: border-box;
     white-space: nowrap;
 }
 
@@ -157,7 +156,6 @@ body:not(.minimise) #browsericon {
     color: rgb(94, 66, 128);
 }
 #ebsbbody {
-    box-sizing: border-box;
     border: 0px;
     padding: 1px 1px 1px 1px;
     min-height: 10px;
