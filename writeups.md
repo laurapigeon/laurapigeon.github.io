@@ -1,21 +1,21 @@
-[Hypothesis Testing/Probability Distributions](https://laurapigeon.github.io/pdfs/HypPD.pdf)
+[Hypothesis Testing/Probability Distributions](/user_resources/documents/HypPD.pdf)
 
-[Acceleration](https://laurapigeon.github.io/pdfs/Acc.pdf)
+[Acceleration](/user_resources/documents/Acc.pdf)
 
-[Electrical Resistivity](https://laurapigeon.github.io/pdfs/ElecRes.pdf)
+[Electrical Resistivity](/user_resources/documents/ElecRes.pdf)
 
-[EMF/Internal Resistance](https://laurapigeon.github.io/pdfs/EMFIntRes.pdf)
+[EMF/Internal Resistance](/user_resources/documents/EMFIntRes.pdf)
 
-[Viscosity](https://laurapigeon.github.io/pdfs/Visc.pdf)
+[Viscosity](/user_resources/documents/Visc.pdf)
 
-[Young Modulus](https://laurapigeon.github.io/pdfs/YoungMod.pdf)
+[Young Modulus](/user_resources/documents/YoungMod.pdf)
 
-[Speed of Sound](https://laurapigeon.github.io/pdfs/SoundSpeed.pdf)
+[Speed of Sound](/user_resources/documents/SoundSpeed.pdf)
 
-[Standing Waves](https://laurapigeon.github.io/pdfs/StandWav.pdf)
+[Standing Waves](/user_resources/documents/StandWav.pdf)
 
-[Wavelength of Light](https://laurapigeon.github.io/pdfs/WavOfLight.pdf)
+[Wavelength of Light](/user_resources/documents/WavOfLight.pdf)
 
 -
 
-[Back to home](https://laurapigeon.github.io/)
+[Back to home](/)

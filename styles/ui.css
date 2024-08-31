@@ -258,7 +258,7 @@ body:not(.minimise) #browsericon {
 }
 #ebback { background-position: -63px 0px; }
 #ebback:active { background-position: -63px -10px; }
-#ebback.off { background-position: -63px -10px; }
+#ebback.off { background-position: -63px -20px; }
 #ebforward { background-position: -76px 0px; }
 #ebforward:active { background-position: -76px -10px; }
 #ebforward.off { background-position: -76px -20px; }

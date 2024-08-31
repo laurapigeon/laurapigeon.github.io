@@ -23,11 +23,4 @@ elements.forEach(function(element) {
             window.location.href = url;
         }
     });
-
-    link.addEventListener("mousedown", function(event) {
-        if (event.button === 1) { // Middle mouse button
-            window.open(url,'_blank');
-            window.open(this.href,'_self');
-        }
-    });
 });
