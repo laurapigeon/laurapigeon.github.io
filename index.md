@@ -11,7 +11,7 @@ tags: []
 <img src="/user_resources/images/poly pigeon.png">
 {: .free style="--top:5px; --right:5px" }
 
-<div class="free" style="--top:10px; --left:20px; --width:260px">
+<div class="free" style="--top:10px; --left:20px; --box-width:260px">
 hi im laura (she/they) welcome to my website :)
 
 i like systems and pigeons

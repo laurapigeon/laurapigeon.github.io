@@ -93,7 +93,7 @@ body:not(.minimise) .p {
     transform-origin: var(--auto-transform-origin);
 }
 
-body:not(.minimise) #content div {
+body:not(.minimise) #content>div {
     height: var(--box-height, fit-content);
     width: var(--box-width, fit-content);
 }
