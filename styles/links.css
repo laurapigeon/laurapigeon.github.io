@@ -42,7 +42,7 @@ body:not(.minimise) a:hover .border {
     top: -1px;
     left: -1px;
     padding: 1px 0px 0px 1px;
-    border-image-source: url("/resources/images/ants/border-1.png");
+    border-image-source: url("/site_resources/images/ants/border-1.png");
     animation-name: antcrawl;
 }
 
@@ -50,7 +50,7 @@ body:not(.minimise) a:hover .border {
     top: 0px;
     left: 0px;
     padding:  0px 1px 1px 0px;
-    border-image-source: url("/resources/images/ants/border-shadow-1.png");
+    border-image-source: url("/site_resources/images/ants/border-shadow-1.png");
     animation-name: antcrawlshadow;
 }
 
@@ -61,15 +61,15 @@ body:not(.minimise) a:hover .border {
 }
 
 @keyframes antcrawl { /* rgb(154 199 245 / 1) */
-     0% { border-image-source: url("/resources/images/ants/border-1.png"); }
-    25% { border-image-source: url("/resources/images/ants/border-2.png"); }
-    50% { border-image-source: url("/resources/images/ants/border-3.png"); }
-    75% { border-image-source: url("/resources/images/ants/border-4.png"); }
+     0% { border-image-source: url("/site_resources/images/ants/border-1.png"); }
+    25% { border-image-source: url("/site_resources/images/ants/border-2.png"); }
+    50% { border-image-source: url("/site_resources/images/ants/border-3.png"); }
+    75% { border-image-source: url("/site_resources/images/ants/border-4.png"); }
 }
 
 @keyframes antcrawlshadow { /* rgb(61 59 91 / 0.75) */
-    0% { border-image-source: url("/resources/images/ants/border-shadow-1.png"); }
-   25% { border-image-source: url("/resources/images/ants/border-shadow-2.png"); }
-   50% { border-image-source: url("/resources/images/ants/border-shadow-3.png"); }
-   75% { border-image-source: url("/resources/images/ants/border-shadow-4.png"); }
+    0% { border-image-source: url("/site_resources/images/ants/border-shadow-1.png"); }
+   25% { border-image-source: url("/site_resources/images/ants/border-shadow-2.png"); }
+   50% { border-image-source: url("/site_resources/images/ants/border-shadow-3.png"); }
+   75% { border-image-source: url("/site_resources/images/ants/border-shadow-4.png"); }
 }

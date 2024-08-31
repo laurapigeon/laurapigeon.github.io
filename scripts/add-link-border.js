@@ -17,7 +17,7 @@ borders.forEach(function(border) {
 
     for (var i = 0; i < 8; i++) {
         var img = document.createElement("img");
-        img.src = "/resources/images/ants/" + images[i < 4 ? 0 : 1];
+        img.src = "/site_resources/images/ants/" + images[i < 4 ? 0 : 1];
         img.classList.add('bordercorner');
         img.style.top = tops[i % 4];
         img.style.left = lefts[i % 4];

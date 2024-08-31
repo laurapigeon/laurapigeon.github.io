@@ -42,7 +42,7 @@ body.minimise #status {
 }
 
 #statusemotebody, #statustextbody, #statusemoteleft, #statusemoteright, #statustextleft, #statustextright, #statusemoteicon {
-    background-image: url("/resources/images/sprites.png");
+    background-image: url("/site_resources/images/sprites.png");
     height: 31px;
 }
 
@@ -75,5 +75,4 @@ body.minimise #status {
 #statusemoteicon {
     width: 24px;
     height: 27px;
-    background-position: -157px -29px;
 }

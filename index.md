@@ -1,12 +1,14 @@
 ---
-layout: HSP
-title: Home
-background_image: polyomino structures.png
+layout: "HSP"
+title: "Home"
+background_image: "polyomino structures.png"
+audio_file: "beeps overworld.mp3"
+audio_text: "beeps overworld - laurapigeon"
 list_page: true
 tags: []
 ---
 
-<img src="/resources/images/poly pigeon.png">
+<img src="/user_resources/images/poly pigeon.png">
 {: .free style="--top:5px; --right:5px" }
 
 <div class="free" style="--top:10px; --left:20px; --width:260px">

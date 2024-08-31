@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {% if page.title and page.title != "" %}
-        <title>{{ page.title }}</title>
-        {% else %}
-        <title>{{ site.data.custom.title }}</title>
-        {% endif %}
+        {% if page.title and page.title != "" %}{% assign title = page.title %}{% else %}{% assign title = site.data.custom.title %}{% endif %}
+        {% if page.favicon and page.favicon != "" %}{% assign favicon = page.favicon %}{% else %}{% assign favicon = site.data.custom.favicon %}{% endif %}
+        {% if page.text_color and page.text_color != "" %}{% assign text_color = page.text_color %}{% else %}{% assign text_color = site.data.custom.text_color %}{% endif %}
+        {% if page.bg_color and page.bg_color != "" %}{% assign bg_color = page.bg_color %}{% else %}{% assign bg_color = site.data.custom.bg_color %}{% endif %}
 
-        {% if page.favicon and page.favicon != "" %}
-        <link rel="icon" type="image/png" href="/resources/images/favicons/{{ page.favicon }}" />
-        {% else %}
-        <link rel="icon" type="image/png" href="/resources/images/favicons/{{ site.data.custom.favicon }}" />
-        {% endif %}
+        {% if page.audio_file and page.audio_file != "" %}{% assign audio_file = page.audio_file %}{% else %}{% assign audio_file = site.data.custom.audio_file %}{% endif %}
+        {% if page.audio_text and page.audio_text != "" %}{% assign audio_text = page.audio_text %}{% else %}{% assign audio_text = site.data.custom.audio_text %}{% endif %}
+        {% if page.audio_link and page.audio_link != "" %}{% assign audio_link = page.audio_link %}{% else %}{% assign audio_link = site.data.custom.audio_link %}{% endif %}
+        
+        <title>{{ title }}</title>
+
+        <link rel="icon" type="image/png" href="/user_resources/images/favicons/{{ favicon }}" />
 
         <link rel="stylesheet" href="/styles/fonts.css">
         <link rel="stylesheet" href="/styles/links.css">
@@ -28,23 +29,32 @@
         <style>
             body:not(.minimise) #content {
                 {% if page.background_image and page.background_image != "" %}
-                background-image: url('/resources/images/backgrounds/{{ page.background_image }}');
+                background-image: url('/user_resources/images/backgrounds/{{ page.background_image }}');
                 background-position: {{ page.background_position }};
                 background-color: rgba(0,0,0,0);
                 {% else %}
-                {% if page.background_color and page.background_color != "" %}
-                background-color: {{ page.background_color }};
-                {% else %}
-                background-color: {{ site.data.custom.background_color }};
-                {% endif %}
+                background-color: {{ bg_color }};
                 {% endif %}
             }
             body:not(.minimise) p,
             body:not(.minimise) #content a {
-                {% if page.text_color and page.text_color != "" %}
-                color: var(--color, {{ page.text_color }});
-                {% else %}
-                color: var(--color, {{ site.data.custom.text_color }});
+                color: var(--color, {{ text_color }});
+            }
+            #statusemoteicon {
+                {% assign status_emote = site.data.custom.status_emote %}
+                {% if status_emote == "grin" %}          background-position: -157px -29px;
+                {% elsif status_emote == "smile" %}      background-position: -181px -29px;
+                {% elsif status_emote == "errr" %}       background-position: -205px -29px;
+                {% elsif status_emote == "frown" %}      background-position: -229px -29px;
+                {% elsif status_emote == "flushed" %}    background-position: -157px -56px;
+                {% elsif status_emote == "goofy" %}      background-position: -181px -56px;
+                {% elsif status_emote == "angry" %}      background-position: -205px -56px;
+                {% elsif status_emote == "sunglasses" %} background-position: -229px -56px;
+                {% elsif sstatus_emote == "crying" %}    background-position: -157px -83px;
+                {% elsif status_emote == "questioning" %}background-position: -181px -83px;
+                {% elsif status_emote == "shock" %}      background-position: -205px -83px;
+                {% elsif status_emote == "sleepy" %}     background-position: -229px -83px;
+                {% else %}                               display: none;
                 {% endif %}
             }
         </style>
@@ -69,7 +79,11 @@
                             {{ site.data.custom.real_name | upcase }}'S STATUS
                         </div>
                         <div id="statusupdate">
+                            {% if site.data.custom.status_updated and site.data.custom.status_updated != "" %}
                             UPDATED {{ site.data.custom.status_updated }}
+                            {% else %}
+                            UPDATED [null]
+                            {% endif %}
                         </div>
                     </div>
                     <div id="statuscontent">
@@ -92,11 +106,7 @@
                 {% endunless %}
                 <div id="pagetitle">
                     <a href="{{ site.url }}">{{ site.url | split: "//" | last | split: "/" | first }}</a>
-                    {% if page.title and page.title != "" %}
-                    <h1>{{ page.title }}</h1>
-                    {% else %}
-                    <h1>{{ site.data.custom.title }}</h1>
-                    {% endif %}
+                    <h1>{{ title }}</h1>
                     <div class="credit">{{ site.data.custom.user_name }}</div>
                     <div id="readtime"></div>
                     <hr>
@@ -173,11 +183,25 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <div id="mediabar">
+                        <div id="mediabar" {% unless audio_file and audio_file != "" %}class="disabled"{% endunless %}>
                             <div id="mbstamp"></div>
-                            <div id="mbmusic"></div>
-                            <div id="mbbody"></div>
+                            <div id="mbmusic">
+                                <audio src="/user_resources/audio/{{ audio_file }}"></audio>
+                            </div>
+                            {% if audio_text and audio_text != "" %}
+                            <div id="mbbody">
+                                {% if audio_link and audio_link != "" %}
+                                <a id="mbtext" class="text" href="{{ audio_link }}">
+                                    {{ audio_text }}
+                                </a>
+                                {% else %}
+                                <div id="mbtext" class="text">
+                                    {{ audio_text }}
+                                </div>
+                                {% endif %}
+                            </div>
                             <div id="mbright"></div>
+                            {% endif %}
                         </div>
                     </div>
                     <div id="scrollbar">

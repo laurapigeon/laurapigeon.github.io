@@ -19,7 +19,19 @@ ebsbbody.addEventListener('select', () => { ebsbbody.selectionStart = ebsbbody.s
 
 const mbmusic = document.getElementById('mbmusic');
 const mediabar = document.getElementById('mediabar');
-mbmusic.addEventListener("click", () => { mediabar.classList.toggle("off"); });
+const audio = document.querySelector('audio');
+mbmusic.addEventListener("click", () => {
+    mediabar.classList.toggle("on");
+    if (mediabar.classList.contains("on")) { audio.play(); }
+    else { audio.pause(); audio.currentTime = 0; }
+});
+audio.onended = function(){
+    this.currentTime = 0;
+    var delay = setTimeout(function(){
+        audio.play();
+        clearTimeout(delay);
+    }, 1000);
+}
 
 const tbminimise = document.getElementById('tbminimise');
 tbminimise.addEventListener("click", () => { document.body.classList.add("minimise"); }); // window.scrollTo(0, 0);

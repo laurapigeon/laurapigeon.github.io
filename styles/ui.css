@@ -56,7 +56,7 @@ body:not(.minimise) #browsericon {
 #tbglobe, #tbminimise,
 #bbleft, #bbright,
 #mbstamp, #mbmusic, #mbright {
-    background-image: url("/resources/images/sprites.png");
+    background-image: url("/site_resources/images/sprites.png");
 }
 
 
@@ -206,14 +206,24 @@ body:not(.minimise) #browsericon {
 #ebuser { text-align: right; }
 #mbbody {
     margin: 5px 0px 5px 0px;
+    padding: 1px 0px 2px 0px;
+    width: 0px;
+    flex-grow: 0;
+    overflow: hidden;
     background-position: -1380000px -62px;
     background-size: 2530000px 123px;
-    flex-grow: 0;
     transition: flex-grow 0.2s linear;
 }
 #mediabar:not(.disabled) #mbmusic:hover ~ #mbbody,
 #mediabar:not(.disabled) #mbbody:hover,
 #mediabar:not(.disabled) #mbbody:has(~ #mbright:hover) { flex-grow: 1; }
+#mbtext {
+    display: block;
+    margin: 0px 0px 0px 1px;
+    width: fit-content;
+    height: 9px;
+    color: rgb(239, 232, 158);
+}
 
 
 
@@ -337,10 +347,10 @@ body:not(.minimise) #browsericon {
 }
 #mbmusic { min-width: 37px; }
 #mediabar.disabled #mbmusic { background-position: -75px -57px; }
-#mediabar:not(.disabled) #mbmusic { background-position: -75px -79px; }
-#mediabar:not(.disabled) #mbmusic:active { background-position: -75px -101px; }
-#mediabar:not(.disabled).off #mbmusic { background-position: -112px -79px; }
-#mediabar:not(.disabled).off #mbmusic:active { background-position: -112px -101px; }
+#mediabar:not(.disabled) #mbmusic { background-position: -112px -79px; }
+#mediabar:not(.disabled) #mbmusic:active { background-position: -112px -101px; }
+#mediabar:not(.disabled).on #mbmusic { background-position: -75px -79px; }
+#mediabar:not(.disabled).on #mbmusic:active { background-position: -75px -101px; }
 #mbright {
     visibility: hidden;
     margin: 0px 1px 0px 0px;
