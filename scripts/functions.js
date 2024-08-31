@@ -109,9 +109,11 @@ function getContentHeight() {
     
     let maxHeight = 0;
     contentelements.forEach(contentelement => {
-        var bottomMargin = parseInt(window.getComputedStyle(contentelement).marginBottom);
-        var height = contentelement.offsetTop + contentelement.offsetHeight + bottomMargin;
-        maxHeight = Math.max(maxHeight, height);
+        if (!contentelement.classList.contains("noheight")) {
+            var bottomMargin = parseInt(window.getComputedStyle(contentelement).marginBottom);
+            var height = contentelement.offsetTop + contentelement.offsetHeight + bottomMargin;
+            maxHeight = Math.max(maxHeight, height);
+        }
     });
     content.style.setProperty("--auto-height", maxHeight + "px");
 

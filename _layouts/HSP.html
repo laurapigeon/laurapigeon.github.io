@@ -12,7 +12,7 @@
         
         <title>{{ title }}</title>
 
-        <link rel="icon" type="image/png" href="/user_resources/images/favicons/{{ favicon }}" />
+        <link rel="icon" type="image/png" href="/user_resources/images/favicons/{{ favicon }}">
 
         <link rel="stylesheet" href="/styles/fonts.css">
         <link rel="stylesheet" href="/styles/links.css">
@@ -36,8 +36,7 @@
                 background-color: {{ bg_color }};
                 {% endif %}
             }
-            body:not(.minimise) p,
-            body:not(.minimise) #content a {
+            body:not(.minimise) .p {
                 color: var(--color, {{ text_color }});
             }
             #statusemoteicon {
@@ -50,7 +49,7 @@
                 {% elsif status_emote == "goofy" %}      background-position: -181px -56px;
                 {% elsif status_emote == "angry" %}      background-position: -205px -56px;
                 {% elsif status_emote == "sunglasses" %} background-position: -229px -56px;
-                {% elsif sstatus_emote == "crying" %}    background-position: -157px -83px;
+                {% elsif status_emote == "crying" %}     background-position: -157px -83px;
                 {% elsif status_emote == "questioning" %}background-position: -181px -83px;
                 {% elsif status_emote == "shock" %}      background-position: -205px -83px;
                 {% elsif status_emote == "sleepy" %}     background-position: -229px -83px;
@@ -82,7 +81,7 @@
                             {% if site.data.custom.status_updated and site.data.custom.status_updated != "" %}
                             UPDATED {{ site.data.custom.status_updated }}
                             {% else %}
-                            UPDATED [null]
+                            UPDATED [NULL]
                             {% endif %}
                         </div>
                     </div>
