@@ -25,6 +25,9 @@ heres how you can contact me
 heres a story about how i messed around with an aperiodic polyomino tiling for dozens of hours :)
 {: data-url="/funtiling" style="--color: rgb(164, 255, 164);"}
 
+heres my words of the day for the day today
+{: data-url="/words" style="--color: rgb(255, 255, 164);"}
+
 also just try clicking around the site! i made this based on the game hypnospace outlaw and it took a looooot of work, but no button does nothing, so try them out :D
 </div>
 
