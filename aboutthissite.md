@@ -5,6 +5,8 @@ list_page: true
 tags: [discussion]
 ---
 
+~~ 2023/12/20 ~\~
+
 hihi! so ive finally committed to properly working on getting this website into a form that i can consistently add pages to, to do things like document my various curios and leave breadcrumb trails for people learning similarly obscure things as i
 
 the site itself closely follows the visual style of hypnospace outlaw, a game i couldnt recommend more highly, but wouldnt want to spoil the experience of by trying to boil it down. suffice to say i loved it enough to spend weeks trying to match the aesthetic in my blocky graphics and crawling ant links, despite css and js really not liking that
@@ -20,3 +22,6 @@ making a site via pages is REALLY EASY and i think more people absolutely should
 about my writing style: to consistently engage with this project i will have to predominantly use my informal tongue and formatting, which will likely mean cryptids for capitals and run-on sentences with only necessary punctuation. sorry. (to potential employers, lol, this doesnt mean i cant write up a mean report in formal english dialect with propah grammar, just that im currently learning a new keyboard layout and so am focussing predominantly on words to help improve my typing speed). additionally, im not going to proofread the discussion (non-resource) pages, so apologies for oddities
 
 for people who have trouble reading the font, im working on adding a toggle to remove the font pixel effects to hopefully improve accessibility in that regard. a stretch goal would be a little hypii on the corner to read out a paragraph when ctrl-clicked. ill have to see what i can do about that :3
+
+2024/09/05 - update here!
+{: data-url="/aboutthissite2" }

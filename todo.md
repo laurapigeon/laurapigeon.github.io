@@ -35,4 +35,6 @@ data load time
 
 hover link title
 
-save page position everywhere?? / in minimise
+save page position everywhere / in minimise
+
+make into single page application

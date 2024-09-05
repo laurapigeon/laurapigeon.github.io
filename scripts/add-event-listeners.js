@@ -37,4 +37,4 @@ const tbminimise = document.getElementById('tbminimise');
 tbminimise.addEventListener("click", () => { document.body.classList.add("minimise"); }); // window.scrollTo(0, 0);
 
 const browsericon = document.getElementById('browsericon');
-browsericon.addEventListener("dblclick", () => { document.body.classList.remove("minimise"); setScrollbarPos() });
+browsericon.addEventListener("click", () => { document.body.classList.remove("minimise"); setScrollbarPos() });
