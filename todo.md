@@ -9,7 +9,7 @@ replace fixed colour border images with custom colours
 
 stop border textures from deloading
 
-implement new fonts
+implement new fonts (use a class per font please)
 
 animate text
 
@@ -38,3 +38,5 @@ hover link title
 save page position everywhere / in minimise
 
 make into single page application
+
+custom cursor / trail

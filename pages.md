@@ -7,35 +7,18 @@ list_page: true
 tags: [list, debug]
 ---
 
-{% for tag in site.data.custom.tag_list %}
-\-\- {{ tag }} \-\-
-{: .center style="--color: aquamarine;" }
 {% for page in site.pages %}
 {% if page.list_page == true %}
-{% for page_tag in page.tags %}
-{% if page_tag == tag %}
 {% assign pageSlug = page.url | split: "." | first %}
+
+<div style="background-image:url('/site_resources/images/page_panel.png'); width:284px; height:32px;" markdown="1">
+
 {{ pageSlug }}
-{: .center data-url="{{ pageSlug }}"}
-{% endif %}
-{% endfor %}
-{% endif %}
-{% endfor %}
-{% endfor %}
-\-\- other \-\-
-{: .center style="--color: aquamarine;" }
-{% for page in site.pages %}
-{% if page.list_page == true %}
-{% assign is_other = true %}
-{% for tag in site.data.custom.tag_list %}
-{% if page.tags contains tag %}
-{% assign is_other = false %}
-{% endif %}
-{% endfor  %}
-{% if is_other %}
-{% assign pageSlug = page.url | split: "." | first %}
-{{ pageSlug }}
-{: .center data-url="{{ pageSlug }}"}
-{% endif %}
+
+{{ page.title }}
+
+</div>
+{: data-url="{{ pageSlug }}"}
+
 {% endif %}
 {% endfor %}

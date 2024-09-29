@@ -2,7 +2,7 @@
 layout: HSP
 title: Desmos
 list_page: true
-tag: [list]
+tags: [list]
 ---
 
 A collection of Desmos charts demonstrating mathematical constructions:

@@ -1,5 +1,5 @@
 a:hover {
-    cursor: pointer;
+    cursor: url("/site_resources/cursor/mouse02.png") 16 1, pointer;
 }
 
 body:not(.minimise) a:hover .border {

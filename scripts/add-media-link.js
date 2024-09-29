@@ -1,7 +1,7 @@
 defineContentParagraphs();
 setReadingTime();
 
-const elements = document.querySelectorAll('p[data-url]');
+const elements = document.querySelectorAll('div[data-url], p[data-url]');
 
 elements.forEach(function(element) {
     var url = element.dataset.url;

@@ -15,8 +15,9 @@ status_updated: "24 YEARS AGO"
 status_emote: "grin"
 status_text: "@pigeon why did you let out a high pitched yippee what is going on right now"
 
-info_url: "/contact"
-home_url: "https://github.com/laurapigeon/laurapigeon.github.io"
+info_url: "https://github.com/laurapigeon/laurapigeon.github.io"
+home_url: "/pages"
+root_url: "/"
 
 title: "laurapigeons epic website :)"
 favicon: "pigeon.ico"

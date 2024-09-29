@@ -2,7 +2,7 @@
 layout: HSP
 title: Discussion Test
 list_page: true
-tag: [discussion]
+tags: [discussion]
 ---
 
 hello

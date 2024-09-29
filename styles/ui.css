@@ -123,7 +123,7 @@ body:not(.minimise) #browsericon {
 #ebcontents {
     transform: translate(0px,-16px);
 }
-#explorerbar, #tbbody, #scrollbar, #mediabar {
+#explorerbar, #tbbody, #scrollbar, #mbmusic, #mbbody {
     pointer-events: auto;
 }
 #wfcontents {
@@ -183,7 +183,7 @@ body:not(.minimise) #browsericon {
 }
 #tbbody {
     position: relative;
-    min-height: 19px;
+    height: 19px;
     background-position: -210000px 0px;
     background-size: 2530000px 123px;
 }
@@ -215,8 +215,8 @@ body:not(.minimise) #browsericon {
     transition: flex-grow 0.2s linear;
 }
 #mediabar:not(.disabled) #mbmusic:hover ~ #mbbody,
-#mediabar:not(.disabled) #mbbody:hover,
-#mediabar:not(.disabled) #mbbody:has(~ #mbright:hover) { flex-grow: 1; }
+#mediabar:not(.disabled) #mbbody:hover { flex-grow: 1; }
+/*#mediabar:not(.disabled) #mbbody:has(~ #mbright:hover)*/
 #mbtext {
     display: block;
     margin: 0px 0px 0px 1px;
@@ -362,7 +362,7 @@ body:not(.minimise) #browsericon {
 #mediabar:not(.disabled) #mbbody:hover ~ #mbright,
 #mediabar:not(.disabled) #mbright:hover { visibility: visible; transition-delay: 0s; }
 
-#browsericon:hover, #tbminimise:hover, #ebsbsearch:hover, #sbtop:hover, #sbbottom:hover, #mediabar:not(.disabled) #mbmusic { cursor: pointer; }
+#browsericon:hover, #tbminimise:hover, #ebsbsearch:hover, #sbtop:hover, #sbbottom:hover, #mediabar:not(.disabled) #mbmusic { cursor: url("/site_resources/cursor/mouse02.png") 16 1, pointer; }
 
 #ebsearchbar { display: none; }
 #ebcontents.search #ebpage, #ebcontents.search #ebuser { display: none; }
