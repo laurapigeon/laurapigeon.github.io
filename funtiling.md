@@ -1,6 +1,7 @@
 ---
 layout: HSP
 title: A fun polyomino tiling
+description: a story about how i messed around with an aperiodic polyomino tiling for dozens of hours :)
 list_page: true
 tags: [discussion]
 ---

@@ -1,6 +1,7 @@
 ---
 layout: "HSP"
-title: "laura's words of the day"
+title: laura\'s words of the day
+description: my favourite words ever (there\'re lots and lots and lots)
 bg_color: rgb(0,0,0)
 list_page: true
 tags: [list]

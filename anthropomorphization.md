@@ -1,7 +1,6 @@
 ---
 layout: HSP
 title: About Anthropomorphization
-list_page: true
 tags: [discussion]
 ---
 

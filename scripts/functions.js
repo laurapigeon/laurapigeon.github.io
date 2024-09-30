@@ -31,8 +31,8 @@ function alignCentered() {
         //console.log(elementMargin);
         if (elementMargin % 1 !== 0) {
             //console.log(element.textContent)
-            element.style.setProperty("--auto-margin-left", `${Math.floor(elementMargin)}px`);
-            element.style.setProperty("--auto-margin-right", `${Math.ceil(elementMargin)}px`);
+            element.style.setProperty("--left", `${Math.floor(elementMargin)}px`);
+            element.style.setProperty("--right", `${Math.ceil(elementMargin)}px`);
         }
     });
 }
@@ -132,7 +132,7 @@ function setScrollbarPos() {
     var scrollAmount = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight);
     var scrollbar = document.getElementById("sbbar");
     var barPosition = scrollAmount * (parseFloat(window.innerHeight) * 0.25 - 68)
-    scrollbar.style.setProperty("--auto-margin-top", `${barPosition}px`);
+    scrollbar.style.setProperty("--top", `${barPosition}px`);
     //console.log(barPosition);
 }
 
@@ -187,9 +187,11 @@ function filterSearchPage() {
     linktiles.forEach(linktile => {
         var listpage = linktile.dataset.listpage;
         var tags = linktile.dataset.tags.split(", ");
-        if (search == "3y3") { var removelink = false; }
-        else if (search) { var removelink = tags.indexOf(search) == -1; }
-        else { var removelink = !listpage || listpage == "false"; }
+
+        var removelink
+        if (search == "3y3") { removelink = false; }
+        else if (search) { removelink = tags.indexOf(search) == -1; }
+        else { removelink = !listpage || listpage == "false"; }
 
         if (removelink) { linktile.remove(); }
     });

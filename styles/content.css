@@ -8,7 +8,6 @@
     overflow: hidden;
 }
 body:not(.minimise) #content {
-    padding: 0px 7px 0px 7px;
     height: var(--auto-height, auto);
     filter: url(#crispify);
 }
@@ -30,7 +29,35 @@ body:not(.minimise) #pagetitle {
     display: none;
 }
 
-body:not(.minimise) .free {
+.p:not(.free):not(:has(.p)) {
+    margin-left: 7px;
+    margin-right: 7px;
+}
+.p {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.p>.p:first-child {
+    margin-top: 0px;
+}
+.p.free {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+}
+.p.center {
+    margin-left: var(--left, auto);
+    margin-right: var(--right, auto);
+}
+.p.shift {
+    margin-top: var(--top, 1em);
+    margin-bottom: var(--bottom, 1em);
+    margin-left: var(--left, 7px);
+    margin-right: var(--right, 7px);
+}
+body:not(.minimise) .p.free {
     position: absolute;
     top: var(--top);
     left: var(--left);
@@ -38,40 +65,11 @@ body:not(.minimise) .free {
     right: var(--right);
 }
 
-body:not(.minimise) .p.free {
-    margin: 2px 2px 2px 2px;
-}
-
-body:not(.minimise) .center {
-    display: block;
-    margin-left: var(--auto-margin-left, auto);
-    margin-right: var(--auto-margin-right, auto);
-}
-
-body.minimise .p.center {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-body:not(.minimise) :not(.p).shift {
-    margin-top: var(--top);
-    margin-left: var(--left);
-    margin-bottom: var(--bottom);
-    margin-right: var(--right);
-}
-
-body:not(.minimise) .p.shift {
-    margin-top: var(--top, 1em);
-    margin-left: var(--left, 2px);
-    margin-bottom: var(--bottom, 1em);
-    margin-right: var(--right, 2px);
-}
-
-body:not(.minimise) .linktile {
+.linktile {
     background-image: url('/site_resources/images/page_panel.png');
     position: relative;
-    --box-width: 284px;
-    --box-height: 32px;
+    --width: 284px;
+    --height: 32px;
 }
 
 
@@ -81,14 +79,6 @@ body:not(.minimise) .linktile {
     text-align: var(--text-align, left);
 }
 
-.p:not(.center):not(.shift):not(.free) {
-    margin-left: 2px;
-    margin-right: 2px;
-}
-.p:not(.shift):not(.free) {
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
 
 body:not(.minimise) .p {
     padding-left: var(--padding-left);
@@ -98,11 +88,6 @@ body:not(.minimise) .p {
     font-size: var(--font-size, 7px);
     line-height: var(--line-height, 8px);
     transform-origin: var(--auto-transform-origin);
-}
-
-body:not(.minimise) #content>.p {
-    height: var(--box-height, fit-content);
-    width: var(--box-width, fit-content);
 }
 
 body.minimise .p:not(.imagebox) {
@@ -179,3 +164,10 @@ body:not(.minimise) .p.hidden {
     75% { transform: scale(1.01); }
     100% { transform: scale(1); }
 }
+
+@property --top    { syntax: "*"; inherits: false; }
+@property --left   { syntax: "*"; inherits: false; }
+@property --bottom { syntax: "*"; inherits: false; }
+@property --right  { syntax: "*"; inherits: false; }
+@property --width  { syntax: "*"; inherits: false; }
+@property --height { syntax: "*"; inherits: false; }

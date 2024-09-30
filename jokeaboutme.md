@@ -1,7 +1,6 @@
 ---
 layout: HSP
 title: About me...
-list_page: true
 tags: [discussion]
 ---
 

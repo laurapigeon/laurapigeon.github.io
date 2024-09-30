@@ -1,6 +1,5 @@
 ---
 title: A gallery of polyomino tiling desktop backgrounds
-list_page: true
 tags: [gallery]
 ---
 

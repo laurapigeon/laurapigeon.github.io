@@ -1,7 +1,6 @@
 ---
 layout: HSP
 title: About this website 2...
-list_page: true
 tags: [discussion]
 ---
 

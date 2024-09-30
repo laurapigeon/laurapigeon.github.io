@@ -1,9 +1,9 @@
 ---
 layout: HSP
 title: Search Results
-background_image: kingdom.png
-background_position: -12px 0px
-list_page: true
+background_image: cells7.png
+background_position: -3px 0px
+hide_status: true
 tags: [list, debug]
 ---
 
@@ -11,15 +11,15 @@ tags: [list, debug]
 {% assign pageSlug = page.url | split: "." | first %}
 {% assign pageTags = page.tags | join: ", " %}
 
-<div class="linktile" markdown="1" data-url="{{ pageSlug }}" data-tags="{{ pageTags }}" data-listpage="{{ page.list_page }}">
+<div class="linktile center" markdown="1" data-url="{{ pageSlug }}" data-tags="{{ pageTags }}" data-listpage="{{ page.list_page }}">
 {{ page.title }}
-{: .free style="--top:-2px; --left:10px;" }
+{: .free style="--top:0px; --left:12px;" }
 
 {{ pageSlug }}
-{: .free style="--top:-2px; --right:9px;" }
+{: .free style="--top:0px; --right:11px;" }
 
 {{ page.description }}
-{: .free style="--top:6px; --left:74px;" }
+{: .free style="--top:8px; --left:76px;" }
 </div>
 
 {% endfor %}

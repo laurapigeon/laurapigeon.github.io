@@ -1,6 +1,7 @@
 ---
 layout: HSP
 title: To-Do List
+description: a list of my plans and fixes for the site going forward
 list_page: true
 tags: [meta]
 ---

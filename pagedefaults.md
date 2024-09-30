@@ -1,6 +1,5 @@
 ---
 layout: HSP
-list_page: true
 text_color: "#000000"
 bg_color: "#ffffff"
 favicon: "mooasis.ico"

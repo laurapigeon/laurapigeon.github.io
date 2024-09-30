@@ -1,7 +1,6 @@
 ---
 layout: HSP
 title: Desmos
-list_page: true
 tags: [list]
 ---
 

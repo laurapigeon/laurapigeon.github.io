@@ -293,7 +293,7 @@ body:not(.minimise) #browsericon {
 #sbbottom:active { background-position: -137px -9px; }
 #scrollbar.off #sbbottom { background-position: -137px -18px; }
 #sbbar {
-    margin-top: var(--auto-margin-top, 0px);
+    margin-top: var(--top, 0px);
     min-width: 9px;
     min-height: 26px;
     background-position: -44px 0px;

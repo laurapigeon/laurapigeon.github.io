@@ -1,7 +1,6 @@
 ---
 layout: HSP
 title: Kramdown
-list_page: true
 tags: [debug]
 ---
 

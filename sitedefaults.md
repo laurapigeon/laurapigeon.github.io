@@ -1,6 +1,5 @@
 ---
 layout: HSP
-list_page: true
 tags: [debug]
 ---
 

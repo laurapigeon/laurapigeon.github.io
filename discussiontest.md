@@ -1,7 +1,6 @@
 ---
 layout: HSP
 title: Discussion Test
-list_page: true
 tags: [discussion]
 ---
 

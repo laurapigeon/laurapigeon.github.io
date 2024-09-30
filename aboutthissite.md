@@ -1,6 +1,7 @@
 ---
 layout: HSP
 title: About this website...
+description: an irregular set of discussion blog-style posts about my creation of this site
 list_page: true
 tags: [discussion]
 ---

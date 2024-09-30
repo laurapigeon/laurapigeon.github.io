@@ -1,7 +1,6 @@
 ---
 layout: HSP
 title: Loading Test
-list_page: true
 tags: [debug]
 ---
 

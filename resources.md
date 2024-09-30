@@ -1,6 +1,7 @@
 ---
 layout: HSP
 title: Resources
+description: various academic resources and writeups mostly from mathematics and physics
 background_image: pigeons.jpg
 list_page: true
 text_color: rgb(0,0,0)
