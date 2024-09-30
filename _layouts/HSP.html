@@ -20,11 +20,12 @@
         <link rel="stylesheet" href="/styles/structure.css">
         <link rel="stylesheet" href="/styles/content.css">
         <link rel="stylesheet" href="/styles/ui.css">
+        <script src="/scripts/functions.js"></script>
+        <script src="/scripts/prep-page.js" defer></script>
         <script src="/scripts/disable-buttons.js" defer></script>
         <script src="/scripts/add-media-link.js" defer></script>
         <script src="/scripts/delay-load.js" defer></script>
         <script src="/scripts/add-link-border.js" defer></script>
-        <script src="/scripts/functions.js"></script>
         <script src="/scripts/add-event-listeners.js" defer></script>
         <style>
             body:not(.minimise) #content {
@@ -169,14 +170,14 @@
                                 <div class="text" id="ebuser">
                                     {{ site.data.custom.user_name }}
                                 </div>
-                                <form id="ebsearchbar" action="/pages" method="get">
+                                <form id="ebsearchbar" action="{{ site.data.custom.search_url }}" method="get">
                                     <div id="ebsbleft"></div>
                                     <input type="text" name="search" autocomplete="off" placeholder="Search page >Tags and Usernames here!" class="text" id="ebsbbody">
                                     <input type="submit" value="" id="ebsbsearch" ondragstart="return false;" ondrop="return false;"></a>
                                 </form>
                                 <a id="ebsearch" ondragstart="return false;" ondrop="return false;"></a>
                                 {% if site.data.custom.info_url and site.data.custom.info_url != "" %}
-                                <a id="ebinfo" href={{ site.data.custom.info_url }} ondragstart="return false;" ondrop="return false;"></a>
+                                <a id="ebinfo" href="{{ site.data.custom.info_url }}" ondragstart="return false;" ondrop="return false;"></a>
                                 {% else %}
                                 <a id="ebinfo" ondragstart="return false;" ondrop="return false;"></a>
                                 {% endif %}

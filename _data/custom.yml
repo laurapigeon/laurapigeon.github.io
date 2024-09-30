@@ -16,8 +16,9 @@ status_emote: "grin"
 status_text: "@pigeon why did you let out a high pitched yippee what is going on right now"
 
 info_url: "https://github.com/laurapigeon/laurapigeon.github.io"
-home_url: "/pages"
-root_url: "/"
+home_url: "/"
+root_url: "/pages"
+search_url: "/pages"
 
 title: "laurapigeons epic website :)"
 favicon: "pigeon.ico"

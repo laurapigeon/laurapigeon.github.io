@@ -1,6 +1,6 @@
 ---
 layout: HSP
-title: Page List
+title: Search Results
 background_image: kingdom.png
 background_position: -12px 0px
 list_page: true
@@ -8,17 +8,18 @@ tags: [list, debug]
 ---
 
 {% for page in site.pages %}
-{% if page.list_page == true %}
 {% assign pageSlug = page.url | split: "." | first %}
+{% assign pageTags = page.tags | join: ", " %}
 
-<div style="background-image:url('/site_resources/images/page_panel.png'); width:284px; height:32px;" markdown="1">
+<div class="linktile" markdown="1" data-url="{{ pageSlug }}" data-tags="{{ pageTags }}" data-listpage="{{ page.list_page }}">
+{{ page.title }}
+{: .free style="--top:-2px; --left:10px;" }
 
 {{ pageSlug }}
+{: .free style="--top:-2px; --right:9px;" }
 
-{{ page.title }}
-
+{{ page.description }}
+{: .free style="--top:6px; --left:74px;" }
 </div>
-{: data-url="{{ pageSlug }}"}
 
-{% endif %}
 {% endfor %}

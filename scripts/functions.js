@@ -49,7 +49,7 @@ function laggyUnhide() {
     window.addEventListener("mousemove", getMousePos);
 
     const content = document.getElementById("content");
-    const paragraphs = content.querySelectorAll("p, a");
+    const paragraphs = content.querySelectorAll(".p");
     
     var i = 0;
     var buffer = 0;
@@ -105,7 +105,7 @@ function getContentHeight() {
     // Calculate the new height of the content boxes based on the text boxes within
     var content = document.getElementById('content');
 
-    const contentelements = content.querySelectorAll('p, a');
+    const contentelements = content.querySelectorAll('.p');
     
     let maxHeight = 0;
     contentelements.forEach(contentelement => {
@@ -138,7 +138,7 @@ function setScrollbarPos() {
 
 function setTransformOrigin() {
     var content = document.getElementById('content');
-    var paragraphs = content.querySelectorAll('p, a');
+    var paragraphs = content.querySelectorAll('.p');
 
     // Loop through paragraphs replacing text contents with lineboxes
     paragraphs.forEach(paragraph => {
@@ -167,7 +167,7 @@ function isClickedOnSelectedText(event) {
 
 function defineContentParagraphs() {
     var content = document.getElementById('content');
-    const contentelements = content.querySelectorAll('p, a');
+    const contentelements = content.querySelectorAll('div, p');
     contentelements.forEach(contentelement => {contentelement.classList.add("p")});
 }
 
@@ -177,4 +177,33 @@ function setReadingTime() {
   const hightime = Math.ceil(words / 225);
   const lowtime = Math.floor(words / 265);
   document.getElementById("readtime").innerText = `${lowtime}–${hightime} minutes`;
+}
+
+function filterSearchPage() {
+    const content = document.getElementById("content");
+    const linktiles = content.querySelectorAll(".linktile");
+    var search = findGetParameter("search");
+    
+    linktiles.forEach(linktile => {
+        var listpage = linktile.dataset.listpage;
+        var tags = linktile.dataset.tags.split(", ");
+        if (search == "3y3") { var removelink = false; }
+        else if (search) { var removelink = tags.indexOf(search) == -1; }
+        else { var removelink = !listpage || listpage == "false"; }
+
+        if (removelink) { linktile.remove(); }
+    });
+}
+
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
 }

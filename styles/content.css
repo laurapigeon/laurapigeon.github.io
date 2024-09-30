@@ -67,6 +67,13 @@ body:not(.minimise) .p.shift {
     margin-right: var(--right, 2px);
 }
 
+body:not(.minimise) .linktile {
+    background-image: url('/site_resources/images/page_panel.png');
+    position: relative;
+    --box-width: 284px;
+    --box-height: 32px;
+}
+
 
 .p {
     display: block;
@@ -93,7 +100,7 @@ body:not(.minimise) .p {
     transform-origin: var(--auto-transform-origin);
 }
 
-body:not(.minimise) #content>div {
+body:not(.minimise) #content>.p {
     height: var(--box-height, fit-content);
     width: var(--box-width, fit-content);
 }
