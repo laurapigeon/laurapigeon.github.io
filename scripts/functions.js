@@ -83,6 +83,7 @@ function laggyUnhide() {
             ['load', 'scroll', 'resize'].forEach(function(e) {
                 window.removeEventListener(e, setTransformOrigin);
             });
+            document.body.classList.remove("loading");
         }
     }
 
@@ -209,4 +210,19 @@ function findGetParameter(parameterName) {
           if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
         });
     return result;
+}
+
+function setCursorPos(event) {
+    var mouseX = event.clientX;
+    var mouseY = event.clientY;
+    const cursor = document.getElementById("cursor");
+    cursor.style.left = `${mouseX}px`;
+    cursor.style.top = `${mouseY}px`;
+}
+
+function disableElementDrag() {
+    const dragElements = document.body.querySelectorAll("img, a");
+    dragElements.forEach(dragElement => {
+        dragElement.draggable = false;
+    });
 }

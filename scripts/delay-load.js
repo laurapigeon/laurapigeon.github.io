@@ -4,3 +4,5 @@ var paragraphs = content.querySelectorAll(".p");
 paragraphs.forEach(paragraph => {
     paragraph.classList.add("hidden");
 });
+
+document.body.classList.add("loading");

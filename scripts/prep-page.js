@@ -1,3 +1,4 @@
 defineContentParagraphs();
 filterSearchPage();
 setReadingTime();
+disableElementDrag();

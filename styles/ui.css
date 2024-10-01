@@ -305,6 +305,15 @@ body:not(.minimise) #browsericon {
     background-position: -46px -31px;
     animation: home-color 1s step-end infinite;
 }
+@keyframes home-color {
+    0%, 100% {       background-position: -46px -31px; }
+    14.2857142857% { background-position: -58px -31px; }
+    28.5714285714% { background-position: -70px -31px; }
+    42.8571428571% { background-position: -82px -31px; }
+    57.1428571429% { background-position: -94px -31px; }
+    71.4285714286% { background-position: -106px -31px; }
+    85.7142857143% { background-position: -118px -31px; }
+}
 #nbrefresh {
     margin: 2px 1px 2px 0px;
     min-width: 9px;
@@ -362,7 +371,6 @@ body:not(.minimise) #browsericon {
 #mediabar:not(.disabled) #mbbody:hover ~ #mbright,
 #mediabar:not(.disabled) #mbright:hover { visibility: visible; transition-delay: 0s; }
 
-#browsericon:hover, #tbminimise:hover, #ebsbsearch:hover, #sbtop:hover, #sbbottom:hover, #mediabar:not(.disabled) #mbmusic { cursor: url("/site_resources/cursor/mouse02.png") 16 1, pointer; }
 
 #ebsearchbar { display: none; }
 #ebcontents.search #ebpage, #ebcontents.search #ebuser { display: none; }
@@ -370,12 +378,67 @@ body:not(.minimise) #browsericon {
 
 #ebback.off, #ebforward.off, #ebsafe, #ebinfo.off, #scrollbar.off #sbtop, #scrollbar.off #sbbottom, #scrollbar.off #sbbar { pointer-events: none; }
 
-@keyframes home-color {
-    0%, 100% {  background-position: -46px -31px; }
-    14.2857142857% { background-position: -58px -31px; }
-    28.5714285714% { background-position: -70px -31px; }
-    42.8571428571% { background-position: -82px -31px; }
-    57.1428571429% { background-position: -94px -31px; }
-    71.4285714286% { background-position: -106px -31px; }
-    85.7142857143% { background-position: -118px -31px; }
+html:has(body:not(.minimise)) * { cursor: none; }
+
+#cursor {
+    position: fixed;
+    pointer-events: none;
+    transform-origin: top left;
+    
+    background-image: url("/site_resources/cursor/mouse01.png");
+    width: 10px;
+    height: 15px;
+    transform: translate(-36px, -4px) scale(4);
+}
+
+body.minimise #browsericon:hover {
+    cursor: pointer;
+}
+
+#tbminimise,
+#ebsbbody,
+#ebsbsearch,
+#sbtop,
+#sbbottom,
+#mbmusic {
+    display: inline-block;
+}
+
+body:not(.loading):not(.minimise):has(#ebsbbody:hover) #cursor,
+body:not(.loading):not(.minimise):has(#ebsbsearch:hover) #cursor,
+body:not(.loading):not(.minimise):has(a:hover) #cursor {
+    background-image: url("/site_resources/cursor/mouse02.png");
+    width: 14px;
+    height: 17px;
+    transform: translate(-32px, -4px) scale(4);
+}
+
+body:not(.loading):not(.minimise):has(#ebsbbody:hover:active) #cursor,
+body:not(.loading):not(.minimise):has(#ebsbsearch:hover:active) #cursor,
+body:not(.loading):not(.minimise):has(a:hover:active) #cursor {
+    background-image: url("/site_resources/cursor/mouse03.png");
+    width: 14px;
+    height: 16px;
+    transform: translate(-32px, 0px) scale(4);
+}
+
+body.loading #cursor {
+    pointer-events: all;
+    background-image: url("/site_resources/cursor/mouse04.png");
+    width: 11px;
+    height: 15px;
+    transform-origin: 50% 50%;
+    transform: translate(-6px, -8px) scale(4);
+    animation: loading-spin 1.5s ease-in-out infinite;
+}
+
+@keyframes loading-spin {
+    0%   { transform: translate(-6px, -8px) scale(4) rotate(0deg) }
+    50%  { transform: translate(-6px, -8px) scale(4) rotate(180deg) }
+    100% { transform: translate(-6px, -8px) scale(4) rotate(360deg) }
+}
+
+body:not(:hover) #cursor,
+body.minimise #cursor {
+    display: none;
 }

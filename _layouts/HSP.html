@@ -128,7 +128,7 @@
                             HYPNOSPACE EXPLORER
                         </div>
                         <div id="navigationbar">
-                            <a id="nbhome" href={{ site.data.custom.home_url }} ondragstart="return false;" ondrop="return false;"></a>
+                            <a id="nbhome" href={{ site.data.custom.home_url }}></a>
                             <dif class="text" id="nbtext">
                                 {% assign pageSlug = page.url | split: "." | first | remove: "/" %}
                                 {% if pageSlug == "" %}
@@ -144,11 +144,11 @@
                                     {{ pageSlug | upcase }}
                                 </a>
                             </dif>
-                            <a id="nbrefresh" href="javascript:window.location.reload()" ondragstart="return false;" ondrop="return false;"></a>
+                            <a id="nbrefresh" href="javascript:window.location.reload()"></a>
                         </div>
                     </div>
                     <div id="tbright">
-                        <div id="tbminimise"></div>
+                        <a id="tbminimise"></a>
                     </div>
                 </div>
                 <div id="wfbody">
@@ -161,9 +161,9 @@
                                 <div id="ebright"></div>
                             </div>
                             <div id="ebcontents">
-                                <a id="ebback" href="javascript:historyBackWFallback()" ondragstart="return false;" ondrop="return false;"></a>
-                                <a id="ebforward" href="javascript:historyForwardWFallback()" ondragstart="return false;" ondrop="return false;"></a>
-                                <a id="ebsafe" ondragstart="return false;" ondrop="return false;"></a>
+                                <a id="ebback" href="javascript:historyBackWFallback()"></a>
+                                <a id="ebforward" href="javascript:historyForwardWFallback()"></a>
+                                <a id="ebsafe"></a>
                                 <div class="text" id="ebpage">
                                     {{ page.title }}
                                 </div>
@@ -173,21 +173,21 @@
                                 <form id="ebsearchbar" action="{{ site.data.custom.search_url }}" method="get">
                                     <div id="ebsbleft"></div>
                                     <input type="text" name="search" autocomplete="off" placeholder="Search page >Tags and Usernames here!" class="text" id="ebsbbody">
-                                    <input type="submit" value="" id="ebsbsearch" ondragstart="return false;" ondrop="return false;"></a>
+                                    <input type="submit" value="" id="ebsbsearch"></a>
                                 </form>
-                                <a id="ebsearch" ondragstart="return false;" ondrop="return false;"></a>
+                                <a id="ebsearch"></a>
                                 {% if site.data.custom.info_url and site.data.custom.info_url != "" %}
-                                <a id="ebinfo" href="{{ site.data.custom.info_url }}" ondragstart="return false;" ondrop="return false;"></a>
+                                <a id="ebinfo" href="{{ site.data.custom.info_url }}"></a>
                                 {% else %}
-                                <a id="ebinfo" ondragstart="return false;" ondrop="return false;"></a>
+                                <a id="ebinfo"></a>
                                 {% endif %}
                             </div>
                         </div>
                         <div id="mediabar" {% unless audio_file and audio_file != "" %}class="disabled"{% endunless %}>
                             <div id="mbstamp"></div>
-                            <div id="mbmusic">
+                            <a id="mbmusic">
                                 <audio src="/user_resources/audio/{{ audio_file }}"></audio>
-                            </div>
+                            </a>
                             {% if audio_text and audio_text != "" %}
                             <div id="mbbody">
                                 {% if audio_link and audio_link != "" %}
@@ -205,11 +205,11 @@
                         </div>
                     </div>
                     <div id="scrollbar">
-                        <div id="sbtop" ondragstart="return false;" ondrop="return false;"></div>
+                        <a id="sbtop"></a>
                         <div id="sbbody">
-                            <div id="sbbar" ondragstart="return false;" ondrop="return false;"></div>
+                            <div id="sbbar"></div>
                         </div>
-                        <div id="sbbottom" ondragstart="return false;" ondrop="return false;"></div>
+                        <a id="sbbottom"></a>
                     </div>
                     <div id="wfright"></div>
                 </div>
@@ -220,5 +220,6 @@
                 </div>
             </div>
         </div>
+        <div id="cursor"></div>
     </body>
 </html>

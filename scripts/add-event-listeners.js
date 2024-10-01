@@ -38,3 +38,5 @@ tbminimise.addEventListener("click", () => { document.body.classList.add("minimi
 
 const browsericon = document.getElementById('browsericon');
 browsericon.addEventListener("click", () => { document.body.classList.remove("minimise"); setScrollbarPos() });
+
+window.addEventListener("mousemove", setCursorPos);
