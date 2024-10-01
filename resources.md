@@ -11,7 +11,7 @@ tags: [list]
 Resources
 
 Google Drive
-{: data-url="https://drive.google.com/open?id=1vPxJSLNgyoM5InfvzLNtTtdAPl2ZJoiW" style="--color: rgb(34, 34, 71);"}
+{: data-url="https://drive.google.com/open?id=1vPxJSLNgyoM5InfvzLNtTtdAPl2ZJoiW" style="--txcol: rgb(34, 34, 71);"}
 
 Experiment Writeups (Sub-Page)
 {: data-url="/writeups"}

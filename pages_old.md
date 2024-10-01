@@ -8,7 +8,7 @@ tags: [list, debug]
 
 {% for tag in site.data.custom.tag_list %}
 \-\- {{ tag }} \-\-
-{: .center style="--color: aquamarine;" }
+{: .center style="--txcol: aquamarine;" }
 {% for page in site.pages %}
 {% if page.list_page == true %}
 {% for page_tag in page.tags %}
@@ -22,7 +22,7 @@ tags: [list, debug]
 {% endfor %}
 {% endfor %}
 \-\- other \-\-
-{: .center style="--color: aquamarine;" }
+{: .center style="--txcol: aquamarine;" }
 {% for page in site.pages %}
 {% if page.list_page == true %}
 {% assign is_other = true %}

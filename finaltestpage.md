@@ -1,8 +1,8 @@
 ---
 layout: HSP
 title: debugging till the end of everything
-background_color: rgba(0,0,0,0)
-text_color: rgb(255,0,0)
+bg_color: "#110000"
+text_color: "#ff0000"
 tags: [debug]
 ---
 
@@ -11,70 +11,103 @@ tags: [debug]
 none
 
 free
-{: .free style="--right:10px" }
+{: .free style="--right:20px" }
 
 shift
-{: .shift style="--left:10px" }
+{: style="--left:20px" data-url="/" }
 
 center
 {: .center }
 
-<div style="--width:116px;">
+right
+{: .right }
+
+<div style="--bgcol:#001111; --txcol:#00ffff;">
 <img src="/user_resources/images/under construction short.png">
 
 none
 
 free
-{: .free style="--right:10px" }
+{: .free style="--right:20px" }
 
 shift
-{: .shift style="--left:10px" }
+{: style="--left:20px" data-url="/" }
 
 center
 {: .center }
+
+right
+{: .right }
 </div>
 
-<div class="free" style="--width:116px; --right:10px">
+<div class="free" style="--right:20px; --bgcol:#001100; --txcol:#00ff00;">
 <img src="/user_resources/images/under construction short.png">
 
 none
 
 free
-{: .free style="--right:10px" }
+{: .free style="--right:20px" }
 
 shift
-{: .shift style="--left:10px" }
+{: style="--left:20px" data-url="/" }
 
 center
 {: .center }
+
+right
+{: .right }
 </div>
 
-<div class="shift" style="--width:116px; --left:10px">
+<div style="--left:20px; --bgcol:#000011; --txcol:#0000ff;" data-url="/">
 <img src="/user_resources/images/under construction short.png">
 
 none
 
 free
-{: .free style="--right:10px" }
+{: .free style="--right:20px" }
 
 shift
-{: .shift style="--left:10px" }
+{: style="--left:20px" data-url="/" }
 
 center
 {: .center }
+
+right
+{: .right }
 </div>
 
-<div class="center" style="--width:116px;">
+<div class="center" style="--bgcol:#111100; --txcol:#ffff00;">
 <img src="/user_resources/images/under construction short.png">
 
 none
 
 free
-{: .free style="--right:10px" }
+{: .free style="--right:20px" }
 
 shift
-{: .shift style="--left:10px" }
+{: style="--left:20px" data-url="/" }
 
 center
 {: .center }
+
+right
+{: .right }
+</div>
+
+<div class="right" style="--bgcol:#110011; --txcol:#ff00ff;">
+<img src="/user_resources/images/under construction short.png">
+
+none
+
+free
+{: .free style="--right:20px" }
+
+shift
+{: style="--left:20px" data-url="/" }
+
+center
+{: .center }
+
+right
+{: .right }
 </div>

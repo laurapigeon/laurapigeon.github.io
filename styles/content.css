@@ -17,45 +17,74 @@ body.minimise #pagetitle {
     max-width: 30em;
     height: auto;
     margin: auto;
-    font-weight: 400;
     color: rgb(251, 251, 254);
+    font-weight: 400;
     letter-spacing: -0.6px;
     line-height: 32px;
     word-spacing: -1px;
     font-family: Helvetica, Arial, sans-serif;
 }
 
-body:not(.minimise) #pagetitle {
-    display: none;
-}
+/* positionings for .p in/out of flow */
+@property --top    { syntax: "*"; inherits: false; }
+@property --left   { syntax: "*"; inherits: false; }
+@property --bottom { syntax: "*"; inherits: false; }
+@property --right  { syntax: "*"; inherits: false; }
+/* sizing for .p */
+@property --width  { syntax: "*"; inherits: false; }
+@property --height { syntax: "*"; inherits: false; }
+/* styles for .p */
+@property --bgcol  { syntax: "*"; inherits: false; }
+@property --txcol  { syntax: "*"; inherits: true; }
 
-.p:not(.free):not(:has(.p)) {
-    margin-left: 7px;
-    margin-right: 7px;
-}
 .p {
     display: block;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    position: relative;
+    text-align: var(--text-align, left);
 }
-.p>.p:first-child {
-    margin-top: 0px;
+body:not(.minimise) .p {
+    padding-left: var(--padding-left);
+    width: var(--width, fit-content);
+    height: var(--height, fit-content);
+    font-family: var(--font, "basic");
+    font-size: var(--font-size, 7px);
+    line-height: var(--line-height, 8px);
+    transform-origin: var(--auto-transform-origin);
+    background-color: var(--bgcol);
 }
-.p.free {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    margin-right: 0px;
+body.minimise .p {
+    width: 100%;
+    height: 100%;
 }
-.p.center {
+
+/* margins except 0px on .free and auto on .center, .right, .bottom */
+/* no horizontal margins ever on .minimise */
+/* collapse left margins of children into parent */
+body:not(.minimise) #content>.p:not(.free):not(.center):not(.right) { margin-left: var(--left, 7px); }
+body:not(.minimise) .p>.p:not(.free):not(.center):not(.right) { margin-left: var(--left); }
+body:not(.minimise) .p.right { margin-left: auto; }
+
+/* collapse right margins of children into parent */
+body:not(.minimise) #content>.p:not(.free):not(.center) { margin-right: var(--right, 7px); }
+body:not(.minimise) .p>.p:not(.free):not(.center) { margin-right: var(--right); }
+
+/* collapse top margin of first child */
+.p:not(.free):not(.bottom) { margin-top: var(--top, 1em); }
+.p.bottom { margin-top: auto; }
+.p>.p:first-child { margin-top: 0px; }
+
+/* collapse bottom margin of last child */
+.p:not(.free) { margin-bottom: var(--bottom, 1em); }
+.p>.p:last-child { margin-bottom: 0px; }
+
+body:not(.minimise) .p.center {
     margin-left: var(--left, auto);
     margin-right: var(--right, auto);
 }
-.p.shift {
-    margin-top: var(--top, 1em);
-    margin-bottom: var(--bottom, 1em);
-    margin-left: var(--left, 7px);
-    margin-right: var(--right, 7px);
+/* dont use script generated left/right for .center on .minimise */
+body.minimise .p.center {
+    margin-left: auto;
+    margin-right: auto;
 }
 body:not(.minimise) .p.free {
     position: absolute;
@@ -63,35 +92,16 @@ body:not(.minimise) .p.free {
     left: var(--left);
     bottom: var(--bottom);
     right: var(--right);
+    margin: 0px;
 }
+/* dont position .free on .minimise */
+body.minimise .p.free { margin: 1em 0px; }
 
 .linktile {
     background-image: url('/site_resources/images/page_panel.png');
     position: relative;
     --width: 284px;
     --height: 32px;
-}
-
-
-.p {
-    display: block;
-    position: relative;
-    text-align: var(--text-align, left);
-}
-
-
-body:not(.minimise) .p {
-    padding-left: var(--padding-left);
-    height: var(--height, fit-content);
-    width: var(--width, fit-content);
-    font-family: var(--font, "basic");
-    font-size: var(--font-size, 7px);
-    line-height: var(--line-height, 8px);
-    transform-origin: var(--auto-transform-origin);
-}
-
-body.minimise .p:not(.imagebox) {
-    width: fit-content;
 }
 
 .p.imagebox {
@@ -106,6 +116,11 @@ img {
     vertical-align: top;
     image-rendering: pixelated;
 }
+
+
+/* minimise stuff */
+
+body:not(.minimise) #pagetitle { display: none; }
 
 a, a:link, a:hover, a:visited, a:active {
     color: inherit;
@@ -150,6 +165,8 @@ body.minimise #readtime {
 }
 
 
+/* load stuff */
+
 body:not(.minimise) .p.hidden {
     visibility: hidden;
 }
@@ -164,10 +181,3 @@ body:not(.minimise) .p.hidden {
     75% { transform: scale(1.01); }
     100% { transform: scale(1); }
 }
-
-@property --top    { syntax: "*"; inherits: false; }
-@property --left   { syntax: "*"; inherits: false; }
-@property --bottom { syntax: "*"; inherits: false; }
-@property --right  { syntax: "*"; inherits: false; }
-@property --width  { syntax: "*"; inherits: false; }
-@property --height { syntax: "*"; inherits: false; }

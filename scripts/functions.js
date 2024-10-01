@@ -112,6 +112,7 @@ function getContentHeight() {
         if (!contentelement.classList.contains("noheight")) {
             var bottomMargin = parseInt(window.getComputedStyle(contentelement).marginBottom);
             var height = contentelement.offsetTop + contentelement.offsetHeight + bottomMargin;
+            if (contentelement.nodeName == "A") { height += 2; }
             maxHeight = Math.max(maxHeight, height);
         }
     });

@@ -18,8 +18,8 @@ hi im laura (she/they) welcome to my website :)
 i like systems and pigeons
 
 try clicking around the site! i made this based on the game hypnospace outlaw and it took a looooot of work, but no button does nothing, so try them out :D
-{: .shift style="--top:20px;" }
+{: style="--top:50px;" }
 </div>
 
 Pages Directory
-{: .free style="--top:150px; --right:0px;" data-url="/pages" }
+{: .free style="--top:150px; --right:2px;" data-url="/pages" }

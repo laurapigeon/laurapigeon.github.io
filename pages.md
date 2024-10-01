@@ -19,7 +19,7 @@ tags: [list, debug]
 {: .free style="--top:0px; --right:11px;" }
 
 {{ page.description }}
-{: .free style="--top:8px; --left:76px;" }
+{: .free style="--top:8px; --left:76px; --right:3px;" }
 </div>
 
 {% endfor %}

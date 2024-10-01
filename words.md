@@ -13,8 +13,8 @@ tags: [list]
 {% assign hue = 0 %}
 {% for word in words %}
 {{ word }}
-{: .center style="--color:hsl({{ hue }},100%,50%);" }
+{: .center style="--txcol:hsl({{ hue }},100%,50%);" }
 {% assign hue = hue | plus: hueshift %}
 {% endfor %}
 yes the words of the day are the same every day
-{: .center style="--color:hsl({{ hue }},100%,80%);" }
+{: .center style="--txcol:hsl({{ hue }},100%,80%);" }
