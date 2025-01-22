@@ -6,7 +6,7 @@ background_image: "polyomino structures.png"
 audio_file: "beeps overworld.mp3"
 audio_text: "beeps overworld - laurapigeon"
 list_page: true
-tags: []
+tags: [welcome, about me, systems, pigeons, music, study, hypnospace]
 ---
 
 <img src="/user_resources/images/poly pigeon.png">
