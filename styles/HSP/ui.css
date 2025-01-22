@@ -217,6 +217,9 @@ body:not(.minimise) #browsericon {
 #mediabar:not(.disabled) #mbmusic:hover ~ #mbbody,
 #mediabar:not(.disabled) #mbbody:hover { flex-grow: 1; }
 /*#mediabar:not(.disabled) #mbbody:has(~ #mbright:hover)*/
+#mediabar.disabled #mbmusic {
+    pointer-events: none;
+}
 #mbtext {
     display: block;
     margin: 0px 0px 0px 1px;

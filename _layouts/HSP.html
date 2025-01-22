@@ -6,9 +6,9 @@
         {% if page.text_color and page.text_color != "" %}{% assign text_color = page.text_color %}{% else %}{% assign text_color = site.data.custom.text_color %}{% endif %}
         {% if page.bg_color and page.bg_color != "" %}{% assign bg_color = page.bg_color %}{% else %}{% assign bg_color = site.data.custom.bg_color %}{% endif %}
 
-        {% if page.audio_file and page.audio_file != "" %}{% assign audio_file = page.audio_file %}{% else %}{% assign audio_file = site.data.custom.audio_file %}{% endif %}
-        {% if page.audio_text and page.audio_text != "" %}{% assign audio_text = page.audio_text %}{% else %}{% assign audio_text = site.data.custom.audio_text %}{% endif %}
-        {% if page.audio_link and page.audio_link != "" %}{% assign audio_link = page.audio_link %}{% else %}{% assign audio_link = site.data.custom.audio_link %}{% endif %}
+        {% if page.audio_file %}{% assign audio_file = page.audio_file %}{% else %}{% assign audio_file = site.data.custom.audio_file %}{% endif %}
+        {% if page.audio_text %}{% assign audio_text = page.audio_text %}{% else %}{% assign audio_text = site.data.custom.audio_text %}{% endif %}
+        {% if page.audio_link %}{% assign audio_link = page.audio_link %}{% else %}{% assign audio_link = site.data.custom.audio_link %}{% endif %}
         
         <title>{{ title }}</title>
 
