@@ -1,0 +1,55 @@
+#+title: welcome to pigeonguide !
+#+subtitle: your #1 stop for all things     !
+#+author: laura
+#+options: num:nil
+# #+setupfile: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+html_head: <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+
+* so *who* are you?
+** hi im laura (she/they) welcome to my website :)
+i like systems :>\\
+i like pigeons :>\\
+i like music :>\\
+i like study :>
+
+* so *what* is this site?
+** i want to use this site to share intricacies
+of the systems i use in my life,\\
+the stuff i like and why i like it,\\
+and how you might can do and like the same!
+
+** i believe we are stifled by restrictions
+imparted by plaintext and style and character limits.\\
+this is partly my attempt to show that you can express yourself\\
+beyond a microblogging about-me or social media profile
+
+** this site is for my past self!
+if some or all of it doesn't apply to you,\\
+that's okay!
+
+* so *why* might i care?
+** you don't know what you don't know, and i might!
+knowing is cool, so let us know together :>
+
+** i used to not know about almost everything i care about today.
+i wish for more ways for more people to encounter such things\\
+so im doing my part in that process!
+
+** the things i know now have drastically helped
+my quality of life, my motivation, and my capability.\\
+they may well for yours too.\\
+lets see, shall we!
+
+* but what is this site not?
+** i don't want to talk about *should*,
+only what i *like*,\\
+and occasionally what i would like to happen.
+
+** i don't want to be a nerd,
+because this stuff *can be* accessible to everyone.\\
+the biggest barrier to entry is the feeling that it isn't.\\
+i wont feed into that.
+
+** i don't want to burn out,
+but i will lol\\
+so i will try not to leave things underbaked.
