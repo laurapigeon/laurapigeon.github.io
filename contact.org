@@ -1,5 +1,5 @@
 #+title: Contact Me
-#+subtitle: my various profiles / contact methods
+#+description: my various profiles / contact methods
 #+options: toc:nil num:nil
 
 - email: ~laurapigeon44@proton.me~

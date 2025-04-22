@@ -1,20 +1,33 @@
-#+title: welcome to pigeonguide !
-#+subtitle: your #1 stop for all things !
-#+options: toc:nil num:nil
+#+title: welcome to the pigeonguide !
+#+subtitle: your #1 stop for all things @@html:&emsp;&emsp;@@ !
+#+description: the home page and overview for the site
+#+options: toc:nil num:nil html-style:nil
 # #+setupfile: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
-# #+html_head: <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+#+html_head: <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+#+html_head_extra: <link rel="stylesheet" type="text/css" href="./css/imagine.css" />
+#+html_link_up: ./index.html
+#+html_link_home: ./index.html
+
+[[./img/poly_pigeon.png]]
+
+you might be thinking...
 
 * so who are you?
 :PROPERTIES:
 :CUSTOM_ID: who
 :END:
 
-hi im laura (she/they) welcome to my website :)\\
-im in my early 20s, autistic and very normal.\\
-i love to talk about all sorts :> consider [[./contact.org][contacting me]]!\\
-i never mean to imply more than i explicitly say/write,\\
-so try not to interpret around my sentences ^^\\
-this whole site is about the stuff i like, so i wont belabour:\\
+hi im laura (she/they) welcome to my website :)
+
+im in my early 20s, autistic and very normal.
+
+i love to talk about all sorts :> consider [[./contact.org][contacting me]]!
+
+i never mean to imply more than i explicitly say/write, so try not to interpret around my sentences ^^
+
+this whole site is about the stuff i like, so i wont belabour:
+
+# #+ATTR_HTML: :style color:red;
 - i like [[#systems][systems]] :>
 - i like [[#pigeons][pigeons]] :>
 - i like [[#music][music]] :>
@@ -25,61 +38,35 @@ this whole site is about the stuff i like, so i wont belabour:\\
 :CUSTOM_ID: what
 :END:
 
-i want to use this site to share intricacies\\
-of the systems i use in my life,\\
-the stuff i like and why i like it,\\
-and how you might can do and like the same!
+i want to use this site to share intricacies of the systems i use in my life, the stuff i like and why i like it, and how you might do and like the same!
 
-i believe we are stifled by restrictions\\
-imparted by plaintext and style and character limits.\\
-this is partly my attempt to show that you can express yourself\\
-beyond a microblogging about-me or social media profile
+i believe we are stifled by restrictions imparted by plaintext and style and character limits. this is partly my attempt to show that you can express yourself beyond a microblogging about-me or social media profile.
 
-this site is for my past self!\\
-if some or all of it doesn't apply to you,\\
-that's okay!
+this site is for my past self! if some or all of it doesn't apply to you, that's okay!
 
 * so why might i care?
 :PROPERTIES:
 :CUSTOM_ID: why
 :END:
 
-you don't know what you don't know, and i might!\\
-knowing is cool, so lets know together :>
+you don't know what you don't know, and i might! knowing is cool, so lets know together :>
 
-i used to not know about everything i care about today.\\
-i wish for more ways for more people to encounter such things\\
-so im doing my part in that process!
+i used to not know about everything i care about today. i wish for more ways for more people to encounter such things, so im doing my part in that process!
 
-the things i know now have drastically helped\\
-my quality of life, my motivation, and my capability.\\
-they may well for yours too.\\
-lets see, shall we!
+the things i know now have drastically helped my quality of life, my motivation, and my capability. they may well for yours too. lets see, shall we!
 
 * but what is this site NOT?
 :PROPERTIES:
 :CUSTOM_ID: not
 :END:
 
-i don't want to limit the scope.\\
-many many facets of life can be systematised,\\
-and many things are awesome.\\
-so this is not a site "about tech",\\
-nor "about pigeons".
+i don't want to limit the scope. many many facets of life can be systematised, and many things are awesome, so this is not a site "about tech", nor "about pigeons".
 
-i don't want to talk about should.\\
-only what i like,\\
-and occasionally what i would like to happen.
+i don't want to talk about should. only what i like, and occasionally what i would like to happen.
 
-i don't want to be a nerd,\\
-because this stuff can be accessible to everyone.\\
-the biggest barrier to entry is the feeling that it isn't.\\
-i wont feed into that.
+i don't want to be a nerd, because this stuff can be accessible to everyone. the biggest barrier to entry is the feeling that it isn't. i wont feed into that.
 
-i don't want to burn out,\\
-but i will! lol\\
-so i will try not to leave things underbaked,\\
-but the site won't ever be done.
+i don't want to burn out, but i will! so i will try not to leave things underbaked, but the site won't ever be done.
 
 * so what do you actually like?
 :PROPERTIES:
