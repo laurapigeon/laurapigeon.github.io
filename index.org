@@ -1,55 +1,115 @@
 #+title: welcome to pigeonguide !
-#+subtitle: your #1 stop for all things     !
-#+author: laura
-#+options: num:nil
+#+subtitle: your #1 stop for all things !
+#+options: toc:nil num:nil
 # #+setupfile: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
-#+html_head: <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+# #+html_head: <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
 
-* so *who* are you?
-** hi im laura (she/they) welcome to my website :)
-i like systems :>\\
-i like pigeons :>\\
-i like music :>\\
-i like study :>
+* so who are you?
+:PROPERTIES:
+:CUSTOM_ID: who
+:END:
 
-* so *what* is this site?
-** i want to use this site to share intricacies
+hi im laura (she/they) welcome to my website :)\\
+im in my early 20s, autistic and very normal.\\
+i love to talk about all sorts :> consider [[./contact.org][contacting me]]!\\
+i never mean to imply more than i explicitly say/write,\\
+so try not to interpret around my sentences ^^\\
+this whole site is about the stuff i like, so i wont belabour:\\
+- i like [[#systems][systems]] :>
+- i like [[#pigeons][pigeons]] :>
+- i like [[#music][music]] :>
+- i like [[#study][study]] :>
+
+* so what is this site?
+:PROPERTIES:
+:CUSTOM_ID: what
+:END:
+
+i want to use this site to share intricacies\\
 of the systems i use in my life,\\
 the stuff i like and why i like it,\\
 and how you might can do and like the same!
 
-** i believe we are stifled by restrictions
+i believe we are stifled by restrictions\\
 imparted by plaintext and style and character limits.\\
 this is partly my attempt to show that you can express yourself\\
 beyond a microblogging about-me or social media profile
 
-** this site is for my past self!
+this site is for my past self!\\
 if some or all of it doesn't apply to you,\\
 that's okay!
 
-* so *why* might i care?
-** you don't know what you don't know, and i might!
-knowing is cool, so let us know together :>
+* so why might i care?
+:PROPERTIES:
+:CUSTOM_ID: why
+:END:
 
-** i used to not know about almost everything i care about today.
+you don't know what you don't know, and i might!\\
+knowing is cool, so lets know together :>
+
+i used to not know about everything i care about today.\\
 i wish for more ways for more people to encounter such things\\
 so im doing my part in that process!
 
-** the things i know now have drastically helped
+the things i know now have drastically helped\\
 my quality of life, my motivation, and my capability.\\
 they may well for yours too.\\
 lets see, shall we!
 
-* but what is this site not?
-** i don't want to talk about *should*,
-only what i *like*,\\
+* but what is this site NOT?
+:PROPERTIES:
+:CUSTOM_ID: not
+:END:
+
+i don't want to limit the scope.\\
+many many facets of life can be systematised,\\
+and many things are awesome.\\
+so this is not a site "about tech",\\
+nor "about pigeons".
+
+i don't want to talk about should.\\
+only what i like,\\
 and occasionally what i would like to happen.
 
-** i don't want to be a nerd,
-because this stuff *can be* accessible to everyone.\\
+i don't want to be a nerd,\\
+because this stuff can be accessible to everyone.\\
 the biggest barrier to entry is the feeling that it isn't.\\
 i wont feed into that.
 
-** i don't want to burn out,
-but i will lol\\
-so i will try not to leave things underbaked.
+i don't want to burn out,\\
+but i will! lol\\
+so i will try not to leave things underbaked,\\
+but the site won't ever be done.
+
+* so what do you actually like?
+:PROPERTIES:
+:CUSTOM_ID: like
+:END:
+
+** systems
+:PROPERTIES:
+:CUSTOM_ID: systems
+:END:
+
+i used to think my muse was definitely maths, then definitely music, then definitely chemistry, then definitely coding, then definitely linguistics; dozens of smaller others along the way. speed cubing, drumming, physics, tetris, juggling, flashcards, linux, cooking, tasks, memos; i came to realise that it's the systems behind them that captivated me.
+
+** pigeons
+:PROPERTIES:
+:CUSTOM_ID: pigeons
+:END:
+
+if you live in a city, there's a chance you haven't quite taken in just how many pigeons there are, just how beautiful they are, and just how much they get up to during their day-to-day. the history of the rock doves that live in every single city is immense, and the more ive come to know about them, the more impossible it has been to stop paying attention to every single one.
+
+** music
+:PROPERTIES:
+:CUSTOM_ID: music
+:END:
+
+i think music rivals game as one of the most enriching mediums of art in the modern era. the sheer breadth and variety in the pool of existing music, the inspiration and transformation of ideas between artists, the low barrier of entry, the experience of live performance, and the ability to affect mood, are all unparalleled to me.
+
+** study
+:PROPERTIES:
+:CUSTOM_ID: study
+:END:
+
+learning is cool now!!! so SUE me!!!!!
