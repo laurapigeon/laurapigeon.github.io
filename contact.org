@@ -7,11 +7,11 @@
 #+html_link_home: ./index.html
 
 #+attr_html: :class color
-| email                                                             | [[mailto:laurapigeon44@proton.me][laurapigeon44@proton.me]] @@html:<div class="aside">@@(i will eventually get =laura@pigeongui.de=)@@html:</div>@@ |
-| bluesky                                                           | [[https://bsky.app/profile/pigeongui.de][laura@pigeongui.de]]                                                                                              |
-| matodon                                                           | [[https://toki.social/@laurapigeon][laurapigeon@toki.social]]                                                                                         |
-| discord                                                           | =laurapigeon=                                                                                                   |
-| matrix                                                            | =@laurapigeon:matrix.org=                                                                                       |
-| signal                                                            | contact me for it                                                                                               |
-| phone                                                             | contact me for it                                                                                               |
-| club penguin @@html:<div class="aside">@@(journey)@@html:</div>@@ | =laurapigeon=                                                                                                   |
+| email                | [[mailto:laurapigeon44@proton.me][laurapigeon44@proton.me]] @@html:<div class="aside">@@(i will eventually get =laura@pigeongui.de=)@@html:</div>@@ |
+| bluesky              | [[https://bsky.app/profile/pigeongui.de][laura@pigeongui.de]]                                                                                              |
+| mastodon             | [[https://toki.social/@laurapigeon][laurapigeon@toki.social]]                                                                                         |
+| discord              | =laurapigeon=                                                                                                   |
+| matrix               | =@laurapigeon:matrix.org=                                                                                       |
+| signal               | contact me for it                                                                                               |
+| phone                | contact me for it                                                                                               |
+| club penguin journey | =laurapigeon=                                                                                                   |

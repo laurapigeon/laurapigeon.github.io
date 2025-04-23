@@ -6,6 +6,7 @@
 #+html_head: <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
 #+html_head_extra: <link rel="stylesheet" type="text/css" href="./css/style.css" />
 #+html_link_up: https://github.com/laurapigeon/laurapigeon.github.io
+#+html_link_home: ./index.html
 # #+attr_html: :class color_alt
 # #+begin_color_alt
 # #+end_color_alt
@@ -81,7 +82,7 @@ i don't want to burn out, but i will! so i will try not to leave things underbak
 :CUSTOM_ID: systems
 :END:
 
-i used to think my muse was definitely maths, then definitely music, then definitely chemistry, then definitely coding, then definitely linguistics, with dozens of smaller others along the way: speed cubing, drumming, physics, tetris, juggling, flashcards, linux, cooking, tasks, memos. i gradually and eventually came to realise that it's the systems behind them that truly captivated me.
+i used to think my muse was definitely maths, then definitely music, then definitely chemistry, then definitely coding, then definitely linguistics, with dozens of smaller others along the way: speed cubing, drumming, physics, tetris, juggling, flashcards, linux, cooking, tasks, memos. i gradually and eventually came to realise that it's the systems behind them that truly captivate me.
 
 [[./systems.org][read more]]
 
@@ -119,6 +120,6 @@ learning is cool now! so SUE me!! it's a pity that so many people don't recognis
 
 this section is called a "colophon" btw!
 
-this site was writen in [[https://en.wikipedia.org/wiki/Org-mode][org-mode]], using [[https://en.wikipedia.org/wiki/GNU_Emacs][emacs]] with [[https://en.wikipedia.org/wiki/Doom_Emacs][doom]]. i export the plaintext .org files into .html, and use .css to style the output. the theme is based on [[https://catppuccin.com/][catppuccin]], using your system's sans-serif and mono fonts. im planning to add a light mode and high contrast mode based on system settings.
+this site was writen in [[https://en.wikipedia.org/wiki/Org-mode][org-mode]], using [[https://en.wikipedia.org/wiki/GNU_Emacs][emacs]] with [[https://en.wikipedia.org/wiki/Doom_Emacs][doom]]. i export the plaintext .org files into .html, and use .css to style the output. the theme is based on [[https://catppuccin.com/][catppuccin]], using your system's sans-serif and mono fonts. im planning to add a light mode and high contrast mode based on system settings. here's my [[./todo.org][todo list]] for the site.
 
 this site was created [[https://declare-ai.org/1.0.0-alpha1/none.html][without any assistance from ai]].

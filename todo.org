@@ -1,0 +1,13 @@
+#+title: todo
+#+options: toc:nil num:nil html-style:nil
+#+html_head: <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+#+html_head_extra: <link rel="stylesheet" type="text/css" href="./css/style.css" />
+#+html_link_up: ./index.html
+#+html_link_home: ./index.html
+
+- 404 page
+- embed image
+- light mode / high contrast mode
+- export page on save / site all at once
+- port hsp pages
+- write more!
