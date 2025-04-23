@@ -1,4 +1,4 @@
-#+title: Contact Me
+#+title: contact me
 #+description: my various profiles / contact methods
 #+options: toc:nil num:nil
 #+html_head: <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
@@ -6,10 +6,12 @@
 #+html_link_up: ./index.html
 #+html_link_home: ./index.html
 
-- email: [[mailto:laurapigeon44@proton.me][laurapigeon44@proton.me]] (i will eventually get ~laura@pigeongui.de~)
-- bluesky: [[https://bsky.app/profile/pigeongui.de][laura@pigeongui.de]]
-- mastodon: [[https://toki.social/@laurapigeon][@laurapigeon@toki.social]]
-- discord: ~laurapigeon~
-- matrix: ~@laurapigeon:matrix.org~
-- phone: ~contact me for it~
-- club penguin (journey): ~laurapigeon~
+#+attr_html: :class color
+| email                                                             | [[mailto:laurapigeon44@proton.me][laurapigeon44@proton.me]] @@html:<div class="aside">@@(i will eventually get =laura@pigeongui.de=)@@html:</div>@@ |
+| bluesky                                                           | [[https://bsky.app/profile/pigeongui.de][laura@pigeongui.de]]                                                                                              |
+| matodon                                                           | [[https://toki.social/@laurapigeon][laurapigeon@toki.social]]                                                                                         |
+| discord                                                           | =laurapigeon=                                                                                                   |
+| matrix                                                            | =@laurapigeon:matrix.org=                                                                                       |
+| signal                                                            | contact me for it                                                                                               |
+| phone                                                             | contact me for it                                                                                               |
+| club penguin @@html:<div class="aside">@@(journey)@@html:</div>@@ | =laurapigeon=                                                                                                   |
