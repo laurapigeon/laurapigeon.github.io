@@ -1,10 +1,15 @@
 #+title: Contact Me
 #+description: my various profiles / contact methods
 #+options: toc:nil num:nil
+#+html_head: <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+#+html_head_extra: <link rel="stylesheet" type="text/css" href="./css/style.css" />
+#+html_link_up: ./index.html
+#+html_link_home: ./index.html
 
-- email: ~laurapigeon44@proton.me~
+- email: [[mailto:laurapigeon44@proton.me][laurapigeon44@proton.me]] (i will eventually get ~laura@pigeongui.de~)
+- bluesky: [[https://bsky.app/profile/pigeongui.de][laura@pigeongui.de]]
+- mastodon: [[https://toki.social/@laurapigeon][@laurapigeon@toki.social]]
 - discord: ~laurapigeon~
 - matrix: ~@laurapigeon:matrix.org~
-- mastodon: ~@laurapigeon@toki.social~
 - phone: ~contact me for it~
 - club penguin (journey): ~laurapigeon~
