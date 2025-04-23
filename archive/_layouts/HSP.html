@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% if page.title and page.title != "" %}{% assign title = page.title %}{% else %}{% assign title = site.data.custom.title %}{% endif %}
+        {% if page.favicon and page.favicon != "" %}{% assign favicon = page.favicon %}{% else %}{% assign favicon = site.data.custom.favicon %}{% endif %}
+        {% if page.text_color and page.text_color != "" %}{% assign text_color = page.text_color %}{% else %}{% assign text_color = site.data.custom.text_color %}{% endif %}
+        {% if page.bg_color and page.bg_color != "" %}{% assign bg_color = page.bg_color %}{% else %}{% assign bg_color = site.data.custom.bg_color %}{% endif %}
+
+        {% if page.audio_file %}{% assign audio_file = page.audio_file %}{% else %}{% assign audio_file = site.data.custom.audio_file %}{% endif %}
+        {% if page.audio_text %}{% assign audio_text = page.audio_text %}{% else %}{% assign audio_text = site.data.custom.audio_text %}{% endif %}
+        {% if page.audio_link %}{% assign audio_link = page.audio_link %}{% else %}{% assign audio_link = site.data.custom.audio_link %}{% endif %}
+        
+        <title>{{ title }}</title>
+
+        <link rel="icon" type="image/png" href="/user_resources/images/favicons/{{ favicon }}">
+        <link rel="me" href="https://toki.social/@laurapigeon">
+
+        <link rel="stylesheet" href="/styles/HSP/fonts.css">
+        <link rel="stylesheet" href="/styles/HSP/links.css">
+        <link rel="stylesheet" href="/styles/HSP/status.css">
+        <link rel="stylesheet" href="/styles/HSP/structure.css">
+        <link rel="stylesheet" href="/styles/HSP/content.css">
+        <link rel="stylesheet" href="/styles/HSP/ui.css">
+        <script src="/scripts/HSP/functions.js"></script>
+        <script src="/scripts/HSP/prep-page.js" defer></script>
+        <script src="/scripts/HSP/disable-buttons.js" defer></script>
+        <script src="/scripts/HSP/add-media-link.js" defer></script>
+        <script src="/scripts/HSP/delay-load.js" defer></script>
+        <script src="/scripts/HSP/add-link-border.js" defer></script>
+        <script src="/scripts/HSP/add-event-listeners.js" defer></script>
+        <style>
+            body:not(.minimise) #content {
+                {% if page.background_image and page.background_image != "" %}
+                background-image: url('/user_resources/images/backgrounds/{{ page.background_image }}');
+                background-position: {{ page.background_position }};
+                background-color: rgba(0,0,0,0);
+                {% else %}
+                background-color: {{ bg_color }};
+                {% endif %}
+            }
+            body:not(.minimise) .p {
+                color: var(--txcol, {{ text_color }});
+            }
+            #statusemoteicon {
+                {% assign status_emote = site.data.custom.status_emote %}
+                {% if status_emote == "grin" %}         background-position: -157px -29px;
+                {% elsif status_emote == "smile" %}     background-position: -181px -29px;
+                {% elsif status_emote == "errr" %}      background-position: -205px -29px;
+                {% elsif status_emote == "frown" %}     background-position: -229px -29px;
+                {% elsif status_emote == "flushed" %}   background-position: -157px -56px;
+                {% elsif status_emote == "goofy" %}     background-position: -181px -56px;
+                {% elsif status_emote == "angry" %}     background-position: -205px -56px;
+                {% elsif status_emote == "sunglasses" %}background-position: -229px -56px;
+                {% elsif status_emote == "crying" %}    background-position: -157px -83px;
+                {% elsif status_emote == "question" %}  background-position: -181px -83px;
+                {% elsif status_emote == "shock" %}     background-position: -205px -83px;
+                {% elsif status_emote == "sleepy" %}    background-position: -229px -83px;
+                {% else %}                              display: none;
+                {% endif %}
+            }
+        </style>
+    </head>
+    <body>
+        <svg class="offscreen" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <!--this is used to remove chromatic aberration for the upscale-->
+                <filter id="crispify">
+                    <feComponentTransfer>
+                        <feFuncA type="discrete" tableValues="0 1"/>
+                    </feComponentTransfer>
+                </filter>
+            </defs>
+        </svg>
+        <div id="scalercontainer">
+            <div id="scaler">
+                {% unless page.hide_status == true %}
+                <div id="status">
+                    <div id="statustitle">
+                        <div id="statusname">
+                            {{ site.data.custom.real_name | upcase }}'S STATUS
+                        </div>
+                        <div id="statusupdate">
+                            {% if site.data.custom.status_updated and site.data.custom.status_updated != "" %}
+                            UPDATED {{ site.data.custom.status_updated }}
+                            {% else %}
+                            UPDATED [NULL]
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div id="statuscontent">
+                        <div id="statusemote">
+                            <div id="statusemoteleft"></div>
+                            <div id="statusemotebody">
+                                    <div id="statusemoteicon"></div>
+                            </div>
+                            <div id="statusemoteright"></div>
+                        </div>
+                        <div id="statustext">
+                            <div id="statustextleft"></div>
+                            <div id="statustextbody">
+                                {{ site.data.custom.status_text }}
+                            </div>
+                            <div id="statustextright"></div>
+                        </div>
+                    </div>
+                </div>
+                {% endunless %}
+                <div id="pagetitle">
+                    <a href="{{ site.url }}">{{ site.url | split: "//" | last | split: "/" | first }}</a>
+                    <h1>{{ title }}</h1>
+                    <div class="credit">{{ site.data.custom.user_name }}</div>
+                    <div id="readtime"></div>
+                    <hr>
+                </div>
+                <div id="content">
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+        <div id="ui">
+            <div id="browsericon"></div>
+            <div id="windowframe">
+                <div id="titlebar">
+                    <div id="tbleft">
+                        <div id="tbglobe"></div>
+                    </div>
+                    <div id="tbbody">
+                        <div class="text" id="tbtitle">
+                            HYPNOSPACE EXPLORER
+                        </div>
+                        <div id="navigationbar">
+                            <a id="nbhome" href={{ site.data.custom.home_url }}></a>
+                            <dif class="text" id="nbtext">
+                                {% assign pageSlug = page.url | split: "." | first | remove: "/" %}
+                                {% if pageSlug == "" %}
+                                {% assign pageSlug = site.data.custom.index_name %}
+                                {% endif %}
+                                <a id="nbtextfirst" class="text" href={{ site.data.custom.home_url }}>
+                                    >>
+                                </a>
+                                <a class="text nbtext" href={{ site.data.custom.root_url }}>
+                                    {{ site.data.custom.zone_name | upcase }} >>
+                                </a>
+                                <a class="text nbtext" href="javascript:window.location.reload()">
+                                    {{ pageSlug | upcase }}
+                                </a>
+                            </dif>
+                            <a id="nbrefresh" href="javascript:window.location.reload()"></a>
+                        </div>
+                    </div>
+                    <div id="tbright">
+                        <a id="tbminimise"></a>
+                    </div>
+                </div>
+                <div id="wfbody">
+                    <div id="wfleft"></div>
+                    <div id="wfcontents">
+                        <div id="explorerbar">
+                            <div id="ebpanel">
+                                <div id="ebleft"></div>
+                                <div id="ebbody"></div>
+                                <div id="ebright"></div>
+                            </div>
+                            <div id="ebcontents">
+                                <a id="ebback" href="javascript:historyBackWFallback()"></a>
+                                <a id="ebforward" href="javascript:historyForwardWFallback()"></a>
+                                <a id="ebsafe"></a>
+                                <div class="text" id="ebpage">
+                                    {{ page.title }}
+                                </div>
+                                <div class="text" id="ebuser">
+                                    {{ site.data.custom.user_name }}
+                                </div>
+                                <form id="ebsearchbar" action="{{ site.data.custom.search_url }}" method="get">
+                                    <div id="ebsbleft"></div>
+                                    <input type="text" name="search" autocomplete="off" placeholder="Search page >Tags and Usernames here!" class="text" id="ebsbbody">
+                                    <input type="submit" value="" id="ebsbsearch"></a>
+                                </form>
+                                <a id="ebsearch"></a>
+                                {% if site.data.custom.info_url and site.data.custom.info_url != "" %}
+                                <a id="ebinfo" href="{{ site.data.custom.info_url }}"></a>
+                                {% else %}
+                                <a id="ebinfo"></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div id="mediabar" {% unless audio_file and audio_file != "" %}class="disabled"{% endunless %}>
+                            <div id="mbstamp"></div>
+                            <a id="mbmusic">
+                                <audio src="/user_resources/audio/{{ audio_file }}"></audio>
+                            </a>
+                            {% if audio_text and audio_text != "" %}
+                            <div id="mbbody">
+                                {% if audio_link and audio_link != "" %}
+                                <a id="mbtext" class="text" href="{{ audio_link }}">
+                                    {{ audio_text }}
+                                </a>
+                                {% else %}
+                                <div id="mbtext" class="text">
+                                    {{ audio_text }}
+                                </div>
+                                {% endif %}
+                            </div>
+                            <div id="mbright"></div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div id="scrollbar">
+                        <a id="sbtop"></a>
+                        <div id="sbbody">
+                            <div id="sbbar"></div>
+                        </div>
+                        <a id="sbbottom"></a>
+                    </div>
+                    <div id="wfright"></div>
+                </div>
+                <div id="bottombar">
+                    <div id="bbleft"></div>
+                    <div id="bbbody"></div>
+                    <div id="bbright"></div>
+                </div>
+            </div>
+        </div>
+        <div id="cursor"></div>
+    </body>
+</html>
