@@ -111,3 +111,14 @@ i think music rivals game as one of the most enriching mediums of art in the mod
 learning is cool now! so SUE me!! it's a pity that so many people don't recognise the joy in learning for the sake of learning, because it augments /all learning/. it took me a long time to discover the way i actually learn, and no manner of learning-style model remotely helped. i got through my pre-university schooling via sheer engrossment in the topics, and when that stopped working i had no means of forcing it any further. learning how my mind compartmentalises and links and recalls ideas over the past few years has been phenomenal.
 
 [[./study.org][read more]]
+
+* so how did you make this site?
+:PROPERTIES:
+:CUSTOM_ID: how
+:END:
+
+this section is called a "colophon" btw!
+
+this site was writen in [[https://en.wikipedia.org/wiki/Org-mode][org-mode]], using [[https://en.wikipedia.org/wiki/GNU_Emacs][emacs]] with [[https://en.wikipedia.org/wiki/Doom_Emacs][doom]]. i export the plaintext .org files into .html, and use .css to style the output. the theme is based on [[https://catppuccin.com/][catppuccin]], using your system's sans-serif and mono fonts. im planning to add a light mode and high contrast mode based on system settings.
+
+this site was created [[https://declare-ai.org/1.0.0-alpha1/none.html][without any assistance from ai]].
