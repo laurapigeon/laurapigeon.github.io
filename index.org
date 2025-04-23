@@ -4,15 +4,18 @@
 #+options: toc:nil num:nil html-style:nil
 # #+setupfile: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 #+html_head: <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
-#+html_head_extra: <link rel="stylesheet" type="text/css" href="./css/imagine.css" />
+#+html_head_extra: <link rel="stylesheet" type="text/css" href="./css/style.css" />
 #+html_link_up: ./index.html
 #+html_link_home: ./index.html
+# #+attr_html: :class color_alt
+# #+begin_color_alt
+# #+end_color_alt
 
 [[./img/poly_pigeon.png]]
 
 you might be thinking...
 
-* so who are you?
+* "so who are you?"
 :PROPERTIES:
 :CUSTOM_ID: who
 :END:
@@ -23,17 +26,18 @@ im in my early 20s, autistic and very normal.
 
 i love to talk about all sorts :> consider [[./contact.org][contacting me]]!
 
-i never mean to imply more than i explicitly say/write, so try not to interpret around my sentences ^^
+i strictly never mean to imply more than i explicitly say/write, so it's best to avoid interpreting around my sentences.
 
 this whole site is about the stuff i like, so i wont belabour:
-
-# #+ATTR_HTML: :style color:red;
+#+attr_html: :class color_alt
 - i like [[#systems][systems]] :>
 - i like [[#pigeons][pigeons]] :>
 - i like [[#music][music]] :>
 - i like [[#study][study]] :>
 
-* so what is this site?
+*o.o* @@html:&ensp;@@ have you heard king gizzard & the lizard wizard btw?
+
+* "so what is this site?"
 :PROPERTIES:
 :CUSTOM_ID: what
 :END:
@@ -44,7 +48,7 @@ i believe we are stifled by restrictions imparted by plaintext and style and cha
 
 this site is for my past self! if some or all of it doesn't apply to you, that's okay!
 
-* so why might i care?
+* "so why might i care?"
 :PROPERTIES:
 :CUSTOM_ID: why
 :END:
@@ -55,7 +59,7 @@ i used to not know about everything i care about today. i wish for more ways for
 
 the things i know now have drastically helped my quality of life, my motivation, and my capability. they may well for yours too. lets see, shall we!
 
-* but what is this site NOT?
+* "but what is this site NOT?"
 :PROPERTIES:
 :CUSTOM_ID: not
 :END:
@@ -68,7 +72,7 @@ i don't want to be a nerd, because this stuff can be accessible to everyone. the
 
 i don't want to burn out, but i will! so i will try not to leave things underbaked, but the site won't ever be done.
 
-* so what do you actually like?
+* "so what do you actually like?"
 :PROPERTIES:
 :CUSTOM_ID: like
 :END:
@@ -78,7 +82,7 @@ i don't want to burn out, but i will! so i will try not to leave things underbak
 :CUSTOM_ID: systems
 :END:
 
-i used to think my muse was definitely maths, then definitely music, then definitely chemistry, then definitely coding, then definitely linguistics; dozens of smaller others along the way. speed cubing, drumming, physics, tetris, juggling, flashcards, linux, cooking, tasks, memos; i came to realise that it's the systems behind them that captivated me.
+i used to think my muse was definitely maths, then definitely music, then definitely chemistry, then definitely coding, then definitely linguistics, with dozens of smaller others along the way: speed cubing, drumming, physics, tetris, juggling, flashcards, linux, cooking, tasks, memos. i gradually and eventually came to realise that it's the systems behind them that truly captivated me.
 
 ** pigeons
 :PROPERTIES:
@@ -92,11 +96,11 @@ if you live in a city, there's a chance you haven't quite taken in just how many
 :CUSTOM_ID: music
 :END:
 
-i think music rivals game as one of the most enriching mediums of art in the modern era. the sheer breadth and variety in the pool of existing music, the inspiration and transformation of ideas between artists, the low barrier of entry, the experience of live performance, and the ability to affect mood, are all unparalleled to me.
+i think music rivals game as one of the most enriching mediums of art in the modern era. the following are unparalleled to me: the sheer breadth and variety in the pool of existing music, the inspiration and transformation of ideas between artists, the low barrier of entry, the experience of live performance, and the ability to affect mood in such a short time.
 
 ** study
 :PROPERTIES:
 :CUSTOM_ID: study
 :END:
 
-learning is cool now!!! so SUE me!!!!!
+learning is cool now! so SUE me!! it's a pity that so many people don't recognise the joy in learning for the sake of learning, because it augments /all learning/. it took me a long time to discover the way i actually learnt, and no manner of learning style model remotely helped. i got through my pre-university schooling via sheer engrossment in the topics, and when that stopped working i had no means of forcing it any further. learning how my mind compartmentalises and links and recalls ideas over the past few years has been phenomenal.
